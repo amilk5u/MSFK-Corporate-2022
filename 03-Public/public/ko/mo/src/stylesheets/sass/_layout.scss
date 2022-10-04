@@ -1,0 +1,51 @@
+@charset "UTF-8";
+header {
+    height:0; width:100%; position:fixed; z-index:15;
+    #logo {
+        width:em(254); height:em(78); margin:em(30) 0 0 em(40);
+        background-position:50% 50%; background-repeat:no-repeat;
+        background-image:url(../../images/common/logo_b.png); background-size:cover;
+        @include transition(all, .2s);
+        &.active { background-image:url(../../images/common/logo_w.png); }
+        a { width:100%; height:100%; display: block; }
+    }
+    nav {
+        position:fixed; bottom:em(40); right:em(40); z-index:99;
+        &.active { bottom:em(320); }
+        .page_dir { width:em(100); height:em(100); display:block; background:url("../../images/common/nav_up.png") no-repeat 0 0; background-size:cover; font-size:0; overflow:hidden; }
+        .page_dir.next {
+            margin:em(20) 0 0;
+            @include transform(rotate(180deg));
+        }
+    }
+    .donate_btn {
+        position:absolute; right:em(40); top:em(38);
+        text-align:center; background-color:#d6251d; font-style:normal; font-weight:$regular; border-radius:em(100);
+        @include boxSizing;
+        a { display:block; padding:em(31) em(70) em(29); font-size:em(28); color:$white; letter-spacing:em(-.5); font-weight:$bold; }
+    }
+}
+footer {
+    position:relative; background-color:#1b1b1b; z-index:10;
+    //donate btn 기본
+    //footer
+    .footer_wrap {
+        width:100%; text-align:center; padding:em(30) 0 em(24);
+        @include boxSizing;
+        ul {
+            display:inline-block; padding:em(10) 0 0; overflow:hidden;
+            @include transform(skew(-0.03deg));
+            &.address { padding:0; }
+            li {
+                position:relative; padding:0 0 0 em(15); float:left; font-size:em(20); color:#707279; font-weight:$bold; line-height:1.2;
+                @extend %clearfix;
+                &:first-child {
+                    padding:0;
+                    &:before { display:none; }
+                }
+                &:before { width:1px; height:100%; content:""; display:block; background-color:#323437; position:absolute; left:em(7); top:em(1); }
+                span { font-weight:500; margin:0 0 0 em(5); }
+            }
+        }
+    }
+}
