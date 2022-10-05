@@ -1,297 +1,111 @@
 "use strict";
 var winW;
 var winH;
-var esStep = "Expo.ease";
-var esOut = "Expo.easeOut";
 var $window = $(window);
 var winSc = $(window).scrollTop();
 var $header = $("#header");
-var $html = $("html");
-var navAni;
-var controller = null;
-//gnb
-var $gnb = $("#gnb"),
-    $navBtn = $gnb.find("button");
-
-//배열 순차 더한 값
-var triggerScrVar = [];
 
 $window.load(function () {
-    var _this =  $(this);
-    winW = _this.width();
-    winH = _this.height();
-    winSc = _this.scrollTop();
-    $window.on("resize", function () {
-        winW = _this.width();
-        winH = _this.height();
-    });
-    _this.trigger("resize");
-    $(window).scroll(function () {
-        winSc = _this.scrollTop();
-    });
-    layout();
-    main();
+	var _this = $(this);
+	winW = _this.width();
+	winH = _this.height();
+	winSc = _this.scrollTop();
+	$window.on("resize", function () {
+		winW = _this.width();
+		winH = _this.height();
+	});
+	_this.trigger("resize");
+	$(window).scroll(function () {
+		winSc = _this.scrollTop();
+	});
+	layout();
+	main();
 });
 function layout() {
 }
 function main() {
+	/*
+ * Libraries used:
+ * http://airbnb.io/lottie/#/web
+ * http://scrollmagic.io/docs/
+*/
 
-    // container
-    const $container = $(".container");
+	/* Get all Lottie animations on page */
+	const animations = document.querySelectorAll('.lottie-animation');
 
-    // section
-    const $sec = $("section"),
-        $secLength = $sec.length,
-        $secH = $sec.outerHeight();
+	/* Initialize ScrollMagic */
+	const controller = new ScrollMagic.Controller();
 
-    // header
-    const $header = $("header"),
-        $logo = $header.find("#logo"),
-        $nav = $header.find("nav"),
-        $navBtn = $nav.find("button");
+	/* Initialize each lottie animation */
+	animations.forEach(async (animation) => {
+		const lottieInstance = lottie.loadAnimation({
+			container: animation,
+			renderer: 'svg',
+			loop: false,
+			autoplay: false,
+			path: animation.dataset.animPath
+		})
 
-    const _hashTag = ["#intro","#video","#map","#story","#changes","#ending"];
+		const animDuration = (() => {
+			let duration;
 
-    // sec1 intro image motion
-    const $sec1 = $(".sec1"),
-        $sec1Txt = $sec1.find("span, h1, p"),
-        $personImgK = $sec1.find(".person_img .korean"),
-        $personImgF = $sec1.find(".person_img .foreign"),
-        $personImg1 = $sec1.find(".person_img img:nth-of-type(n+6)"),
-        $personImg2 = $sec1.find(".person_img img:nth-of-type(1), .person_img img:nth-of-type(2), .person_img img:nth-of-type(4)"),
-        $personImg3 = $sec1.find(".person_img img:nth-of-type(3), .person_img img:nth-of-type(5), .person_img img:nth-of-type(6)");
+			if (animation.dataset.animDuration) {
+				duration = animation.dataset.animDuration;
+				const durationIsNumString = /^\d+$/.test(duration);
+				if (durationIsNumString) {
+					duration = parseInt(duration)
+				}
+			} else {
+				duration = "parentHeight"
+			}
+			return duration
+		})();
 
-    // sec2 grow fade
-    const $grow = $(".grow_wrap span"),
-        $instaImg = $(".insta_img ul"),
-        _instaH = $instaImg.height() / 3;
+		const animTriggerHook = (() => {
+			let triggerHook;
 
-    // sec4 window motion
-    const $windowImg = $(".window_img img");
+			if (animation.dataset.animTriggerHook) {
+				triggerHook = animation.dataset.animTriggerHook;
+				triggerHook = parseFloat(triggerHook)
+			} else {
+				triggerHook = 0.5
+			}
 
-    let _page = 0,
-        sec4Ani = true,
-        action = true,
-        motion = true,
-        instaM = true;
+			return triggerHook
+		})();
 
-    if(location.hash) {
-        _page = _hashTag.indexOf(location.hash);
-        scrollMove(_page);
-    } else {
-        _page = 0;
-        location.hash = "#intro";
-    }
+		const animOffset = (() => {
+			let offset;
 
-    const $scrollWrap = $(".scroll_wrap");
+			if (animation.dataset.animOffset) {
+				offset = animation.dataset.animOffset;
+				offset = parseInt(offset)
+			} else {
+				offset = 0
+			}
 
-    // scroll top
-    gsap.to($html, .01, {scrollTop:0});
+			return offset
+		})();
 
-    // mause wheel
-    window.addEventListener("wheel", function (e) {
-        const data = e.deltaY;
-        if (motion === true) {
-            motion = false;
-            // 아래로 스크롤
-            if (!gsap.isTweening(".wrap")) {
-                if (data > 0) {
-                    if (_page >= $secLength - 1) {
-                    } else {
-                        _page++;
-                    }
-                } else {
-                    // 위로
-                    if (_page <= 0) {
 
-                    } else {
-                        _page--;
-                    }
-                }
-                scrollMove(_page);
-            }
-        }
-    });
+		lottieInstance.addEventListener('DOMLoaded', async (e) => {
+			/* Waits until the SVGs have loaded to get height of container - prevents breaking of non-fixed height containers. */
+			let parent = animation.parentElement;
 
-    let introTimeline = gsap.timeline();
-    introTimeline
-        .to($sec1.find("span"), 1.3, {opacity:1, delay:.2})
-        .to($sec1.find("h1"), 2.3, {opacity:1, delay:-.8})
-        .to($sec1.find("p"), 1.5, {opacity:1, delay:-1.8})
-    // 구성원 이미지 순차적으로 fade in
-    TweenMax.staggerTo($personImgK, 1, {opacity:.75, scale:1, delay:1, ease:Circ.easeOut}, .1);
-    TweenMax.staggerTo($personImgF, 1, {opacity:.6, scale:1, delay:1, ease:Circ.easeOut}, .1);
-
-    gsap.to($personImg1, .8, { y:-3.5, repeat:-1, yoyo:true });
-    gsap.to($personImg2, .7, { y:-5, repeat:-1, yoyo:true });
-    gsap.to($personImg3, .9, { y:-4.5, repeat:-1, yoyo:true });
-
-    // nav button 클릭시 실행
-    $navBtn.on("click", function () {
-        if (!gsap.isTweening(".wrap")) {
-            let _this = $(this),
-                _index = _this.index();
-            _page = _index;
-            scrollMove(_page);
-        }
-    });
-
-    // intro mouse click
-    $scrollWrap.on("click", function () {
-        if (motion === true) {
-            motion = false;
-            gsap.to($container, .75, {y: -winH, ease: Power1.easeInOut, onComplete: () => motion = true});
-            $navBtn.removeClass("active");
-            $navBtn.eq(1).addClass("active");
-            _page = 1;
-        }
-    });
-
-    function scrollMove(page) {
-        let secTop = winH * page;
-        $navBtn.removeClass("active");
-        $navBtn.eq(page).addClass("active");
-        gsap.to($container, .75, {y: -secTop, ease: Power1.easeInOut, onComplete: () => motion = true});
-        $nav.removeClass("active");
-        $logo.removeClass("active");
-        objAry[0].pauseVideo();
-        location.hash = _hashTag[page];
-         if (page === 2) {
-            $nav.addClass("active");
-            $logo.addClass("active");
-            TweenMax.staggerTo($(".sec3 .ani"), 1.8, {opacity:1, delay:.75}, .2);
-            growMotion();
-        } else if (page === 3) {
-            let svgTimeline = gsap.timeline();
-            svgTimeline
-                .to($(".mapline_svg"), .8, {"width": "662px", delay:.75})
-                .to($(".mapline_wrap .more_btn"), .8, {"opacity": 1, delay: -.1, onComplete: function () {
-                        $(".activist_cont").eq(0).find(".svg_map").addClass("active");
-                    }
-                })
-            TweenMax.staggerTo($(".swiper-slide-active").find(".deco_wrap img"), .8, {opacity: 1, delay:1.5}, .5)
-
-        } else if (page === 4) {
-            TweenMax.staggerTo($(".sec5 .ani"), 1.8, {opacity:1, delay:.75}, .2);
-            $nav.addClass("active");
-            $logo.addClass("active");
-
-        } else if (page === 5) {
-            TweenMax.staggerTo($(".sec6 .ani"), 1.8, {opacity:1, delay:.75}, .2);
-            if (instaM === true) {
-                instaM = false;
-            /*    let instaTimeline = gsap.timeline();
-                instaTimeline
-                    .to($instaImg, 1.5, {y: -_instaH, delay:.8})
-                    .to($instaImg, 1.5, {y: -_instaH * 2, delay:.5})*/
-            }
-        }
-    }
-
-    function windowMotion() {
-        // 이미지 순차적으로 fade In / Out
-        let num = 0;
-        let _autoImgTimeline = gsap.timeline().repeat(-1);
-        _autoImgTimeline
-            .to($windowImg.eq(0), 1.2, {opacity: 0, delay: 2})
-            .to($windowImg.eq(1), 1.2, {opacity: 1, delay: -1})
-            .to($windowImg.eq(1), 1.2, {opacity: 0, delay: 2})
-            .to($windowImg.eq(2), 1.2, {opacity: 1, delay: -1})
-            .to($windowImg.eq(2), 1.2, {opacity: 0, delay: 2})
-            .to($windowImg.eq(3), 1.2, {opacity: 1, delay: -1})
-            .to($windowImg.eq(3), 1.2, {opacity: 0, delay: 2})
-            .to($windowImg.eq(0), 1.2, {opacity: 1, delay: -1})
-    }
-
-    function growMotion() {
-        // sec2 grow fade In
-        const $grow = $(".grow_wrap span");
-        let growFade = gsap.timeline();
-        let randomNums = [];
-        let ramdom = Math.floor(Math.random() * 5);
-
-        $grow.each(function (i) {
-            let _this = $(this);
-            randomNums.push(_this);
-        });
-        const shuffleArray = array => {
-            for (let i = 0; i < array.length; i++) {
-                let j = Math.floor(Math.random() * (i + 1));
-                const x = array[i];
-                array[i] = array[j];
-                array[j] = x;
-            }
-            return array;
-        };
-        shuffleArray(randomNums);
-        growFade.staggerTo(randomNums, 1.3, {opacity: 1, delay: .6, scale:1}, .02);
-    }
-
-    function slideSection () {
-        let swiper = new Swiper("#activistSlider", {
-            slidesPerView: "auto",
-            centeredSlides: true,
-            speed: 900,
-            // loop:true,
-            navigation: {
-                nextEl: '.next_btn',
-                prevEl: '.prev_btn',
-            },
-            simulateTouch: false,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            on: {
-                slideChangeTransitionEnd: function () {
-                    gsap.to($(".swiper-slide").find(".deco_wrap img"), .2, {opacity: 0}, .5)
-                    TweenMax.staggerTo($(".swiper-slide-active").find(".deco_wrap img"), .8, {opacity: 1}, .5)
-                    $(".swiper-slide").find(".svg_map").removeClass("active");
-                    $(".swiper-slide-active").find(".svg_map").addClass("active");
-                    $(".mapline_wrap").css("zIndex","5");
-                },
-                slideChange: function () {
-                    popupBtn(this.activeIndex);
-                    $(".mapline_wrap").css("zIndex","10");
-                }
-            }
-        });
-    }
-
-    // 현재슬라이드의 map 을 클릭시
-    // 현재슬라이드와 동일한 popup 창을 실행시킨다.
-    function popupBtn(i) {
-        $(".activist_cont").eq(i).find(".popup_btn").on("click",function(){
-            gsap.to($nav, .5, {opacity: .1})
-            gsap.to($(".popup_wrap"), .5, {opacity: 1, display:"block"})
-            gsap.to($(".popup_box").eq(i), .5, {opacity: 1, display:"block"})
-        });
-    }
-    $(".activist_cont").eq(0).find(".popup_btn").on("click",function(){
-        gsap.to($nav, .5, {opacity: .1})
-        gsap.to($(".popup_wrap"), .5, {opacity: 1, display:"block"})
-        gsap.to($(".popup_box").eq(0), .5, {opacity: 1, display:"block"})
-    });
-    $(".dim").on("click",function(){
-        gsap.to($nav, .5, {opacity: 1})
-        gsap.to($(".popup_box"), .5, {opacity: 0, display:"none"})
-        gsap.to($(".popup_wrap"), .5, {opacity: 0, display:"none"})
-    });
-
-    var swiper = new Swiper(".insta-slide", {
-        loop:true,
-        slidesPerView: "auto",
-        touchRatio: 0,//드래그 금지
-        speed:1300,
-        autoplay: {delay: 1600,},
-    });
-
-    function init() {
-        windowMotion();
-        slideSection();
-        if(location.hash){
-            scrollMove(_hashTag.indexOf(location.hash));
-        }
-    }
-    init();
+			/* Build ScrollMagic scene once all SVGs are loaded*/
+			new ScrollMagic.Scene({
+				/* Animation will be linked to the scroll progress of its container, starting when the top of container is halfway through viewport and ending when bottom of container is halfway through viewport */
+				triggerElement: parent,
+				triggerHook: animTriggerHook,
+				offset: animOffset,
+				duration: animDuration === "parentHeight" ? parent.offsetHeight : animDuration === "elemHeight" ? animation.offsetHeight : animDuration
+			})
+				.addTo(controller)
+				.addIndicators() /* Debugging tool to see where an  d when animations occur */
+				.on("progress", function (e) {
+					const scrollFrame = e.progress * (lottieInstance.totalFrames - 1);
+					lottieInstance.goToAndStop(scrollFrame, true);
+				});
+		})
+	})
 }
