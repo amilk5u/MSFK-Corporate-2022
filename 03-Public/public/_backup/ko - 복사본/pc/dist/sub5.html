@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<!-- <meta name="title" content="국경없는의사회 2021 캠페인"> -->
+	<!-- <meta name="Description" content="국경없는의사회 2021 캠페인"> -->
+	<!-- <meta name="Keywords" content=""> -->
+	<meta name="Author" content="국경없는의사회">
+	<meta name="robots" content="ALL">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<!-- <meta property="og:image" content="https://msf.or.kr/campaigns/?/images/common/og_banner.jpg"> -->
+	<meta property="og:site_name" content="국경없는의사회">
+	<link rel="shortcut icon" href="https://msf.or.kr/sites/default/files/favicon.png" type="image/png" />
+	<link rel="stylesheet" href="./stylesheets/css/common.css">
+	<script src="./javascripts/jquery-1.8.2.min.js"></script>
+	<script>
+		var locationUrl = window.location.href;
+		var urlUtm;
+		urlUtm = locationUrl.split("?");
+		urlUtm = urlUtm[1];
+		var mUrl = "./mobile/";
+		var userAgent = navigator.userAgent;
+		if (userAgent.match(/iPhone|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|LG|nokia|SonyEricsson/i) != null || userAgent.match(/LG|SAMSUNG|Samsung/) != null) {
+			// mobile
+			if (urlUtm !== undefined) {
+				mUrl = mUrl + "?" + urlUtm;
+			}
+			window.location.href = mUrl
+		}
+	</script>
+	<!-- Google Tag Manager -->
+	<script>
+		(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-PCTTRC7');
+	</script>
+	<!-- End Google Tag Manager -->
+</head>
+<body>
+	<div id="wrap">		
+		<!-- header -->
+		<header>
+			<h1 id="logo">
+				<a href="https://msf.or.kr/" target="_blank"></a>
+			</h1>
+		</header>
+		<!-- //header -->
+<!-- container -->
+<link rel="stylesheet" href="https://codepen.io/GreenSock/pen/7ba936b34824fefdccfe2c6d9f0b740b.css">
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js?r=5426"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
+<script src="https://codepen.io/GreenSock/pen/7ba936b34824fefdccfe2c6d9f0b740b.js"></script>
+<div class="container sub5">
+	<div class="description panel blue">
+		<div>
+			<h1>Callbacks</h1>
+			<ul>
+				<li><code>onEnter</code> - forward past "start" (typically when <code>trigger</code> is scrolled into view)</li>
+				<li><code>onLeave</code> - forward past "end" (typically when <code>trigger</code> is scrolled out of view)</li>
+				<li><code>onEnterBack</code> - backward past "end" (typically when <code>trigger</code> is scrolled back into view)</li>
+				<li><code>onLeaveBack</code> - backward past "start" (typically when <code>trigger</code> goes backward out of view)</li>
+				<li><code>onUpdate</code> - every time the scroll position changes while between "start" and "end".</li>
+				<li><code>onToggle</code> - passes the start or end in either direction</li>
+				<li><code>onRefreshInit</code> - immediately before measurements are recalculated (typically on resize)</li>
+				<li><code>onRefresh</code> - after measurements are recalculated (typically on resize)</li>
+			</ul>
+			<div class="scroll-down">Scroll down<div class="arrow"></div>
+			</div>
+		</div>
+	</div>
+	<section class="panel red">
+		<p><span class="line line-1"></span>When this panel's top edge reaches 100px from the top of the viewport, the ScrollTrigger will start (<code>start: "top 100px"</code>), then end when its bottom is 100px from the bottom of the viewport (<code>end: "bottom bottom-=100px"</code>). Callbacks are logged to the right, and progress below: <br><span class="red-progress">progress: 0</span></p>
+		<div class="log red-log"></div>
+	</section>
+	<section class="panel gray">
+		<p>All callbacks receive one parameter - the <strong>ScrollTrigger&nbsp;instance</strong> itself which has properties like <code>progress</code>, <code>direction</code>, and <code>isActive</code>.</p>
+		<div class="box"></div>
+	</section>
+	
+</div>
+<!-- //container --> 		<!--footer-->
+		<footer></footer>
+		<!--//footer-->
+		<script src="./javascripts/plugin.js"></script>
+		<script src="./javascripts/design_common.js"></script>
+		</div>
+	</body>
+</html>

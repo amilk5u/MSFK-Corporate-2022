@@ -1,0 +1,35 @@
+@@include("./include/header.html")
+<!-- container -->
+<link rel="stylesheet" href="https://codepen.io/GreenSock/pen/7ba936b34824fefdccfe2c6d9f0b740b.css">
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js?r=5426"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
+<script src="https://codepen.io/GreenSock/pen/7ba936b34824fefdccfe2c6d9f0b740b.js"></script>
+<div class="container sub5">
+	<div class="description panel blue">
+		<div>
+			<h1>Callbacks</h1>
+			<ul>
+				<li><code>onEnter</code> - forward past "start" (typically when <code>trigger</code> is scrolled into view)</li>
+				<li><code>onLeave</code> - forward past "end" (typically when <code>trigger</code> is scrolled out of view)</li>
+				<li><code>onEnterBack</code> - backward past "end" (typically when <code>trigger</code> is scrolled back into view)</li>
+				<li><code>onLeaveBack</code> - backward past "start" (typically when <code>trigger</code> goes backward out of view)</li>
+				<li><code>onUpdate</code> - every time the scroll position changes while between "start" and "end".</li>
+				<li><code>onToggle</code> - passes the start or end in either direction</li>
+				<li><code>onRefreshInit</code> - immediately before measurements are recalculated (typically on resize)</li>
+				<li><code>onRefresh</code> - after measurements are recalculated (typically on resize)</li>
+			</ul>
+			<div class="scroll-down">Scroll down<div class="arrow"></div>
+			</div>
+		</div>
+	</div>
+	<section class="panel red">
+		<p><span class="line line-1"></span>When this panel's top edge reaches 100px from the top of the viewport, the ScrollTrigger will start (<code>start: "top 100px"</code>), then end when its bottom is 100px from the bottom of the viewport (<code>end: "bottom bottom-=100px"</code>). Callbacks are logged to the right, and progress below: <br><span class="red-progress">progress: 0</span></p>
+		<div class="log red-log"></div>
+	</section>
+	<section class="panel gray">
+		<p>All callbacks receive one parameter - the <strong>ScrollTrigger&nbsp;instance</strong> itself which has properties like <code>progress</code>, <code>direction</code>, and <code>isActive</code>.</p>
+		<div class="box"></div>
+	</section>
+	
+</div>
+<!-- //container --> @@include("./include/footer.html")

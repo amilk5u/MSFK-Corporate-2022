@@ -1,0 +1,47 @@
+@@include("./include/header.html")
+<!-- container -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.3/lottie.min.js"></script>
+<script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/MotionPathPlugin.min.js"></script>
+
+<div class="container sub4">
+	<div id="viewport">
+		<div id="content">
+			<div class="box box-a">a</div>
+			<div class="box box-b">b</div>
+			<div class="box box-c">c</div>
+			<svg id="line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1280">
+				<text class="text01" x="30" y="190">a</text>
+				<text class="text02" x="30" y="390">b</text>
+				<text class="text03" x="30" y="590">c</text>
+				<path class="theLine" d="M -5,0Q 450 230 300 450T 130 750Q 100 850 300 1000T 150 1200" fill="none" stroke="black" stroke-width="5px" />
+				<path class="theLine" d="M -5,0Q 450 230 300 450T 130 750Q 100 850 300 1000T 150 1200" fill="none" stroke="black" stroke-width="5px" />
+				<circle class="ball ball01" r="70" cx="70" cy="100"></circle>
+				<!-- <circle class="ball ball02" r="20" cx="278" cy="201"></circle> -->
+				<!-- <circle class="ball ball03" r="20" cx="327" cy="401"></circle> -->
+				<!-- <circle class="ball ball04" r="20" cx="203" cy="601"></circle> --> 
+			</svg>
+			<div id="animationWindow">
+			</div>
+			<div id="animationWindow2">
+			</div>
+
+			<svg id="line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1280">
+				<text class="text01" x="30" y="190">a</text>
+				<text class="text02" x="30" y="390">b</text>
+				<text class="text03" x="30" y="590">c</text>
+				<path class="theLine" d="M -5,0Q 450 230 300 450T 130 750Q 100 850 300 1000T 150 1200" fill="none" stroke="black" stroke-width="5px" />
+				<path class="theLine" d="M -5,0Q 450 230 300 450T 130 750Q 100 850 300 1000T 150 1200" fill="none" stroke="black" stroke-width="5px" />
+				<circle class="ball ball01" r="70" cx="70" cy="100"></circle>
+				<!-- <circle class="ball ball02" r="20" cx="278" cy="201"></circle> -->
+				<!-- <circle class="ball ball03" r="20" cx="327" cy="401"></circle> -->
+				<!-- <circle class="ball ball04" r="20" cx="203" cy="601"></circle> --> 
+			</svg>
+		</div>
+	</div>
+</div>
+<!-- //container --> 
+@@include("./include/footer.html")

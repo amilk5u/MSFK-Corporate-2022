@@ -1,0 +1,49 @@
+@@include("./include/header.html")
+<!-- container -->
+<!-- scrollTrigger -->
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/MotionPathPlugin.min.js"></script>
+<!-- //scrollTrigger -->
+<!-- lottie & ScrollMagic -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.3/lottie.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.js"></script>
+<!-- //lottie & ScrollMagic -->
+<div class="container sub6">
+	<svg id="line" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1200">
+		<!-- <path class="line01 line" d="M 10 200  600 200"></path>
+		<path class="line02 line" d="M 10 400  600 400"></path>
+		<path class="line03 line" d="M 10 600  600 600"></path>
+		<path class="line04 line" d="M 10 800  600 800"></path>
+		<path class="line05 line" d="M 10 1000  600 1000"></path>
+		<text class="text01" x="30" y="190">a</text>
+		<text class="text02" x="30" y="390">b</text>
+		<text class="text03" x="30" y="590">c</text> -->
+		<path class="aaa" d="M -5,0
+					  Q 450 230 300 450 
+					  T 130 750
+					  Q 100 850 300 1000
+					  T 150 1200" fill="none" stroke="transparent" stroke-width="2px" />
+		<path class="theLine" d="M -5,0
+					  Q 450 230 300 450 
+					  T 130 750
+					  Q 100 850 300 1000
+					  T 150 1200" fill="none" stroke="black" stroke-width="5px" />
+		<circle class="ball ball01" r="70" cx="70" cy="100"></circle>
+		<!-- <circle class="ball ball02" r="20" cx="278" cy="201"></circle> -->
+		<!-- <circle class="ball ball03" r="20" cx="327" cy="401"></circle> -->
+		<!-- <circle class="ball ball04" r="20" cx="203" cy="601"></circle> -->
+	</svg>
+	<div class="one">
+		<section id="5">
+			<div class="lottie-animation aaa" data-anim-path="./datafile/test3.json" data-anim-duration="parentHeight"></div>
+			<!-- <div class="lottie-animation aaa" data-anim-path="./datafile/test3.json" data-anim-duration="parentHeight"></div> -->
+		</section>
+		<section id="5">
+			<div class="lottie-animation aaa" data-anim-path="./datafile/test2.json" data-anim-duration="parentHeight"></div>
+		</section>
+	</div>
+</div>
+<!-- //container --> @@include("./include/footer.html")
