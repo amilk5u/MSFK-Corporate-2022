@@ -17,7 +17,17 @@ $window.load(function () {
 	_this.trigger("resize");
 	$(window).scroll(function () {
 		winSc = _this.scrollTop();
+		$('.top').text(winSc);
 	});
 	layout();
 	main();
+
+// 	$(window).bind('wheel', function(event){
+// 		if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
+// 			 TweenMax.to($("html, body"), .2, {scrollTop:"-=200", ease:"Expo.ease"});
+// 		}
+// 		else {
+// 			 TweenMax.to($("html, body"), .2, {scrollTop:"+=200", ease:"Expo.ease"});
+// 		}
+//   });
 });

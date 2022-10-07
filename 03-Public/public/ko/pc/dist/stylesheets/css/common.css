@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* reset css */
 article, aside, footer, header, nav, section { display: block; }
 
@@ -135,33 +136,49 @@ strong, h1, h2, h3, h4, h5, h6 { font-weight: 700; }
 
 label, button { cursor: pointer; }
 
-/* .container {
-	// width: 100%; height: 100px; background-color:red;
-} */
-/* Demo styling */
-.lottie-animation { max-height: 1000vh; }
+.top { position: fixed; left: 0; bottom: 0; font-size: 50px; color: black; z-index: 9999; }
 
-.lottie-animation * { max-height: inherit; }
+.sub4 { /* 가로스크롤 */ }
 
-.lottie-animation--sticky { width: 50vh; position: sticky; top: 25%; margin: 0 auto; }
+.sub4 .box { width: 100px; height: 100px; background-color: #28a92b; position: absolute; left: 300px; z-index: 100; line-height: 100px; font-size: 50px; text-align: center; }
 
-section { position: relative; background: hsl(var(--hue, 0), 75%, 85%); margin: 20px 10px; padding: 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+.sub4 .box.active { background-color: red; }
 
-section.demo { font-size: 1.25rem; min-height: unset; padding: 80px 100px; }
+.sub4 .box-a { top: 200px; background-color: #8d3dae; }
 
-section.demo > * { max-width: 800px; }
+.sub4 .box-b { top: 600px; }
 
-section.demo dt { margin-top: 0.5em; font-weight: bold; }
+.sub4 .box-c { top: 1000px; background-color: #e26c16; }
 
-section.demo dd p:not(first-of-type) { margin: 0.3em 0; }
+.sub4 .sec01 #animationWindow { height: 100vh; }
 
-section:nth-child(even) { --hue: 200; }
+.sub4 .sec02 { width: 100%; height: 100vh; background-color: teal; }
 
-section :first-child { margin-top: 0; }
+.sub4 .sec03 #animationWindow2 { width: 100vw; }
 
-section :last-child { margin-bottom: 0; }
+.sub4 .sec03 #animationWindow3 { width: 5000px; }
 
-.demo-side { width: 50vh; position: absolute; top: 25%; right: 0; }
+.sub4 .sec04 { width: max-content; height: 100vh; position: relative; }
+
+.sub4 .sec04:after { clear: both; content: ""; display: block; }
+
+.sub4 .sec04 .over_box { width: 100%; height: 100%; background-color: white; position: absolute; top: 0; right: 0; z-index: 999; }
+
+.sub4 .sec04 .line_wrap { width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 5; }
+
+.sub4 .sec04 .line_wrap .line { width: 100%; height: 100%; }
+
+.sub4 .sec04 .line_wrap svg { width: 100%; height: 100%; stroke-dasharray: 0; }
+
+.sub4 .sec04 .min { width: 600px; height: 100vh; float: left; }
+
+.sub4 .spacer { width: 100%; height: 100vh; background: #000000; }
+
+.sub4 #trigger { width: 100%; height: 1px; background: #ff0000; }
+
+.sub6 .spacer { width: 100%; height: 100vh; background: #000000; }
+
+.sub6 #trigger { width: 100%; height: 1px; background: #ff0000; }
 
 /* common css */
 ::selection { background: #e2d8d1; color: #000; text-shadow: none; }
