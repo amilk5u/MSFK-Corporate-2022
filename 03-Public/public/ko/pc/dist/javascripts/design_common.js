@@ -246,7 +246,7 @@ function main() {
 
 		/* 가로 스크롤 ------------------------------------------------------ */
 		gsap.to($(".sec04"), {
-			x: -3000 + $(window).outerWidth(),
+			x: - $('.line_wrap').outerWidth() + $(window).outerWidth(),
 			scrollTrigger: {
 				trigger: $(".sec04"),
 				pin: true,
@@ -259,16 +259,52 @@ function main() {
 			}
 		});
 
-		gsap.to($(".over_box"), {
-			width: 0,
+
+		// gsap.to($(".over_box"), {
+		// 	width: 0,
+		// 	scrollTrigger: {
+		// 		trigger: $(".sec04"),
+		// 		// pin: true,
+		// 		start: "top top",
+		// 		end: "+=1000",
+		// 		scrub: true,
+		// 	}
+		// });
+
+		// const tl = gsap.timeline();
+		// tl.to('.elm1', { x: 500, duration: 2 })
+		// 	.to('.elm2', { y: 200, duration: 3 })
+
+		const tl2 = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.elm2',
+				start: 'top 20%',
+				end: 'top 80%'
+			}
+		})
+
+		tl2.to($(".elm2"), {
+			x: 500,
 			scrollTrigger: {
 				trigger: $(".sec04"),
-				// pin: true,
+				pin: true,
 				start: "top top",
 				end: "+=1000",
 				scrub: true,
 			}
 		});
+
+
+		// const tl3 = gsap.timeline({
+		// 	scrollTrigger: {
+		// 		trigger: '.main',
+		// 		start: 'top 20%',
+		// 		end: 'top 80%'
+		// 	}
+		// })
+
+		// tl2.to('.elm3', { x: 500, duration: 2 })
+		// 	.to('.elm4', { y: 200, duration: 3 })
 		/* //가로 스크롤 ------------------------------------------------------ */
 
 
