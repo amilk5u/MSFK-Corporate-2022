@@ -164,15 +164,15 @@ label, button { cursor: pointer; }
 
 .sub4 .sec4_1 { width: 100%; height: 100vh; background-color: #eee; }
 
-.sub4 .sec4_1 > div { width: 100px; height: 100px; background-color: red; }
+.sub4 .sec4_1 h2 { font-size: 3rem; }
 
-.sub4 .sec4_1 .elm1 { margin: 0 0 0 400px; }
+.sub4 .sec4_1 h2 + p { margin-top: 1rem; }
 
-.sub4 .sec4_1 .elm2 { margin: 200px 0 0 900px; }
+.sub4 .sec4_1 p { max-width: 65ch; line-height: 1.5; }
 
-.sub4 .sec4_1 .elm3 { margin: 300px 0 0 800px; }
+.sub4 .sec4_1 .blue { background-color: #c4c4f8; }
 
-.sub4 .sec4_1 .elm4 { margin: 80px 0 0 100px; }
+.sub4 .sec4_1 .section { height: 100vh; width: 100%; padding: 2rem; }
 
 .sub4 .sec04 { width: max-content; height: 100vh; position: relative; }
 

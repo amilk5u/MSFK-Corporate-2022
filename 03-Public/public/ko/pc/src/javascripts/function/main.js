@@ -223,36 +223,11 @@ function main() {
 				}
 			}
 		});
-
-
-		// gsap.to($(".over_box"), {
-		// 	width: 0,
-		// 	scrollTrigger: {
-		// 		trigger: $(".sec04"),
-		// 		// pin: true,
-		// 		start: "top top",
-		// 		end: "+=1000",
-		// 		scrub: true,
-		// 	}
-		// });
-
-		// const tl = gsap.timeline();
-		// tl.to('.elm1', { x: 500, duration: 2 })
-		// 	.to('.elm2', { y: 200, duration: 3 })
-
-		const tl2 = gsap.timeline({
-			scrollTrigger: {
-				trigger: '.elm2',
-				start: 'top 20%',
-				end: 'top 80%'
-			}
-		})
-
-		tl2.to($(".elm2"), {
-			x: 500,
+		gsap.to($(".over_box"), {
+			width: 0,
 			scrollTrigger: {
 				trigger: $(".sec04"),
-				pin: true,
+				// pin: true,
 				start: "top top",
 				end: "+=1000",
 				scrub: true,
@@ -260,16 +235,53 @@ function main() {
 		});
 
 
-		// const tl3 = gsap.timeline({
-		// 	scrollTrigger: {
-		// 		trigger: '.main',
-		// 		start: 'top 20%',
-		// 		end: 'top 80%'
-		// 	}
-		// })
+		gsap.registerPlugin(ScrollTrigger);
+		const tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.elm1',
+				pin: true,
+				markers: { startColor: "blue", endColor: "blue" },
+				start: 'top 10%',
+				end: 'top 90%',
+				scrub: true,
+			}
+		})
 
-		// tl2.to('.elm3', { x: 500, duration: 2 })
-		// 	.to('.elm4', { y: 200, duration: 3 })
+		tl.to('.elm2', { x: 500, duration: 2 })
+			.to('.elm3', { y: 200, duration: 3 })
+
+
+		let sections = gsap.utils.toArray(".section");
+
+		console.log(sections)
+		sections.forEach((section) => {
+			let title = section.querySelector(".title");
+			let text = section.querySelector(".text");
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: section,
+						start: "top center",
+						end: "+=400",
+						scrub: true,
+						markers: true
+					}
+				})
+
+				.from(title, {
+					opacity: 0,
+					x: 500,
+					// delay: 1
+				})
+
+				.from(text, {
+					xPercent: -120
+				});
+		});
+
+
+
+
 		/* //가로 스크롤 ------------------------------------------------------ */
 
 

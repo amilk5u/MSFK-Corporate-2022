@@ -24,14 +24,33 @@
 	.sec4_1 {
 		width:100%; height:100vh;
 		background-color: #eee;
-		> div {
-			width: 100px; height: 100px;
-			background-color: red;
-		}
-		.elm1 { margin:0 0 0 400px; }
-		.elm2 { margin:200px 0 0 900px; }
-		.elm3 { margin:300px 0 0 800px; }
-		.elm4 { margin:80px 0 0 100px; }
+		// > div {
+		// 	width: 100px; height: 100px;
+		// 	background-color: red;
+		// }
+		// .elm1 { margin:0 0 0 400px; }
+		// .elm2 { margin:200px 0 0 900px; }
+		// .elm3 { margin:300px 0 0 800px; }
+		// .elm4 { margin:80px 0 0 100px; }
+		h2 {
+			font-size: 3rem;
+		 }
+		 h2 + p {
+			margin-top: 1rem;
+		 }
+		 p {
+			max-width: 65ch;
+			line-height: 1.5;
+		 }
+		 .blue {
+			background-color: rgb(196, 196, 248);
+		 }
+		 .section {
+			height: 100vh;
+			width: 100%;
+			padding: 2rem;
+		 }
+		 
 
 	}
 
