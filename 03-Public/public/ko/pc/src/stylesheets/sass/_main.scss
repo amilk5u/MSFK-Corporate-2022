@@ -1,10 +1,36 @@
 @charset"UTF-8";
-
 .index {
-
+	font-size: 100px;
 }
-
-.sub4 {
+.sub1 {
+	.first {
+		// height: 100vh;
+		position: relative;
+		.box1 {
+			width: 100px; height: 100px;
+			background-color: blue;
+		}
+		.box2 {
+			width: 100px; height: 100px;
+			background-color: pink;
+			position: absolute;
+			top:50%; left:50%;
+			z-index: 999;
+			@include transform(translate(-50%,-50%));
+		}
+		.box3 {
+			width: 100px; height: 100px;
+			background-color: green;
+			position: absolute;
+			top:50%; left:50%;
+			z-index: 999;
+			@include transform(translate(-50%,-50%));
+		}
+		.panel {
+			height:1000px;
+			background-color: #000000;
+		}
+	}
 	> div {background-color: #777;}
 	#content { overflow: visible; width: 100%; background-image: linear-gradient(rgba(255, 255, 255, .07) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 255, 255, .07) 2px, transparent 2px), linear-gradient(rgba(255, 255, 255, .06) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .06) 1px, transparent 1px); background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px; background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px; }
 	.box { width: 100px; height: 100px; background-color: #28a92b; position: absolute; left: 300px; z-index: 100; line-height: 100px; font-size: 50px; text-align: center; }
@@ -14,21 +40,33 @@
 	.box-c { top: 1000px; background-color: #e26c16; }
 
 	.sec01 {
+		position: relative;
 		#animationWindow { height:100vh; }
+		.bx_wrap {
+			width: 100%; height: 100%; position: absolute; top: 0; left: 0;
+			.elm1 { 
+				width: 200px; height: 200px; background-color: hotpink; position: absolute; right: 0; 
+				@include borderRadius(200px);
+			}
+			.elm2 { 
+				width: 200px; height: 200px; background-color: skyblue; position: absolute; left: 0; 
+				@include borderRadius(200px);
+			}
+		}
 	}
 	.sec02 { width: 100%; height: 100vh; background-color: teal; }
 	.sec03 {
-		#animationWindow2 { width: 100vw; }
-		#animationWindow3 { width: 5000px; }
+		#animationWindow2 { height:100vh; }
+		#animationWindow3 { height:100vh; }
 	}
 	.sec4_1 {
 		width:100%; height:100vh;
 		background-color: #eee;
-		// > div {
-		// 	width: 100px; height: 100px;
-		// 	background-color: red;
-		// }
-		// .elm1 { margin:0 0 0 400px; }
+		> div {
+			width: 100px; height: 100px;
+			background-color: red;
+		}
+		.elm1 { margin:0 0 0 400px; }
 		// .elm2 { margin:200px 0 0 900px; }
 		// .elm3 { margin:300px 0 0 800px; }
 		// .elm4 { margin:80px 0 0 100px; }
@@ -50,8 +88,6 @@
 			width: 100%;
 			padding: 2rem;
 		 }
-		 
-
 	}
 
 
@@ -59,42 +95,40 @@
 	.sec04 {
 		width: max-content; height: 100vh; position: relative;
 		&:after { clear: both; content: ""; display: block; }
-		.over_box {
-			width: 100%; height: 100%; background-color: rgba(255,255,255, .2); position: absolute; top: 0; right: 0; z-index: 999;
-		}
+		// .over_box {
+		// 	width: 100%; height: 100%; background-color: rgba(255,255,255, .8); position: absolute; top: 0; right: 0; z-index: 999;
+		// }
 		.line_wrap { 
 			width: 100%; height: 100%;
 			position: absolute; top:0; left:0; z-index: 5;
 			.line {
 				width: 100%; height: 100%;
 			}
-			svg { width: 100%; height: 100%; stroke-dasharray: 0; }
+			svg { 
+				width: 100%; height: 100%; fill :none; stroke: black; stroke-width: 10px; 
+				// stroke-dashoffset: 0;
+				stroke-dashoffset: 8520;
+				stroke-dasharray: 8520;
+			}
 		}
 		.min {
-			width: 1500px; height: 100vh;
-			// background-color: pink;
+			width: 1300px; height: 100vh;
+			background-color: pink;
 			float:left;
-			// &:nth-of-type(odd) { background-color: green; }
+			&:nth-of-type(odd) { background-color: green; }
 		}
 	}
 	.sec05 {
-		width: 100%; height: 3000px;
-		background-color: #ccc;
-		.spacer {
-			width:100%;
-			height:100%;
-			background:#000000;
+		height: 200vh;
+		background: #777;
+		.one {
+			width: 500px; height: 500px; background-color: #28a92b;
+			@include borderRadius(500px);
 		}
-		
-		#trigger {
-		width:100%;
-		height:1px;
-		background:#ff0000;
-		}
+	
 	}
 }
-
-.sub6 {
+.sub2 {
 	.spacer {
 		width:100%;
 		height:100vh;
@@ -106,4 +140,7 @@
 	height:1px;
 	background:#ff0000;
 	}
+}
+.sub3 {
+	width: 100%; height: 4000px; background-color: #eee;
 }

@@ -21,13 +21,8 @@ $window.load(function () {
 	});
 	layout();
 	main();
-
-// 	$(window).bind('wheel', function(event){
-// 		if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
-// 			 TweenMax.to($("html, body"), .2, {scrollTop:"-=200", ease:"Expo.ease"});
-// 		}
-// 		else {
-// 			 TweenMax.to($("html, body"), .2, {scrollTop:"+=200", ease:"Expo.ease"});
-// 		}
-//   });
+	$(window).scrollTop(0);
+	$(window).on('unload', function () {
+		$(window).scrollTop(0);
+	});
 });

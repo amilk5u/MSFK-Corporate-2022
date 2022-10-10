@@ -1,61 +1,115 @@
 @@include("./include/header.html")
+<!-- container -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.3/lottie.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.js"></script>
-
-	<!-- container -->
-	<div class="container sub1">
-		<section class="demo">
-			<p>Using two libraries: <a href="http://airbnb.io/lottie/#/web">Lottie</a> & <a href="http://scrollmagic.io/docs/">ScrollMagic.</a></p>
-			<p>Debug tools from ScrollMagic are activated in this preview. You can remove the debugging tools from the JS.</p>
-			<p>HTML (with all attributes) is:</p>
-			<code style="user-select: all; display: block; background: rgb(245, 233, 233); padding: 20px;">
-			  &lt;div class="lottie-animation" data-anim-path="https://assets4.lottiefiles.com/packages/lf20_tpXwrC.json" data-anim-duration="" data-anim-offset="" data-anim-trigger-hook=""&gt;&lt;/div>
-			</code>
-			<div class="lottie-animation" data-anim-path="https://assets4.lottiefiles.com/packages/lf20_tpXwrC.json" data-anim-duration="" data-anim-offset="" data-anim-trigger-hook=""></div>
-		 </section> 
-		 <section class="demo">
-			<div class="demo-side">
-			  <div class="lottie-animation" data-anim-path="https://assets2.lottiefiles.com/packages/lf20_OT15QW.json" data-anim-duration="" data-anim-trigger-hook="" data-anim-offset=""></div>
+<script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
+<div class="container sub1">
+	<div id="viewport">
+		<div id="content">
+			<div class="first">
+				<div class="panel">
+				</div>
+				<div class="box1">
+					asas
+				</div>
+				<div class="box2">
+					asas
+				</div>
+				<div class="box3">
+					asas
+				</div>
+				<div class="panel">
+				</div>
 			</div>
-			<p>.lottie-animation elements has a total of three extra attributes to keep in mind:</p>
-			<dl>
-			  <dt>data-anim-path [REQUIRED]</dt>
-			  <dd>Path to the Bodymovin JSON file that this element will load.</dd>
-			  <dt>data-anim-duration</dt>
-			  <dd>
-				 <p> How long is the animation? Measured in distance from trigger-start. </p>
-				 <p> Can be passed: <br><b>"100%"</b> (A percentage of the viewport - passed as string), <br><b>100</b> (Set number of pixels - passed as number or string), <br><b>"elemHeight"</b> (A string - gets height of SVG), <br><b>"parentHeight"</b> (A string - gets height of container). Defaults to the height of the parent element after the SVG has loaded if empty/not mentioned. </p>
-				 <p> See <a href="http://scrollmagic.io/docs/ScrollMagic.Scene.html#constructor">ScrollMagic docs on Scene constructors</a>. </p>
-			  </dd>
-			  <dt>data-anim-trigger-hook</dt>
-			  <dd>
-				 <p> At what point of the viewport should the trigger be registered? </p>
-				 <p> Can be passed a float number [0.0 - 1.0] as a string. Defaults to vertical middle of screen - 0.5 if empty/not mentioned. </p>
-				 <p> See <a href="http://scrollmagic.io/docs/ScrollMagic.Scene.html#constructor">ScrollMagic docs on Scene constructors</a>. </p>
-			  </dd>
-			  <dt>data-anim-offseet</dt>
-			  <dd>Number of pixels AFTER the trigger-start to start animation. Can be passed a number as a string. Defaults to no offset if empty/not mentioned.<br> See <a href="http://scrollmagic.io/docs/ScrollMagic.Scene.html#constructor">ScrollMagic docs on Scene constructors</a>.</dd>
-			</dl>
-		 </section>
-		 <section id="1">
-			<div class="lottie-animation" data-anim-path="https://assets1.lottiefiles.com/packages/lf20_pjdN0Y.json" data-anim-duration="parentHeight"></div>
-		 </section>
-		 <section id="1">
-			<div class="lottie-animation" data-anim-path="https://assets1.lottiefiles.com/packages/lf20_pjdN0Y.json" data-anim-duration="parentHeight"></div>
-		 </section>
-		 <section id="2" style="height: 100vh">
-			<div class="lottie-animation lottie-animation--sticky" data-anim-path="https://assets5.lottiefiles.com/packages/lf20_dc0U2t.json" data-anim-duration="500" data-anim-trigger-hook="0.75"></div>
-		 </section>
-		 <section id="3" style="height: 100vh">
-			<div class="lottie-animation lottie-animation--sticky" data-anim-path="https://assets1.lottiefiles.com/packages/lf20_hqzVuX.json"></div>
-		 </section>
-		 <section id="4">
-			<div class="lottie-animation lottie-animation--sticky" data-anim-path="https://assets4.lottiefiles.com/packages/lf20_KNeUFG.json" data-anim-duration="" data-anim-trigger-hook="1"></div>
-		 </section>
-		<section id="5">
-			<div class="lottie-animation" data-anim-path="./datafile/test.json" data-anim-duration="parentHeight"></div>
-		</section>		 
+			<div class="sec01">
+				<div class="cont_ani">
+					<div id="animationWindow">
+					</div>
+					<div class="bx_wrap">
+						<div class="elm1"></div>
+						<div class="elm2"></div>
+					</div> 
+				</div>
+			</div>
+			<div class="sec02"> ssss </div>
+			<!-- box -->
+			<!-- <div class="box box-a">a</div>
+			<div class="box box-b">b</div>
+			<div class="box box-c">c</div> -->
+			<!-- //box -->
+			<!-- lottie -->
+			<div class="sec03">
+				<div id="animationWindow2">
+				</div>
+				<div id="animationWindow3">
+				</div>
+			</div>
+			<!-- //lottie -->
+			<div class="sec4_1"> 
+				<section class="section blue">
+					<h2 class="title">Title</h2>
+					<p class="text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia iste aspernatur quidem dicta dolores et, repudiandae minus dolorum obcaecati sequi rem doloribus alias. Eaque tenetur tempora, iust Officia iste aspernatur quidem dicta dolores et, repudiandae minus dolorum obcaecati sequi rem doloribus alias. Eaque tenetur tempora, iust. </p>
+				</section>
+				<section class="section">
+					<h2 class="title">Title</h2>
+					<p class="text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia iste aspernatur quidem dicta dolores et, repudiandae minus dolorum obcaecati sequi rem doloribus alias. Eaque tenetur tempora, iust Officia iste aspernatur quidem dicta dolores et, repudiandae minus dolorum obcaecati sequi rem doloribus alias. Eaque tenetur tempora, iust. </p>
+				</section>
+				<section class="section blue">
+					<h2 class="title">Title</h2>
+					<p class="text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia iste aspernatur quidem dicta dolores et, repudiandae minus dolorum obcaecati sequi rem doloribus alias. Eaque tenetur tempora, iust Officia iste aspernatur quidem dicta dolores et, repudiandae minus dolorum obcaecati sequi rem doloribus alias. Eaque tenetur tempora, iust. </p>
+				</section>
+			</div>
+			<!-- 가로 스크롤 -->
+			<div class="sec04">
+				<div class="line">
+					<div id="animationWindow3">
+					</div>
+				</div>
+				<!-- <div class="over_box"></div> -->
+				<div class="line_wrap">
+					<div class="line">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8009 1079.86" enable-background="new 0 0 8009 1079.86" xml:space="preserve">
+							<path d="
+								M1412.155,542.777c0,0,130.979-29.872,296.425,95.743c36.973,28.072,98.549,40.73,143.336,43.998
+								c78.694,5.742,141.965-25.784,196.009-81.112c47.536-48.664,96.92-95.975,137.886-150.521
+								c21.366-28.449,39.976-59.101,53.637-92.009c13.692-32.983,23.097-67.664,41.269-98.686
+								c37.076-63.297,101.746-82.777,171.521-90.423c50.003-5.48,100.838,2.152,147.123,21.809
+								c35.095,14.904,63.991,40.116,95.438,61.053c28.006,18.646,58.984,34.131,89.765,47.659
+								c64.603,28.393,133.639,42.426,203.165,52.532c85.022,22.978,133.277,53.617,186.128,157.021
+								c45.192,93.446,193.787,381.445,335.489,173.108c33.444-49.172,56.914-106.865,85.281-159.072
+								c27.452-50.523,56.523-101.902,95.462-144.621c28.047-30.771,64.202-58.787,107.535-60.259c65.06-2.21,116.399,53.462,161.936,92.9
+								c27.305,23.648,54.896,47.812,87.743,63.531c104.03,49.782,231.963-0.58,329.873-41.417
+								c130.213-45.957,258.895-87.319,258.895-87.319s90.383-34.468,115.658,48.255c28.342,84.256,106.469,362.298,106.469,362.298
+								s72.766,302.553,382.979,152.425c89.072-45.154,178.499-89.614,267.836-134.241c93.181-46.548,186.083-93.746,279.72-139.371
+								c116.734-56.88,216.272-157.833,305.721-249.536c58.152-59.619,125.979-138.071,214.136-147.995
+								c43.049-4.847,84.095,10.673,118.771,35.436c24.535,17.521,46.055,39.064,65.596,61.93c26.145,30.593,50.023,61.077,67.094,97.718
+								c10.826,23.24,21.787,46.446,33.139,69.433c24.668,49.951,52.243,99.034,88.523,141.589
+								c56.496,66.269,132.456,108.649,219.295,118.74c68.17,4.595,179.234,6.893,227.488-121.787
+								c12.006-32.011,15.916-68.295,25.195-101.261c10.608-37.687,23.575-75.669,44.547-108.984
+								c19.051-30.262,45.849-56.348,81.364-65.325c46.604-11.78,95.394,6.694,135.858,28.9c62.229,34.15,115.294,80.09,181.927,106.63
+								c51.692,20.589,106.164,33.689,161.368,40.322c82.54,9.918,166.365,5.635,248.295-7.517" />
+						</svg>
+					</div>
+				</div>
+				<div class="min_wrap">
+					<div class="min"></div>
+					<div class="min"></div>
+					<div class="min"></div>
+					<div class="min"></div>
+					<div class="min"></div>
+				</div>
+			</div>
+			<div class="sec05">				 
+				<div class="txt_wrap">
+					<div class="txt1">앰플 인터랙티브</div>
+					<div class="txt2">4년차 퍼블리셔</div>
+					<div class="txt3">신민주 입니다</div>
+				</div>
+				<div class="one"></div>
+			</div>
+			<!-- //가로 스크롤 -->
+		</div>
 	</div>
-	<!-- //container -->
-@@include("./include/footer.html")
+</div>
+<!-- //container --> @@include("./include/footer.html")

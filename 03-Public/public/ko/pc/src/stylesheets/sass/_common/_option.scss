@@ -1,9 +1,7 @@
 @charset "UTF-8";
 
 /* Font style setting */
-$NanumSquare:"NanumSquare", Arial, Apple SD Gothic Neo, sans-serif;
-$NanumYeorIrCe:"NanumYeorIrCe", Arial, Apple SD Gothic Neo, sans-serif;
-$GimjuIm:"NanumYageunhaneunGimjuIm", Arial, Apple SD Gothic Neo, sans-serif;
+$omnigothic:"omnigothic", Arial, Apple SD Gothic Neo, sans-serif;
 
 /* Point color setting */
 $black:#000;
@@ -49,12 +47,12 @@ $btn-black:$black;
 /**
  * BASE SETTING
  */
-$base-font:$NanumSquare, "Apple SD Gothic Neo", AppleGothic, Arial, Helvetica, sans-serif;
+$base-font:$omnigothic, "Apple SD Gothic Neo", AppleGothic, Arial, Helvetica, sans-serif;
 $base-font-size:20px;
 $base-font-color:$black;
 
 $letter-spacing:0;
 
 $light:300;
-$regular:500;
-$bold:700;
+$regular:400;
+$bold:600;

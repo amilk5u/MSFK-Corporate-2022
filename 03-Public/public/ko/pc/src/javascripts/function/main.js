@@ -1,6 +1,7 @@
 function main() {
 
 
+
 	/* main ------------------------------------------------------------------------------ */
 	function index() {
 		console.log('메인')
@@ -11,75 +12,13 @@ function main() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	function sub4() {
-		gsap.defaults({ ease: "none" });
-		const pulses = gsap.timeline({
-			defaults: {
-				duration: 0.7,
-				autoAlpha: 0.9, //불투명도 
-				scale: 2,
-				markers: { startColor: "red", endColor: "red" },
-				transformOrigin: 'center',
-				ease: "elastic(2.5, 1)"
-			}
-		})
-			.to(".ball02, .text01", {}, 0.2)
-			.to(".ball03, .text02", {}, 0.33)
-			.to(".ball04, .text03", {}, 0.46)
-
-		const main = gsap.timeline({
-			defaults: { duration: 2 },
-			scrollTrigger: {
-				trigger: "#line",
-				scrub: true,
-				markers: { startColor: "black", endColor: "black" },
-				start: "top center",
-				end: "bottom center"
-			}
-		})
-			.to(".ball01", { duration: 0.01, autoAlpha: 1 })
-			.from(".theLine", { drawSVG: 0 }, 0)
-			.to(".ball01", {
-				motionPath: {
-					path: ".theLine",
-					align: ".theLine",
-					alignOrigin: [0.5, 0.5],
-				}
-			}, 0)
-			.add(pulses, 0);
+	function sub1() {
 		smoothScroll("#content");
-
-		// pin each box for 300px when they hit the top
-		gsap.utils.toArray(".box").forEach(box => {
-			ScrollTrigger.create({
-				trigger: box,
-				pin: true,
-				start: "top top",
-				end: "+=300"
-			});
-		});
-
-		// this is the helper function that sets it all up. Pass in the content <div> and then the wrapping viewport <div> (can be the elements or selector text). It also sets the default "scroller" to the content so you don't have to do that on all your ScrollTriggers.
 		/* smoothScroll -------------------------------------------------------------------- */
 		function smoothScroll(content, viewport, smoothness) {
 			content = gsap.utils.toArray(content)[0];
-			smoothness = smoothness || 1;
-			smoothness = 0.7;
-			console.log(smoothness)
+			smoothness = smoothness || 0.7;
+			// smoothness = 0.7;
 			gsap.set(viewport || content.parentNode, { overflow: "hidden", position: "fixed", height: "100%", width: "100%", top: 0, left: 0, right: 0, bottom: 0 });
 			gsap.set(content, { overflow: "visible", width: "100%" });
 
@@ -149,18 +88,42 @@ function main() {
 
 
 
-
 		/* LottieScrollTrigger ------------------------------------------ */
 		LottieScrollTrigger({
 			target: "#animationWindow",
 			// path: "https://assets.codepen.io/35984/tapered_hello.json",
 			path: "./datafile/sec05.json",
+			pin : '.cont_ani',
+			speed: "medium",
+			markers: { startColor: "green", endColor: "green" },
+			scrub: true,
+			onLeave: () => {
+				console.log('onLeave')
+				TweenMax.to($('#animationWindow'), .5, { opacity: 0 })
+			},
+			onEnterBack: () => {
+				console.log('onEnterBack')
+				TweenMax.to($('#animationWindow'), .5, { opacity: 1 })
+			}
+		});
+		LottieScrollTrigger({
+			target: "#animationWindow2",
+			// path: "https://assets.codepen.io/35984/tapered_hello.json",
+			path: "./datafile/test.json",
 			speed: "medium",
 			markers: { startColor: "green", endColor: "green" },
 			scrub: true // seconds it takes for the playhead to "catch up"
 			// you can also add ANY ScrollTrigger values here too, like trigger, start, end, onEnter, onLeave, onUpdate, etc. See https://greensock.com/docs/v3/Plugins/ScrollTrigger
 		});
-
+		LottieScrollTrigger({
+			target: "#animationWindow3",
+			path: "https://assets.codepen.io/35984/tapered_hello.json",
+			// path: "./datafile/sec05.json",
+			speed: "medium",
+			markers: { startColor: "green", endColor: "green" },
+			scrub: true // seconds it takes for the playhead to "catch up"
+			// you can also add ANY ScrollTrigger values here too, like trigger, start, end, onEnter, onLeave, onUpdate, etc. See https://greensock.com/docs/v3/Plugins/ScrollTrigger
+		});
 
 		function LottieScrollTrigger(vars) {
 			let playhead = { frame: 0 },
@@ -202,58 +165,130 @@ function main() {
 		}
 		/* //LottieScrollTrigger ------------------------------------------ */
 
-		/* 예시 연습용 */
-		// gsap.to(".min", {
-		// 	scrollTrigger: ".min", // start the animation when ".box" enters the viewport (once)
-		// 	x: 500
-		//  });
-		/* //예시 연습용 */
-
 		/* 가로 스크롤 ------------------------------------------------------ */
+		let bol = true;
 		gsap.to($(".sec04"), {
-			x: - $('.line_wrap').outerWidth() + $(window).outerWidth(),
+			x: - $('.min_wrap').outerWidth() + $(window).outerWidth(),
 			scrollTrigger: {
 				trigger: $(".sec04"),
 				pin: true,
 				start: "top top",
-				end: "+=1000",
+				end: "+=4000",
 				scrub: true,
+				toggleClass: {targets: 'nav', className: 'active'}, // start 시점에서 class가 추가되고 end에서 class가 삭제된다.
+				// duration : 100,
+				// snap : {
+				// 	duration : 2
+				// },
 				onUpdate: function (self) {
-					// gsap.to($(".over_box"), .5, { "width": 0 });
+					let w = $('.sec04').css('transform').replace(/[^0-9\-.,]/g, '').split(',')[4];
+					console.log(w)
+					if (w < -200) {
+						TweenMax.to($('.line svg'), 1, { 'stroke-dashoffset': 7700 })
+					} else {
+						TweenMax.to($('.line svg'), .5, { 'stroke-dashoffset': 8520 })	
+					}
+					// if (w < -1420) {
+					// 	TweenMax.to($('.line svg'), 2, { 'stroke-dashoffset': 5000 })
+					// } else {
+					// 	TweenMax.to($('.line svg'), .5, { 'stroke-dashoffset': 7700 })	
+					// }
+					// if (w < -2500) {
+					// 	TweenMax.to($('.line svg'), 1.5, { 'stroke-dashoffset': 3000 })
+					// } else {
+					// 	TweenMax.to($('.line svg'), .5, { 'stroke-dashoffset': 5000 })	
+					// }
+					// if (w < -4450) {
+					// 	TweenMax.to($('.line svg'), 1.5, { 'stroke-dashoffset': 0 })
+					// } else {
+					// 	TweenMax.to($('.line svg'), 1, { 'stroke-dashoffset': 3000 })	
+					// }
 				}
 			}
 		});
-		gsap.to($(".over_box"), {
-			width: 0,
+
+		/* //가로 스크롤 ------------------------------------------------------ */
+
+
+		/* 스크롤 연결 노출 -------------------------------------------------------------------------------- */
+		/* 연결되는 트리거 */
+		const tl = gsap.timeline({
 			scrollTrigger: {
-				trigger: $(".sec04"),
+				trigger: '.box1',
 				// pin: true,
-				start: "top top",
-				end: "+=1000",
+				start: "top 80%",
+				end: "top 30%",
+				markers: {
+					startColor: "yellow",
+					endColor: "yellow",
+				},
 				scrub: true,
 			}
 		});
 
+		tl.to('.box1', { x: 500, duration: 1 })
+			.to('.box2', { x: 500, duration: 1 })
+			.to('.box3', { x: 800, duration: 1 })
+		/* //연결되는 트리거 */
 
-		gsap.registerPlugin(ScrollTrigger);
-		const tl = gsap.timeline({
+		/* json과 결합되는 트리거 */	
+		// const tl4 = gsap.timeline({
+		// 	scrollTrigger: {
+		// 		trigger: '.elm1',
+		// 		pin: '.cont_ani',
+		// 		start: "top 80%",
+		// 		end: "top 30%",
+		// 		markers: {
+		// 			startColor: "yellow",
+		// 			endColor: "yellow",
+		// 		},
+		// 		scrub: true,
+		// 	}
+		// });
+		// tl4.to('.elm2', { x: 500, duration: 1 })
+		/* //json과 결합되는 트리거 */	
+
+		/* 움직이는 원 트리거 */
+		const tl2 = gsap.timeline({
 			scrollTrigger: {
-				trigger: '.elm1',
-				pin: true,
-				markers: { startColor: "blue", endColor: "blue" },
-				start: 'top 10%',
-				end: 'top 90%',
+				trigger: '.one',
+				pin: '.sec05',
+				// pin: true,
+				// toggleClass: {targets: 'nav', className: 'active'} // start 시점에서 class가 추가되고 end에서 class가 삭제된다.
+				start: "top 20%",
+				end: "+=6000",
+				markers: {
+					startColor: "#555",
+					endColor: "#555",
+					// fontSize: '1rem',
+					// indent: 200
+				},
 				scrub: true,
 			}
-		})
+		});
 
-		tl.to('.elm2', { x: 500, duration: 2 })
-			.to('.elm3', { y: 200, duration: 3 })
+		tl2.to('.one', { x: 800, duration: .5, delay: .1 })
+			.to('.one', { x: 0, duration: .5, delay: .1 })
+		/* //움직이는 원 트리거 */
 
 
+		/* 움직이는 텍스트 */
+		const tl3 = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.txt1',
+				start: "top 20%",
+				end: "+=6000",
+				scrub: true,
+			}
+		});
+
+		tl3.fromTo('.txt2', { opacity: 0 }, { opacity: 1, duration: .5 })
+			.fromTo('.txt3', { opacity: 0 }, { opacity: 1, duration: .5 })
+		/* //움직이는 텍스트 */
+
+		/* 기타 연결 트리거 모션 */
 		let sections = gsap.utils.toArray(".section");
 
-		console.log(sections)
 		sections.forEach((section) => {
 			let title = section.querySelector(".title");
 			let text = section.querySelector(".text");
@@ -278,14 +313,10 @@ function main() {
 					xPercent: -120
 				});
 		});
-
-
-
-
-		/* //가로 스크롤 ------------------------------------------------------ */
-
-
-		/* ScrollMagic ------------------------------------------------------ */
+		/* //기타 연결 트리거 모션 */
+		/* //스크롤 연결 노출 -------------------------------------------------------------------------------- */
+	}
+	function sub2() {
 		var controller = new ScrollMagic.Controller();
 
 		function pathPrepare($el) {
@@ -313,86 +344,66 @@ function main() {
 		})
 			.setTween(tween)
 			.addTo(controller);
-		/* ScrollMagic ------------------------------------------------------ */
 	}
+	function sub3() {
+		let clusterTimeline;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	function sub5() {
-		var $doc = $(document),
-			$win = $(window),
-			$svg = $('.latter').drawsvg(),
-			max = $doc.height() - $win.height();
-		$win.on('scroll', function () {
-			var p = $win.scrollTop() / max;
-			$svg.drawsvg('progress', p);
-			console.log(p)
+		clusterTimeline = gsap.timeline({
+			scrollTrigger: {
+				trigger: this.clusterSectionElem,
+				start: () => "top top",
+				end: () => `+=4000% bottom`, // 전체 스크롤 길이.
+				scrub: 1,
+				pin: true,
+				pinSpacing: true,
+				// markers: true,
+				invalidateOnRefresh: true,
+				id: 'impact-cluster',
+				fastScrollEnd: true,
+				preventOverlaps: true
+			},
 		});
+		clusterTimeline.to(this.clusterVerticalWrapperElem, { y: () => -window.innerHeight, duration: 30 }, "+=90");
 	}
 
 
-	function sub6() {
-		var controller = new ScrollMagic.Controller();
 
-		function pathPrepare($el) {
-			var lineLength = $el[0].getTotalLength();
-			$el.css("stroke-dasharray", lineLength);
-			$el.css("stroke-dashoffset", lineLength);
-			console.log(lineLength)
-		}
 
-		var $1 = $("path#1");
-		var $2 = $("path#2");
-		var $3 = $("path#3");
-		var $4 = $("path#4");
-		var $5 = $("path#5");
-		pathPrepare($1);
-		pathPrepare($2);
-		pathPrepare($3);
-		pathPrepare($4);
-		pathPrepare($5);
-		var tween = new TimelineMax()
-			.add(TweenMax.to($1, 4, { strokeDashoffset: 0, ease: Linear.easeNone }))
-			.add(TweenMax.to($5, 3, { strokeDashoffset: 0, ease: Linear.easeNone }))
-		var scene = new ScrollMagic.Scene({
-			triggerElement: "#trigger", triggerHook: 0.3, duration: 1000
-		})
-			.setTween(tween)
-			.addTo(controller);
-	}
 
-	if ($('.container').hasClass('sub4')) {
-		sub4()
+
+
+
+
+
+	if ($('.container').hasClass('sub1')) {
+		sub1()
 	}
-	if ($('.container').hasClass('sub5')) {
-		sub5()
+	if ($('.container').hasClass('sub2')) {
+		sub2()
 	}
-	if ($('.container').hasClass('sub6')) {
-		sub6()
+	if ($('.container').hasClass('sub3')) {
+		sub3()
 	}
 	if ($('.container').hasClass('index')) {
 		index()
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
