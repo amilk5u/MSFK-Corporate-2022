@@ -121,9 +121,14 @@
 	.sec05 {
 		height: 200vh;
 		background: #777;
+		// position: relative;
 		.one {
 			width: 500px; height: 500px; background-color: #28a92b;
 			@include borderRadius(500px);
+		}
+		.txt_wrap {
+			position: fixed; top:0;
+			font-size: 50px;
 		}
 	
 	}

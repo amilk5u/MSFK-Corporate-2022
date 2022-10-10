@@ -47,8 +47,8 @@ function main() {
 		/* smoothScroll -------------------------------------------------------------------- */
 		function smoothScroll(content, viewport, smoothness) {
 			content = gsap.utils.toArray(content)[0];
-			smoothness = smoothness || 0.7;
-			// smoothness = 0.7;
+			smoothness = smoothness || 0;
+			smoothness = 2;
 			gsap.set(viewport || content.parentNode, { overflow: "hidden", position: "fixed", height: "100%", width: "100%", top: 0, left: 0, right: 0, bottom: 0 });
 			gsap.set(content, { overflow: "visible", width: "100%" });
 
@@ -125,7 +125,7 @@ function main() {
 			path: "./datafile/sec05.json",
 			pin : '.cont_ani',
 			speed: "medium",
-			markers: { startColor: "green", endColor: "green" },
+			// markers: { startColor: "green", endColor: "green" },
 			scrub: true,
 			onLeave: () => {
 				console.log('onLeave')
@@ -141,7 +141,7 @@ function main() {
 			// path: "https://assets.codepen.io/35984/tapered_hello.json",
 			path: "./datafile/test.json",
 			speed: "medium",
-			markers: { startColor: "green", endColor: "green" },
+			// markers: { startColor: "green", endColor: "green" },
 			scrub: true // seconds it takes for the playhead to "catch up"
 			// you can also add ANY ScrollTrigger values here too, like trigger, start, end, onEnter, onLeave, onUpdate, etc. See https://greensock.com/docs/v3/Plugins/ScrollTrigger
 		});
@@ -150,7 +150,7 @@ function main() {
 			path: "https://assets.codepen.io/35984/tapered_hello.json",
 			// path: "./datafile/sec05.json",
 			speed: "medium",
-			markers: { startColor: "green", endColor: "green" },
+			// markers: { startColor: "green", endColor: "green" },
 			scrub: true // seconds it takes for the playhead to "catch up"
 			// you can also add ANY ScrollTrigger values here too, like trigger, start, end, onEnter, onLeave, onUpdate, etc. See https://greensock.com/docs/v3/Plugins/ScrollTrigger
 		});
@@ -218,21 +218,21 @@ function main() {
 					} else {
 						TweenMax.to($('.line svg'), .5, { 'stroke-dashoffset': 8520 })	
 					}
-					// if (w < -1420) {
-					// 	TweenMax.to($('.line svg'), 2, { 'stroke-dashoffset': 5000 })
-					// } else {
-					// 	TweenMax.to($('.line svg'), .5, { 'stroke-dashoffset': 7700 })	
-					// }
-					// if (w < -2500) {
-					// 	TweenMax.to($('.line svg'), 1.5, { 'stroke-dashoffset': 3000 })
-					// } else {
-					// 	TweenMax.to($('.line svg'), .5, { 'stroke-dashoffset': 5000 })	
-					// }
-					// if (w < -4450) {
-					// 	TweenMax.to($('.line svg'), 1.5, { 'stroke-dashoffset': 0 })
-					// } else {
-					// 	TweenMax.to($('.line svg'), 1, { 'stroke-dashoffset': 3000 })	
-					// }
+					if (w < -1420) {
+						TweenMax.to($('.line svg'), 2, { 'stroke-dashoffset': 5000 })
+					} else {
+						TweenMax.to($('.line svg'), .5, { 'stroke-dashoffset': 7700 })	
+					}
+					if (w < -2500) {
+						TweenMax.to($('.line svg'), 1.5, { 'stroke-dashoffset': 3000 })
+					} else {
+						TweenMax.to($('.line svg'), .5, { 'stroke-dashoffset': 5000 })	
+					}
+					if (w < -4450) {
+						TweenMax.to($('.line svg'), 1.5, { 'stroke-dashoffset': 0 })
+					} else {
+						TweenMax.to($('.line svg'), 1, { 'stroke-dashoffset': 3000 })	
+					}
 				}
 			}
 		});
@@ -248,10 +248,10 @@ function main() {
 				// pin: true,
 				start: "top 80%",
 				end: "top 30%",
-				markers: {
-					startColor: "yellow",
-					endColor: "yellow",
-				},
+				// markers: {
+				// 	startColor: "yellow",
+				// 	endColor: "yellow",
+				// },
 				scrub: true,
 			}
 		});
@@ -287,12 +287,12 @@ function main() {
 				// toggleClass: {targets: 'nav', className: 'active'} // start 시점에서 class가 추가되고 end에서 class가 삭제된다.
 				start: "top 20%",
 				end: "+=6000",
-				markers: {
-					startColor: "#555",
-					endColor: "#555",
-					// fontSize: '1rem',
-					// indent: 200
-				},
+				// markers: {
+				// 	startColor: "#555",
+				// 	endColor: "#555",
+				// 	// fontSize: '1rem',
+				// 	// indent: 200
+				// },
 				scrub: true,
 			}
 		});
@@ -329,7 +329,7 @@ function main() {
 						start: "top center",
 						end: "+=400",
 						scrub: true,
-						markers: true
+						// markers: true
 					}
 				})
 
