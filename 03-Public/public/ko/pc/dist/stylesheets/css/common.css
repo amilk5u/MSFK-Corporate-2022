@@ -146,11 +146,53 @@ label, button { cursor: pointer; }
 .top { position: fixed; left: 0; bottom: 0; font-size: 50px; color: black; z-index: 9999; }
 
 /* 메인 css --------------------------------------------------------------------------------------------------------- */
-.index .sec1-container .content1 .txt_wrap h1 { font-size: 120px; font-weight: 400; }
+.index { background-color: #777; }
 
-.index .sec1-container .content1 .txt_wrap p { font-size: 27px; font-weight: 300; }
+.index section { width: 100%; height: 100vh; }
 
-.index .sec1-container .content1 .bg_circle img { position: absolute; top: 0; left: 0; }
+.index #content { overflow: visible; width: 100%; background-image: linear-gradient(rgba(255, 255, 255, 0.07) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 255, 255, 0.07) 2px, transparent 2px), linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px); background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px; background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px; }
+
+.index .sec1-container { background-color: #fff; overflow: hidden; }
+
+.index .sec1-container .content1 { width: 100%; height: 100vh; display: flex; align-items: center; justify-content: center; }
+
+.index .sec1-container .content1 .txt_wrap { text-align: center; }
+
+.index .sec1-container .content1 .txt_wrap h1 { font-size: 120px; font-weight: 400; color: #2d2d2d; }
+
+.index .sec1-container .content1 .txt_wrap p { padding: 25px 0 0; font-size: 27px; font-weight: 300; color: #2d2d2d; }
+
+.index .sec1-container .content1 .bg_circle { width: 100%; height: 100%; overflow: hidden; position: absolute; display: flex; align-items: center; justify-content: center; }
+
+.index .sec1-container .content1 .bg_circle img { position: absolute; }
+
+.index .sec1-container .content1 .circle_deco1 { animation: linear infinite circle1 50s; }
+
+.index .sec1-container .content1 .circle_deco2 { animation: linear infinite circle2 80s; }
+
+.index .sec1-container .content1 .circle_deco3 { animation: linear infinite circle1 100s; }
+
+@keyframes circle1 { 0% { -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes circle2 { 0% { -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+    transform: rotate(-360deg); } }
 
 /* //메인 css --------------------------------------------------------------------------------------------------------- */
 /* 기술 연습 css ------------------------------------------------------------------------------------------------*/

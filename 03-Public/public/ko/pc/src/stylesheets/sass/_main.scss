@@ -1,22 +1,46 @@
 @charset"UTF-8";
 /* 메인 css --------------------------------------------------------------------------------------------------------- */
+
 .index {
-	// .cont { position: absolute; top: 0; left: 0; }
-	.sec1-container {
+	background-color: #777;
+	section { width: 100%; height: 100vh; }
+	#content { overflow: visible; width: 100%; background-image: linear-gradient(rgba(255, 255, 255, .07) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 255, 255, .07) 2px, transparent 2px), linear-gradient(rgba(255, 255, 255, .06) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .06) 1px, transparent 1px); background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px; background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px; }
+	.sec1-container { 
+		background-color: $white;
+		overflow: hidden;
 		.content1 {
+			width: 100%; height: 100vh; display: flex; align-items: center; justify-content: center;
 			.txt_wrap {
-				h1 { font-size: 120px; font-weight: $regular; }
-				p { font-size: 27px; font-weight: $light; }
+				text-align: center;
+				h1 { font-size: 120px; font-weight: $regular; color: $gray1; }
+				p { padding: 25px 0 0; font-size: 27px; font-weight: $light; color: $gray1; }
 			}
 			.bg_circle {
-				img { position: absolute; top: 0; left: 0; }
+				width: 100%; height: 100%; overflow: hidden; position: absolute; display: flex; align-items: center; justify-content: center;
+				img { position: absolute; }
 			}
-			.circle_deco1 {}
+			.circle_deco1 {
+				animation: linear infinite circle1 50s;
+			}
+			.circle_deco2 {
+				animation: linear infinite circle2 80s;
+			}
+			.circle_deco3 {
+				animation: linear infinite circle1 100s;
+			}
+
+			@keyframes circle1 {
+				0% { @include rotate(0) }
+				100% { @include rotate(360) }
+			}
+			@keyframes circle2 {
+				0% { @include rotate(0) }
+				100% { @include rotate(-360) }
+			}
 		}
-	}
+	} 
 	.sec2-container {}
 	.sec3-container {}
-
 }
 /* //메인 css --------------------------------------------------------------------------------------------------------- */
 
