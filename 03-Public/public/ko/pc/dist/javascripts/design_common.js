@@ -48,7 +48,7 @@ function main() {
 		function smoothScroll(content, viewport, smoothness) {
 			content = gsap.utils.toArray(content)[0];
 			smoothness = smoothness || 0;
-			smoothness = 2;
+			smoothness = 0.5;
 			gsap.set(viewport || content.parentNode, { overflow: "hidden", position: "fixed", height: "100%", width: "100%", top: 0, left: 0, right: 0, bottom: 0 });
 			gsap.set(content, { overflow: "visible", width: "100%" });
 
