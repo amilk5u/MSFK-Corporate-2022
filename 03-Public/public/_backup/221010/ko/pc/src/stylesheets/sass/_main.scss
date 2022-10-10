@@ -1,0 +1,212 @@
+@charset"UTF-8";
+/* 메인 css --------------------------------------------------------------------------------------------------------- */
+
+.index {
+	background-color: #777;
+	section { width: 100%; height: 100vh; }
+	#content { overflow: visible; width: 100%; background-image: linear-gradient(rgba(255, 255, 255, .07) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 255, 255, .07) 2px, transparent 2px), linear-gradient(rgba(255, 255, 255, .06) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .06) 1px, transparent 1px); background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px; background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px; }
+	.sec1-container { 
+		background-color: $white;
+		overflow: hidden;
+		.content1 {
+			width: 100%; height: 100vh; display: flex; align-items: center; justify-content: center;
+			.txt_wrap {
+				text-align: center;
+				h1 { font-size: 120px; font-weight: $regular; color: $gray1; }
+				p { padding: 25px 0 0; font-size: 27px; font-weight: $light; color: $gray1; }
+			}
+			.bg_circle {
+				width: 100%; height: 100%; overflow: hidden; position: absolute; display: flex; align-items: center; justify-content: center;
+				img { position: absolute; }
+			}
+			.circle_deco1 {
+				animation: linear infinite circle1 50s;
+			}
+			.circle_deco2 {
+				animation: linear infinite circle2 80s;
+			}
+			.circle_deco3 {
+				animation: linear infinite circle1 100s;
+			}
+
+			@keyframes circle1 {
+				0% { @include rotate(0) }
+				100% { @include rotate(360) }
+			}
+			@keyframes circle2 {
+				0% { @include rotate(0) }
+				100% { @include rotate(-360) }
+			}
+		}
+	} 
+	.sec2-container {}
+	.sec3-container {}
+}
+/* //메인 css --------------------------------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 기술 연습 css ------------------------------------------------------------------------------------------------*/
+.sub1 {
+	.first {
+		// height: 100vh;
+		position: relative;
+		.box1 {
+			width: 100px; height: 100px;
+			background-color: blue;
+		}
+		.box2 {
+			width: 100px; height: 100px;
+			background-color: pink;
+			position: absolute;
+			top:50%; left:50%;
+			z-index: 999;
+			@include transform(translate(-50%,-50%));
+		}
+		.box3 {
+			width: 100px; height: 100px;
+			background-color: green;
+			position: absolute;
+			top:50%; left:50%;
+			z-index: 999;
+			@include transform(translate(-50%,-50%));
+		}
+		.panel {
+			height:1000px;
+			background-color: #000000;
+		}
+	}
+	> div {background-color: #777;}
+	#content { overflow: visible; width: 100%; background-image: linear-gradient(rgba(255, 255, 255, .07) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 255, 255, .07) 2px, transparent 2px), linear-gradient(rgba(255, 255, 255, .06) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .06) 1px, transparent 1px); background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px; background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px; }
+	.box { width: 100px; height: 100px; background-color: #28a92b; position: absolute; left: 300px; z-index: 100; line-height: 100px; font-size: 50px; text-align: center; }
+	.box.active { background-color: red; }
+	.box-a { top: 200px; background-color: #8d3dae; }
+	.box-b { top: 600px; }
+	.box-c { top: 1000px; background-color: #e26c16; }
+
+	.sec01 {
+		position: relative;
+		#animationWindow { height:100vh; }
+		.bx_wrap {
+			width: 100%; height: 100%; position: absolute; top: 0; left: 0;
+			.elm1 { 
+				width: 200px; height: 200px; background-color: hotpink; position: absolute; right: 0; 
+				@include borderRadius(200px);
+			}
+			.elm2 { 
+				width: 200px; height: 200px; background-color: skyblue; position: absolute; left: 0; 
+				@include borderRadius(200px);
+			}
+		}
+	}
+	.sec02 { width: 100%; height: 100vh; background-color: teal; }
+	.sec03 {
+		#animationWindow2 { height:100vh; }
+		#animationWindow3 { height:100vh; }
+	}
+	.sec4_1 {
+		width:100%; height:100vh;
+		background-color: #eee;
+		> div {
+			width: 100px; height: 100px;
+			background-color: red;
+		}
+		.elm1 { margin:0 0 0 400px; }
+		// .elm2 { margin:200px 0 0 900px; }
+		// .elm3 { margin:300px 0 0 800px; }
+		// .elm4 { margin:80px 0 0 100px; }
+		h2 {
+			font-size: 3rem;
+		 }
+		 h2 + p {
+			margin-top: 1rem;
+		 }
+		 p {
+			max-width: 65ch;
+			line-height: 1.5;
+		 }
+		 .blue {
+			background-color: rgb(196, 196, 248);
+		 }
+		 .section {
+			height: 100vh;
+			width: 100%;
+			padding: 2rem;
+		 }
+	}
+
+
+	/* 가로스크롤 */
+	.sec04 {
+		width: max-content; height: 100vh; position: relative;
+		&:after { clear: both; content: ""; display: block; }
+		// .over_box {
+		// 	width: 100%; height: 100%; background-color: rgba(255,255,255, .8); position: absolute; top: 0; right: 0; z-index: 999;
+		// }
+		.line_wrap { 
+			width: 100%; height: 100%;
+			position: absolute; top:0; left:0; z-index: 5;
+			.line {
+				width: 100%; height: 100%;
+			}
+			svg { 
+				width: 100%; height: 100%; fill :none; stroke: black; stroke-width: 10px; 
+				// stroke-dashoffset: 0;
+				stroke-dashoffset: 8520;
+				stroke-dasharray: 8520;
+			}
+		}
+		.min {
+			width: 1300px; height: 100vh;
+			background-color: pink;
+			float:left;
+			&:nth-of-type(odd) { background-color: green; }
+		}
+	}
+	.sec05 {
+		height: 200vh;
+		background: #777;
+		// position: relative;
+		.one {
+			width: 500px; height: 500px; background-color: #28a92b;
+			@include borderRadius(500px);
+		}
+		.txt_wrap {
+			position: fixed; top:0;
+			font-size: 50px;
+		}
+	
+	}
+}
+.sub2 {
+	.spacer {
+		width:100%;
+		height:100vh;
+		background:#000000;
+	}
+	
+	#trigger {
+	width:100%;
+	height:1px;
+	background:#ff0000;
+	}
+}
+.sub3 {
+	width: 100%; height: 4000px; background-color: #eee;
+}
+/* //기술 연습 css ------------------------------------------------------------------------------------------------*/
