@@ -28,6 +28,10 @@ legend {width:0; height:0; overflow:hidden; display:inline-block; text-indent:-9
 //
 //.yt_play_btn:after { width:0; height:0; display:block; content:""; border-left-style:solid; border-left-width:23px; border-left-color:#fff; border-top:14px solid transparent; border-bottom:14px solid transparent; position:absolute; top:38px; left:44px; }
 
+.inter_font {
+	font-family: $Inter;
+}
+
 .guide_line {
 	&:before,
 	&:after {width:1px; height:100vh; display:block; content:""; position:fixed; background-color:$red; opacity:1; left:50%; z-index:1000;}

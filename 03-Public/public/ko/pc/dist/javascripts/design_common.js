@@ -33,14 +33,15 @@ function main() {
 	const $warp = $('#warp');
 	const $intro = $('#intro');
 
-	const $content1 = $('.content1'),
-		$content1Title = $content1.find('h1'),
-		$content1Txt = $content1.find('p'),
-		$cont1circleDeco1 = $content1.find('.circle_deco1'),
-		$cont1circleDeco2 = $content1.find('.circle_deco2'),
-		$cont1circleDeco3 = $content1.find('.circle_deco3');
+	const $sec1Container = $('.sec1-container'),
+		$sec1Content1 = $sec1Container.find('.content1'),
+		$sec1Content1Title = $sec1Container.find('h1'),
+		$sec1Content1Txt = $sec1Container.find('p'),
+		$sec1Cont1circleDeco1 = $sec1Container.find('.circle_deco1'),
+		$sec1Cont1circleDeco2 = $sec1Container.find('.circle_deco2'),
+		$sec1Cont1circleDeco3 = $sec1Container.find('.circle_deco3'),
 
-	const $content2 = $('.content2');
+		$sec1Content2 = $sec1Container.find('.content2');
 
 	/* main ------------------------------------------------------------------------------ */
 	function index() {
@@ -116,23 +117,28 @@ function main() {
 		}
 		/* //smoothScroll -------------------------------------------------------------------- */
 
-
-		// var customTimeline = gsap.timeline();
-
-		/* intro trigger */
-		const customTimeline = gsap.timeline({
+		/* intro trigger ------------------------------------------------------------------------*/
+		const introTimeline = gsap.timeline({
 			scrollTrigger: {
 				trigger: $warp,
 				start: () => "top top",
 				// end: () => `+=4000% bottom`, // 전체 스크롤 길이.
-				end: () => "+=10000", // 전체 스크롤 길이.
+				end: () => "+=20000", // 전체 스크롤 길이.
 				pin: $intro,
-				scrub: 1,
+				scrub: 2,
 				pinSpacing: true,
 				markers: {
 					startColor: "blue",
 					endColor: "blue",
 				},
+				endonLeave: () => {
+					console.log('onLeave')
+					// TweenMax.to($('#animationWindow'), .5, { opacity: 0 })
+				},
+				onEnterBack: () => {
+					// console.log('onEnterBack')
+					// TweenMax.to($('#animationWindow'), .5, { opacity: 1 })
+				}
 				// invalidateOnRefresh: true,
 				// id: 'impact-cluster',
 				// fastScrollEnd: true,
@@ -140,17 +146,16 @@ function main() {
 			}
 		});
 
-		// intro
 		function motionBy1() {
-			var sec1ContainerTimeLine = gsap.timeline();
+			const sec1ContainerTimeLine = gsap.timeline();
 			/* content1 */
-			sec1ContainerTimeLine.to($content1Title, { opacity: 0, yPercent: -20, duration: .2, delay: .5 })
-			sec1ContainerTimeLine.to($content1Txt, { opacity: 0, yPercent: -20, duration: .2 })
-			sec1ContainerTimeLine.to($cont1circleDeco1, { opacity: 0, duration: .2 })
-			sec1ContainerTimeLine.to($cont1circleDeco2, { opacity: 0, duration: .2 })
-			sec1ContainerTimeLine.to($cont1circleDeco3, { opacity: 0, duration: .2 })
-			sec1ContainerTimeLine.to($content1, { display: 'none', opacity: 0, duration: .5 })
-			sec1ContainerTimeLine.to($content2, { display: 'block', opacity: 1, duration: .5, delay: -.5 })
+			sec1ContainerTimeLine.to($sec1Content1Title, { opacity: 0, yPercent: -20, duration: .2, delay: .5 })
+			sec1ContainerTimeLine.to($sec1Content1Txt, { opacity: 0, yPercent: -20, duration: .2 })
+			sec1ContainerTimeLine.to($sec1Cont1circleDeco1, { opacity: 0, duration: .2 })
+			sec1ContainerTimeLine.to($sec1Cont1circleDeco2, { opacity: 0, duration: .2 })
+			sec1ContainerTimeLine.to($sec1Cont1circleDeco3, { opacity: 0, duration: .2 })
+			sec1ContainerTimeLine.to($sec1Content1, { display: 'none', opacity: 0, duration: .5 })
+			sec1ContainerTimeLine.to($sec1Content2, { display: 'block', opacity: 1, duration: .5, delay: -.5 })
 
 			/* content2 */
 			// 텍스트 1
@@ -175,12 +180,12 @@ function main() {
 			sec1ContainerTimeLine.to('.content2 .round_wrap .round_elm6', { width: 160, height: 160, duration: .2 })
 
 			// 작은 데코 원형
-			sec1ContainerTimeLine.to('.content2 .deco_elm .deco1', { width: 20, height: 20, duration: .2 })
-			sec1ContainerTimeLine.to('.content2 .deco_elm .deco2', { width: 20, height: 20, duration: .2 })
-			sec1ContainerTimeLine.to('.content2 .deco_elm .deco3', { width: 30, height: 30, duration: .2 })
-			sec1ContainerTimeLine.to('.content2 .deco_elm .deco4', { width: 30, height: 30, duration: .2 })
-			sec1ContainerTimeLine.to('.content2 .deco_elm .deco5', { width: 20, height: 20, duration: .2 })
-			sec1ContainerTimeLine.to('.content2 .deco_elm .deco6', { width: 20, height: 20, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .deco_wrap .circle_deco1', { width: 20, height: 20, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .deco_wrap .circle_deco2', { width: 20, height: 20, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .deco_wrap .circle_deco3', { width: 30, height: 30, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .deco_wrap .circle_deco4', { width: 30, height: 30, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .deco_wrap .circle_deco5', { width: 20, height: 20, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .deco_wrap .circle_deco6', { width: 20, height: 20, duration: .2 })
 			sec1ContainerTimeLine.to('.content2 .txt_cont2 p', { opacity: 0, yPercent: 0, duration: .2 })
 
 			// 텍스트 3
@@ -200,38 +205,155 @@ function main() {
 
 			// 텍스트 4
 			sec1ContainerTimeLine.to('.content2 .txt_cont4 p', { opacity: 1, yPercent: -20, duration: .2 })
-
-			// sec1ContainerTimeLine.to('.content2', { display: 'none', opacity: 0, duration: .5, delay: 1.5 })
-			// sec1ContainerTimeLine.to('.content3', { display: 'none', opacity: 0, duration: .5, delay: 1.5 })
-			sec1ContainerTimeLine.to('.content4', { display: 'block', opacity: 1, duration: .5, delay: 1 })
-
-
-
-
-
-
-
-
-
-
-
-
+			sec1ContainerTimeLine.to('.content2', { display: 'none', opacity: 0, duration: .5, delay: 1 })
 			return sec1ContainerTimeLine;
 		}
 
-		customTimeline.add(motionBy1());
-		// customTimeline.add( motionBy2().delay(-1) );
-		/* //intro trigger */
+		function motionBy2() {
+			const sec2ContainerTimeLine = gsap.timeline();
+			sec2ContainerTimeLine.to('.content3', { display: 'block', opacity: 1, duration: .5, delay: -1 })
+			sec2ContainerTimeLine.to('.content3 .txt_wrap p', { display: 'block', opacity: 1, yPercent: -10, duration: .2, delay: -.5 })
+			// video
+			sec2ContainerTimeLine.to('.content3 .video_wrap', { display: 'block', opacity: 1, duration: .2, delay: -.2 })
+			// deco 순차적으로 나타나기
+			// 원 데코
+			sec2ContainerTimeLine.to('.content3 .circle_deco1', { width: 20, height: 20, duration: .2, delay: -.11 })
+			sec2ContainerTimeLine.to('.content3 .circle_deco2', { width: 20, height: 20, duration: .2, delay: -.12 })
+			sec2ContainerTimeLine.to('.content3 .circle_deco3', { width: 30, height: 30, duration: .2, delay: -.16 })
+			sec2ContainerTimeLine.to('.content3 .circle_deco4', { width: 20, height: 20, duration: .2, delay: -.14 })
+			sec2ContainerTimeLine.to('.content3 .circle_deco5', { width: 30, height: 30, duration: .2, delay: -.18 })
+			sec2ContainerTimeLine.to('.content3 .circle_deco6', { width: 20, height: 20, duration: .2, delay: -.15 })
+			// 별 데코
+			sec2ContainerTimeLine.to('.content3 .glitter_deco1', { display: 'block', opacity: 1, duration: .2, delay: -.18 })
+			sec2ContainerTimeLine.to('.content3 .glitter_deco2', { display: 'block', opacity: 1, duration: .2, delay: -.14 })
+			sec2ContainerTimeLine.to('.content3 .glitter_deco3', { display: 'block', opacity: 1, duration: .2, delay: -.16 })
+			sec2ContainerTimeLine.to('.content3 .glitter_deco4', { display: 'block', opacity: 1, duration: .2, delay: -.11 })
+			sec2ContainerTimeLine.to('.content3 .glitter_deco5', { display: 'block', opacity: 1, duration: .2, delay: -.12 })
+			sec2ContainerTimeLine.to('.content3 .glitter_deco6', { display: 'block', opacity: 1, duration: .2, delay: -.17 })
+			sec2ContainerTimeLine.to('.content3', { display: 'none', opacity: 0, duration: .5, delay: 1 })
+			return sec2ContainerTimeLine;
+		}
+
+		function motionBy3() {
+			const sec3ContainerTimeLine = gsap.timeline();
+			// 지구 그래프 나타나기
+			sec3ContainerTimeLine.to('.content4', { display: 'block', opacity: 1, duration: .5 })
+			sec3ContainerTimeLine.to('.content4 .txt_wrap p', { display: 'block', opacity: 1, yPercent: -20, duration: .2 })
+			sec3ContainerTimeLine.to('.content4 .earth_img', { opacity: 1, duration: .2 })
+			sec3ContainerTimeLine.to('.content4 .txt_elm1', { display: 'block', opacity: 1, yPercent: -20, duration: .2 })
+			sec3ContainerTimeLine.to('.content4 .txt_elm2', { display: 'block', opacity: 1, yPercent: -20, duration: .2 })
+			sec3ContainerTimeLine.to('.content4 .income_tit', { display: 'block', opacity: 1, yPercent: -20, duration: .2 })
+			sec3ContainerTimeLine.to('.content4 .money_tit', { display: 'block', opacity: 1, yPercent: -20, duration: .2 })
+			sec3ContainerTimeLine.to('.content4 .bottom_txt strong', { display: 'block', opacity: 1, yPercent: -20, duration: .2 })
+			sec3ContainerTimeLine.to('.content4 .bottom_txt > span', { display: 'block', opacity: 1, yPercent: -20, duration: .2 })
+
+			sec3ContainerTimeLine.to('.content4', { display: 'none', opacity: 0, duration: .5, delay: 1 })
+			sec3ContainerTimeLine.to('.content5', { opacity: 1, duration: .5 })
+			return sec3ContainerTimeLine;
+		}
+
+		introTimeline.add(motionBy1());
+		introTimeline.add(motionBy2());
+		introTimeline.add(motionBy3());
+		/* //intro trigger ------------------------------------------------------------------------*/
+
+
+		/* social contribution trigger ------------------------------------------------------------------------*/
+		const socialTimeline = gsap.timeline({
+			scrollTrigger: {
+				trigger: $warp,
+				start: () => "top top",
+				// end: () => `+=4000% bottom`, // 전체 스크롤 길이.
+				end: () => "+=20000", // 전체 스크롤 길이.
+				pin: $intro,
+				scrub: 2,
+				pinSpacing: true,
+				markers: {
+					startColor: "blue",
+					endColor: "blue",
+				},
+				endonLeave: () => {
+					console.log('onLeave')
+					// TweenMax.to($('#animationWindow'), .5, { opacity: 0 })
+				},
+				onEnterBack: () => {
+					// console.log('onEnterBack')
+					// TweenMax.to($('#animationWindow'), .5, { opacity: 1 })
+				}
+				// invalidateOnRefresh: true,
+				// id: 'impact-cluster',
+				// fastScrollEnd: true,
+				// preventOverlaps: true
+			}
+		});
+
+		function socialmotionBy1() {
+			const sec1ContainerTimeLine = gsap.timeline();
+			
+
+			return sec1ContainerTimeLine;
+		}
+		socialTimeline.add(socialmotionBy1());
+
+		/* //social contribution trigger ------------------------------------------------------------------------*/
+
+
+
+
+
+		// /* 움직이는 원 트리거 */
+		// const tl2 = gsap.timeline({
+		// 	scrollTrigger: {
+		// 		trigger: '.one',
+		// 		pin: '.sec05',
+		// 		// pin: true,
+		// 		// toggleClass: {targets: 'nav', className: 'active'} // start 시점에서 class가 추가되고 end에서 class가 삭제된다.
+		// 		start: "top 20%",
+		// 		end: "+=6000",
+		// 		// markers: {
+		// 		// 	startColor: "#555",
+		// 		// 	endColor: "#555",
+		// 		// 	// fontSize: '1rem',
+		// 		// 	// indent: 200
+		// 		// },
+		// 		scrub: true,
+		// 	}
+		// });
+
+		// tl2.to('.one', { x: 800, duration: .5, delay: .1 })
+		// 	.to('.one', { x: 0, duration: .5, delay: .1 })
+		// /* //움직이는 원 트리거 */
+
 
 
 
 		/* LottieScrollTrigger ------------------------------------------ */
 		LottieScrollTrigger({
-			target: "#animationWindow",
+			target: "#circularLineMotion",
 			// path: "https://assets.codepen.io/35984/tapered_hello.json",
 			path: "./datafile/sec05.json",
 			pin: true,
 			start: 7900,
+			end: '+=1100',
+			speed: "medium",
+			markers: { startColor: "green", endColor: "green" },
+			scrub: true,
+			// onLeave: () => {
+			// 	console.log('onLeave')
+			// 	TweenMax.to($('#animationWindow'), .5, { opacity: 0 })
+			// },
+			// onEnterBack: () => {
+			// 	console.log('onEnterBack')
+			// 	TweenMax.to($('#animationWindow'), .5, { opacity: 1 })
+			// }
+		});
+
+		LottieScrollTrigger({
+			target: "#seedMotion",
+			// path: "https://assets.codepen.io/35984/tapered_hello.json",
+			path: "./datafile/sec12.json",
+			pin: true,
+			start: 20000,
 			end: '+=1100',
 			speed: "medium",
 			markers: { startColor: "green", endColor: "green" },

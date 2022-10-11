@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* Font style setting */
-$omnigothic:"omnigothic", Arial, Apple SD Gothic Neo, sans-serif;
+$OmNiGothic:"OmNiGothic", Arial, Apple SD Gothic Neo, sans-serif;
 $Inter:"Inter", Arial, Apple SD Gothic Neo, sans-serif;
 
 /* Point color setting */
@@ -14,6 +14,8 @@ $gray2:#646566;
 $gray3:#a4a4a4;
 $gray4:#ddd;
 $gray5:#f4f5f6;
+
+$pink:#ff5758;
 
 /* Background - color setting */
 $bg-black:$black;
@@ -48,7 +50,7 @@ $btn-black:$black;
 /**
  * BASE SETTING
  */
-$base-font:$omnigothic, "Apple SD Gothic Neo", AppleGothic, Arial, Helvetica, sans-serif;
+$base-font:$OmNiGothic, "Apple SD Gothic Neo", AppleGothic, Arial, Helvetica, sans-serif;
 $base-font-size:20px;
 $base-font-color:$black;
 

@@ -5,6 +5,7 @@
 <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
 <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
 <div class="container index">
+	<!-- <img src="./images/main/bg_circle_img.png" alt=""> -->
 	<section id="intro" class="sec1-container">
 		<div class="cont content1">
 			<div class="txt_wrap">
@@ -53,43 +54,82 @@
 						<img src="./images/main/round_img5.png" alt="">
 					</div>
 				</div>
-				<div class="deco_elm">
-					<span class="deco1"></span>
-					<span class="deco2"></span>
-					<span class="deco3"></span>
-					<span class="deco4"></span>
-					<span class="deco5"></span>
-					<span class="deco6"></span>
+				<div class="deco_wrap">
+					<span class="circle_deco1"></span>
+					<span class="circle_deco2"></span>
+					<span class="circle_deco3"></span>
+					<span class="circle_deco4"></span>
+					<span class="circle_deco5"></span>
 				</div>
 			</div>
+			<div id="circularLineMotion"> </div>
 		</div>
 		<div class="cont content3">
-			<div id="animationWindow"> </div>
-		</div>
-		<div class="cont content4">
 			<div class="txt_wrap">
 				<p>국경없는의사회는 <br> 기업 및 개인 후원자의 든든한 후원으로</p>
 			</div>
-			<div class="deco_elm">
-				<span class="deco1"></span>
-				<span class="deco2"></span>
-				<span class="deco3"></span>
-				<span class="deco4"></span>
-				<span class="deco5"></span>
-				<span class="deco6"></span>
-				<span class="deco7"></span>
-				<span class="deco8"></span>
-				<span class="deco9"></span>
-				<span class="deco10"></span>
-				<span class="deco11"></span>
-				<span class="deco12"></span>
+			<div class="deco_wrap">
+				<div class="circle_cont">
+					<span class="circle_deco1"></span>
+					<span class="circle_deco2"></span>
+					<span class="circle_deco3"></span>
+					<span class="circle_deco4"></span>
+					<span class="circle_deco5"></span>
+					<span class="circle_deco6"></span>
+				</div>
+				<div class="glitter_cont">
+					<img class="glitter_deco1" src="./images/main/glitter_deco1.png" alt="">
+					<img class="glitter_deco2" src="./images/main/glitter_deco1.png" alt="">
+					<img class="glitter_deco3" src="./images/main/glitter_deco1.png" alt="">
+					<img class="glitter_deco4" src="./images/main/glitter_deco1.png" alt="">
+					<img class="glitter_deco5" src="./images/main/glitter_deco1.png" alt="">
+					<img class="glitter_deco6" src="./images/main/glitter_deco1.png" alt="">
+				</div>
 			</div>
 			<div class="video_wrap">
 				<video loop autoplay src="./datafile/earth_sphere_car.mp4"> </video>
 			</div>
 		</div>
+		<div class="cont content4">
+			<div class="graph_contain">
+				<div class="txt_wrap">
+					<p>재원의 <span class="inter_font">97%</span>를 <br> 민간 후원금으로 마련하고 있습니다.</p>
+				</div>
+				<div class="circle_wrap">
+					<img class="earth_img" src="./images/main/earth_img.png" alt="지구 이미지">
+					<div class="txt_percentage">
+						<div class="txt_elm1">
+							<span class="inter_font">1.5<i>%</i> </span> 공공기관
+						</div>
+						<div class="txt_elm2">
+							<span class="inter_font">1.5<i>%</i></span> 기타
+						</div>
+					</div>
+					<div class="income_wrap">
+						<span class="income_tit">총 수입</span>
+						<div class="money_tit">
+							<strong> <span class="inter_font">19</span> 억 <span class="inter_font">3500</span>만 </strong>
+							<span> 유로</span>
+						</div>
+					</div>
+					<div class="bottom_txt">
+						<strong class="inter_font"> 97.1 <span>%</span> </strong>
+						<span>민간 후원금</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="cont content5">
+			<div class="transparent_wrap">
+				<div class="one"></div>
+			</div>
+		</div> -->
 	</section>
-	<section id="" class="sec2-container"></section>
+	<section id="" class="sec2-container">
+		<div class="cont content1">
+			<div id="seedMotion"> </div>
+		</div>
+	</section>
 	<section id="" class="sec3-container"></section>
 </div>
 <!-- //container --> @@include("./include/footer.html")

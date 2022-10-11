@@ -1,6 +1,9 @@
 @charset"UTF-8";
 /* 메인 css --------------------------------------------------------------------------------------------------------- */
-.container { width: 100%; overflow: visible; background-image: linear-gradient(rgba(0, 0, 0, .1) 2px, transparent 2px), linear-gradient(90deg, rgba(0, 0, 0, .1) 2px, transparent 2px), linear-gradient(rgba(0, 0, 0, .1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, .1) 1px, transparent 1px); background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px; background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px; }
+.container { 
+	width: 100%; overflow: visible; background-image: linear-gradient(rgba(0, 0, 0, .1) 2px, transparent 2px), linear-gradient(90deg, rgba(0, 0, 0, .1) 2px, transparent 2px), linear-gradient(rgba(0, 0, 0, .1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, .1) 1px, transparent 1px); background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px; background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px; 
+	> img { position: absolute; top:19626px; }
+}
 .index {
 	background-color: #777;
 	section { width: 100%; height: 100vh; }
@@ -9,7 +12,7 @@
 		.cont { width: 100%; height: 100vh; position: absolute; top: 0 ; left: 0; overflow:hidden; }
 		.content1 { 
 			display: flex; align-items: center; justify-content: center; background-color: rgb(165, 59, 59);
-			display: none;
+			// display: none;
 			.txt_wrap {
 				text-align: center;
 				h1 { font-size: 120px; font-weight: $medium; color: $gray1; } 
@@ -29,15 +32,15 @@
 			@keyframes circleRotateLeft {
 				0% { @include rotate(0) }
 				100% { @include rotate(-360) }
-			}
+			} 
 		}
 		.content2 {
-			background-color: rgb(4, 86, 100);
+			// background-color: rgb(4, 86, 100);
 			opacity: 0;
 			display: none;
 			.txt_wrap {
 				width: 100%; height: 100%; text-align: center; display: flex; align-items: center; justify-content: center;
-				>div { position: absolute; }
+				> div { position: absolute; }
 				p { 
 					padding: 25px 0 0; font-size: 30px; font-weight: $regular; color: $gray1; line-height: 48px; opacity: 0;
 					@include translate(0,20px); 
@@ -59,47 +62,158 @@
 						img { position: absolute; bottom: -100%; }
 					}
 				}
-				.deco_elm {
+				.deco_wrap {
 					> span {
 						width: 0; height: 0; position: absolute; left: 50%; top: 50%;
 						@include translate(-50%,-50%);
-						&.deco1 { background-color: #ff5758; margin: -338px 0 0 -42px; }
-						&.deco2 { background-color: #9fc3ff; margin: 155px 0 0 -735px; }
-						&.deco3 { background-color: #ffd34e; margin: 175px 0 0 -145px; }
-						&.deco4 { background-color: #9fc3ff; margin: -140px 0 0 288px; }
-						&.deco5 { background-color: #ff5758; margin: 419px 0 0 32px; }
-						&.deco6 { background-color: #63d1c2; margin: 136px 0 0 677px; }
+						&.circle_deco1 { background-color: #ff5758; margin: -338px 0 0 -42px; }
+						&.circle_deco2 { background-color: #9fc3ff; margin: 155px 0 0 -735px; }
+						&.circle_deco3 { background-color: #ffd34e; margin: 175px 0 0 -145px; }
+						&.circle_deco4 { background-color: #9fc3ff; margin: -140px 0 0 288px; }
+						&.circle_deco5 { background-color: #ff5758; margin: 419px 0 0 32px; }
+						&.circle_deco6 { background-color: #63d1c2; margin: 136px 0 0 677px; }
 						@include borderRadius(100%);
 					}
 				}
 			}
-		}
-		.content3 {
-			z-index: 1;
-			#animationWindow { 
+			#circularLineMotion { 
 				width:1920px !important; height: 970px !important; position: absolute; top: 50% ; left: 50%;
+				z-index: -1;
 				transform: translate(-50%,-50%) !important;
 			}
 		}
-		.content4 {
+		.content3 {
 			background-color: red; z-index: 2;
-			// display: none;
-			// opacity: 0;
+			display: none;
+			opacity: 0;
 			.txt_wrap {
 				width: 100%; height: 100%; padding: 155px 0 0; text-align: center; display: flex; justify-content: center;
-				p { font-size: 30px; line-height: 48px; color: $gray1; font-weight: $medium; }
+				p { 
+					font-size: 30px; line-height: 48px; color: $gray1; font-weight: $medium; opacity: 0; display: none; 
+					@include translate(0,10%);
+				}
 			}
-			.deco_elm {
+			.circle_cont {
+				> span {
+					width: 0; height: 0; background-color: black; position: absolute; top: 50%; left: 50%; 
+					@include translate(-50%,-50%);
+					@include borderRadius(100%);
+				}
+				.circle_deco1 { margin: -380px 0 0 -350px; background-color: #ff5758; }
+				.circle_deco2 { margin: -350px 0 0 -700px;background-color: #9fc3ff; }
+				.circle_deco3 { margin: 150px 0 0 -550px; background-color: #ffd34e;}
+				.circle_deco4 { margin: -350px 0 0 450px;background-color: #63d1c2;}
+				.circle_deco5 { margin: 0 0 0 650px; background-color: #9fc3ff;}
+				.circle_deco6 { margin: 380px 0 0 380px; background-color: #ff5758;}
+			}
+			.glitter_cont {
+				> img {
+					width: 21px; height: 21px; position: absolute; top: 50%; left: 50%; 
+					opacity: 0; display: none;
+					@include translate(-50%,-50%);
+				}
+				.glitter_deco1 { margin: -180px 0 0 -580px; }
+				.glitter_deco2 { margin: 250px 0 0 -850px; }
+				.glitter_deco3 { margin: 380px 0 0 -450px; }
+				.glitter_deco4 { margin: -250px 0 0 580px; }
+				.glitter_deco5 { margin: 200px 0 0 450px; }
+				.glitter_deco6 { margin: 330px 0 0 780px; }
 			}
 			.video_wrap {
 				width: 100%; min-width: 1700px; position: absolute; top: 50%; left: 50%; z-index: -1;
+				display: none;
+				opacity: 0;
 				@include transform(translate(-50%,-50%)); 
 				video { width: 100%; }
 			}
 		}
+		.content4 {
+			background-color: pink;
+			display: none; opacity: 0;
+			.graph_contain { width: 100%; height: 100%; position: absolute; top: 0; left: 0; text-align: center; display: flex; align-items: center; justify-content: center; flex-direction: column; }
+			.txt_wrap {
+				width: 100%; text-align: center; display: flex; justify-content: center;
+				.inter_font { font-weight: $semiBold; }
+				p { 
+					font-size: 30px; line-height: 48px; color: $gray1; font-weight: $medium; /* opacity: 0; display: none;  */
+					opacity: 0; display: none; 
+					@include translate(0,10%);
+				}
+			}
+			.earth_img { display: inline-block; padding: 100px 0 0; opacity: 0; }
+			.circle_wrap { position: relative; }
+			.txt_percentage {
+				> div {		
+					width: max-content; position: absolute; font-size: 18px; color: #7e7e7e; font-weight: $medium;
+					opacity: 0; display: none; 
+					span { font-size: 22px; font-weight: $semiBold; }
+					i { font-size: 18px; }
+				}
+				.txt_elm1 {
+					left: 353px; top: 111px;
+					span { color: #ff9292; }
+				}
+				.txt_elm2 {
+					left: 384px; top: 142px;
+					span { color: #ffc1c2; }
+				}
+			}
+			.income_wrap {
+				width: 100%; position: absolute; top: 293px;
+				.income_tit { 
+					font-size: 22px; font-weight: $regular; opacity: 0; display: none; 					
+				}
+				.money_tit {
+					padding: 10px 0 0;
+					opacity: 0; display: none;
+					strong { font-size: 34px; }
+					.inter_font { font-weight: $semiBold; font-size: 36px; }
+					> span { font-size: 22px; font-weight: $medium; }
+				}
+			}
+			.bottom_txt {
+				padding: 30px 0 0;
+				strong { 
+					opacity: 0; display: none; 
+					display: block; font-size: 70px; color: $pink; font-weight: $semiBold;
+					span { display: inline-block; font-size: 40px; margin: 0 0 0 -18px; }
+				}
+				> span { 
+					opacity: 0; display: none; 
+					display: block; padding: 10px 0 0; font-size: 20px; color: $gray1; font-weight: $medium;
+					@include transform(skew(-0.001deg)); 
+				}
+			}
+		}
+		.content5 {
+			height: auto; padding: 350px 0 0;
+			position: relative;
+			// opacity: 0;
+		}
+		.transparent_wrap {
+			width:100%; height: 100vh;
+			// background-color: #0000ff;
+			position: absolute; top:0; left:0;
+			opacity: .5;
+			.one {
+				position: absolute; top:0;
+				width: 400px; height: 400px; background-color: red;
+				@include borderRadius(100%);
+			}
+		}
 	} 
-	.sec2-container {}
-	.sec3-container {}
+	.sec2-container {
+		background-color: blue;
+		.cont { width: 100%; height: 100vh; position: absolute; top: 0 ; left: 0; overflow:hidden; }
+		.content1 {
+			#seedMotion { 
+				width:1920px !important; height: 970px !important; position: absolute; top: 50% ; left: 50%;
+				z-index: -1;
+				transform: translate(-50%,-50%) !important;
+			}
+		}
+	}
+	// .sec3-container {}
 }
 /* //메인 css --------------------------------------------------------------------------------------------------------- */
 
