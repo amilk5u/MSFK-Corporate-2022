@@ -17,3 +17,23 @@
 	font-weight: 600;
 	src:url(../../fonts/210Gothic050.woff) format("woff");
 }
+
+/* Inter */
+@font-face {
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 300;
+	src:url(../../fonts/InterRegular.woff) format("woff");
+}
+@font-face {
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 400;
+	src:url(../../fonts/InterMedium.woff) format("woff");
+}
+@font-face {
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 600;
+	src:url(../../fonts/InterSemiBold.woff) format("woff");
+}

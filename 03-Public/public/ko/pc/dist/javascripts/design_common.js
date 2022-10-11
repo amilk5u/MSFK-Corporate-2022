@@ -30,16 +30,25 @@ function layout() {
 }
 function main() {
 
+	const $warp = $('#warp');
+	const $intro = $('#intro');
 
+	const $content1 = $('.content1'),
+		$content1Title = $content1.find('h1'),
+		$content1Txt = $content1.find('p'),
+		$cont1circleDeco1 = $content1.find('.circle_deco1'),
+		$cont1circleDeco2 = $content1.find('.circle_deco2'),
+		$cont1circleDeco3 = $content1.find('.circle_deco3');
+
+	const $content2 = $('.content2');
 
 	/* main ------------------------------------------------------------------------------ */
 	function index() {
-		console.log('메인')
 		/* smoothScroll -------------------------------------------------------------------- */
-		smoothScroll("#content");
+		smoothScroll(".container");
 		function smoothScroll(content, viewport, smoothness) {
 			content = gsap.utils.toArray(content)[0];
-			smoothness = smoothness || 1; 
+			smoothness = smoothness || 0;
 			gsap.set(viewport || content.parentNode, { overflow: "hidden", position: "fixed", height: "100%", width: "100%", top: 0, left: 0, right: 0, bottom: 0 });
 			gsap.set(content, { overflow: "visible", width: "100%" });
 
@@ -106,6 +115,187 @@ function main() {
 			});
 		}
 		/* //smoothScroll -------------------------------------------------------------------- */
+
+
+		// var customTimeline = gsap.timeline();
+
+		/* intro trigger */
+		const customTimeline = gsap.timeline({
+			scrollTrigger: {
+				trigger: $warp,
+				start: () => "top top",
+				// end: () => `+=4000% bottom`, // 전체 스크롤 길이.
+				end: () => "+=10000", // 전체 스크롤 길이.
+				pin: $intro,
+				scrub: 1,
+				pinSpacing: true,
+				markers: {
+					startColor: "blue",
+					endColor: "blue",
+				},
+				// invalidateOnRefresh: true,
+				// id: 'impact-cluster',
+				// fastScrollEnd: true,
+				// preventOverlaps: true
+			}
+		});
+
+		// intro
+		function motionBy1() {
+			var sec1ContainerTimeLine = gsap.timeline();
+			/* content1 */
+			sec1ContainerTimeLine.to($content1Title, { opacity: 0, yPercent: -20, duration: .2, delay: .5 })
+			sec1ContainerTimeLine.to($content1Txt, { opacity: 0, yPercent: -20, duration: .2 })
+			sec1ContainerTimeLine.to($cont1circleDeco1, { opacity: 0, duration: .2 })
+			sec1ContainerTimeLine.to($cont1circleDeco2, { opacity: 0, duration: .2 })
+			sec1ContainerTimeLine.to($cont1circleDeco3, { opacity: 0, duration: .2 })
+			sec1ContainerTimeLine.to($content1, { display: 'none', opacity: 0, duration: .5 })
+			sec1ContainerTimeLine.to($content2, { display: 'block', opacity: 1, duration: .5, delay: -.5 })
+
+			/* content2 */
+			// 텍스트 1
+			sec1ContainerTimeLine.to('.content2 .txt_cont1 p', { opacity: 1, yPercent: -20, duration: .2 })
+			// 메인 원형 생기기
+			sec1ContainerTimeLine.to('.content2 .round_wrap .round_elm1', { width: 60, height: 60, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .round_wrap .round_elm2', { width: 30, height: 30, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .round_wrap .round_elm3', { width: 50, height: 50, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .round_wrap .round_elm4', { width: 50, height: 50, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .round_wrap .round_elm5', { width: 60, height: 60, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .round_wrap .round_elm6', { width: 40, height: 40, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .txt_cont1 p', { opacity: 0, yPercent: 0, duration: .2 })
+
+			// 텍스트 2
+			sec1ContainerTimeLine.to('.content2 .txt_cont2 p', { opacity: 1, yPercent: -20, duration: .2 })
+			// 메인 원형 커지기
+			sec1ContainerTimeLine.to('.content2 .round_wrap .round_elm1', { width: 330, height: 330, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .round_wrap .round_elm2', { width: 160, height: 160, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .round_wrap .round_elm3', { width: 200, height: 200, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .round_wrap .round_elm4', { width: 220, height: 220, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .round_wrap .round_elm5', { width: 240, height: 240, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .round_wrap .round_elm6', { width: 160, height: 160, duration: .2 })
+
+			// 작은 데코 원형
+			sec1ContainerTimeLine.to('.content2 .deco_elm .deco1', { width: 20, height: 20, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .deco_elm .deco2', { width: 20, height: 20, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .deco_elm .deco3', { width: 30, height: 30, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .deco_elm .deco4', { width: 30, height: 30, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .deco_elm .deco5', { width: 20, height: 20, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .deco_elm .deco6', { width: 20, height: 20, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .txt_cont2 p', { opacity: 0, yPercent: 0, duration: .2 })
+
+			// 텍스트 3
+			sec1ContainerTimeLine.to('.content2 .txt_cont3 p', { opacity: 1, yPercent: -20, duration: .2 })
+
+			// 사진 이미지 생기기
+			sec1ContainerTimeLine.to('.content2 .round_wrap .round_elm1 img', { bottom: 0, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .round_wrap .round_elm2 img', { bottom: 0, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .round_wrap .round_elm3 img', { bottom: 0, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .round_wrap .round_elm4 img', { bottom: 0, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .round_wrap .round_elm5 img', { bottom: 0, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .round_wrap .round_elm6 img', { bottom: 0, duration: .2 })
+			sec1ContainerTimeLine.to('.content2 .txt_cont3 p', { opacity: 0, yPercent: 0, duration: .2 })
+
+			// 작은 데코 사라지기
+			sec1ContainerTimeLine.to('.content2 .deco_elm span', { width: 0, height: 0, duration: .2 })
+
+			// 텍스트 4
+			sec1ContainerTimeLine.to('.content2 .txt_cont4 p', { opacity: 1, yPercent: -20, duration: .2 })
+
+			// sec1ContainerTimeLine.to('.content2', { display: 'none', opacity: 0, duration: .5, delay: 1.5 })
+			// sec1ContainerTimeLine.to('.content3', { display: 'none', opacity: 0, duration: .5, delay: 1.5 })
+			sec1ContainerTimeLine.to('.content4', { display: 'block', opacity: 1, duration: .5, delay: 1 })
+
+
+
+
+
+
+
+
+
+
+
+
+			return sec1ContainerTimeLine;
+		}
+
+		customTimeline.add(motionBy1());
+		// customTimeline.add( motionBy2().delay(-1) );
+		/* //intro trigger */
+
+
+
+		/* LottieScrollTrigger ------------------------------------------ */
+		LottieScrollTrigger({
+			target: "#animationWindow",
+			// path: "https://assets.codepen.io/35984/tapered_hello.json",
+			path: "./datafile/sec05.json",
+			pin: true,
+			start: 7900,
+			end: '+=1100',
+			speed: "medium",
+			markers: { startColor: "green", endColor: "green" },
+			scrub: true,
+			// onLeave: () => {
+			// 	console.log('onLeave')
+			// 	TweenMax.to($('#animationWindow'), .5, { opacity: 0 })
+			// },
+			// onEnterBack: () => {
+			// 	console.log('onEnterBack')
+			// 	TweenMax.to($('#animationWindow'), .5, { opacity: 1 })
+			// }
+		});
+
+		function LottieScrollTrigger(vars) {
+			let playhead = { frame: 0 },
+				target = gsap.utils.toArray(vars.target)[0],
+				speeds = { slow: "+=2000", medium: "+=1000", fast: "+=500" },
+				st = { trigger: target, pin: true, start: "top top", end: speeds[vars.speed] || "+=1000", scrub: true },
+				animation = lottie.loadAnimation({
+					container: target,
+					renderer: vars.renderer || "svg",
+					loop: false,
+					autoplay: false,
+					path: vars.path
+				});
+			for (let p in vars) { // let users override the ScrollTrigger defaults
+				st[p] = vars[p];
+			}
+			animation.addEventListener("DOMLoaded", function () {
+				gsap.to(playhead, {
+					frame: animation.totalFrames - 1,
+					ease: "none",
+					// onUpdate: () => animation.goToAndStop(playhead.frame, true),
+					onUpdate: function () {
+						animation.goToAndStop(playhead.frame, true);
+						// console.log("progress:", self.progress.toFixed(3), "direction:", self.direction, "velocity", self.getVelocity());
+						// console.log('안녕');
+					},
+					/* onUpdate: self => {
+						console.log("progress:", self.progress.toFixed(3), "direction:", self.direction, "velocity", self.getVelocity());
+					}, */
+					scrollTrigger: st,
+				});
+				// }).set($("#animationWindow2"), {fill:'#2cc52c'}) ;
+				// in case there are any other ScrollTriggers on the page and the loading of this Lottie asset caused layout changes
+				ScrollTrigger.sort();
+				ScrollTrigger.refresh();
+				// ScrollTrigger.set($("#animationWindow2"), {fill:'#2cc52c'})();
+			});
+			return animation;
+		}
+		/* //LottieScrollTrigger ------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+
 	}
 	/* //main ------------------------------------------------------------------------------ */
 
@@ -188,13 +378,12 @@ function main() {
 		/* //smoothScroll -------------------------------------------------------------------- */
 
 
-
 		/* LottieScrollTrigger ------------------------------------------ */
 		LottieScrollTrigger({
 			target: "#animationWindow",
 			// path: "https://assets.codepen.io/35984/tapered_hello.json",
 			path: "./datafile/sec05.json",
-			pin : '.cont_ani',
+			pin: '.cont_ani',
 			speed: "medium",
 			// markers: { startColor: "green", endColor: "green" },
 			scrub: true,
@@ -276,7 +465,7 @@ function main() {
 				start: "top top",
 				end: "+=4000",
 				scrub: true,
-				toggleClass: {targets: 'nav', className: 'active'}, // start 시점에서 class가 추가되고 end에서 class가 삭제된다.
+				toggleClass: { targets: 'nav', className: 'active' }, // start 시점에서 class가 추가되고 end에서 class가 삭제된다.
 				// duration : 100,
 				// snap : {
 				// 	duration : 2
@@ -287,22 +476,22 @@ function main() {
 					if (w < -200) {
 						TweenMax.to($('.line svg'), 1, { 'stroke-dashoffset': 7700 })
 					} else {
-						TweenMax.to($('.line svg'), .5, { 'stroke-dashoffset': 8520 })	
+						TweenMax.to($('.line svg'), .5, { 'stroke-dashoffset': 8520 })
 					}
 					if (w < -1420) {
 						TweenMax.to($('.line svg'), 2, { 'stroke-dashoffset': 5000 })
 					} else {
-						TweenMax.to($('.line svg'), .5, { 'stroke-dashoffset': 7700 })	
+						TweenMax.to($('.line svg'), .5, { 'stroke-dashoffset': 7700 })
 					}
 					if (w < -2500) {
 						TweenMax.to($('.line svg'), 1.5, { 'stroke-dashoffset': 3000 })
 					} else {
-						TweenMax.to($('.line svg'), .5, { 'stroke-dashoffset': 5000 })	
+						TweenMax.to($('.line svg'), .5, { 'stroke-dashoffset': 5000 })
 					}
 					if (w < -4450) {
 						TweenMax.to($('.line svg'), 1.5, { 'stroke-dashoffset': 0 })
 					} else {
-						TweenMax.to($('.line svg'), 1, { 'stroke-dashoffset': 3000 })	
+						TweenMax.to($('.line svg'), 1, { 'stroke-dashoffset': 3000 })
 					}
 				}
 			}
@@ -332,7 +521,7 @@ function main() {
 			.to('.box3', { x: 800, duration: 1 })
 		/* //연결되는 트리거 */
 
-		/* json과 결합되는 트리거 */	
+		/* json과 결합되는 트리거 */
 		// const tl4 = gsap.timeline({
 		// 	scrollTrigger: {
 		// 		trigger: '.elm1',
@@ -347,7 +536,7 @@ function main() {
 		// 	}
 		// });
 		// tl4.to('.elm2', { x: 500, duration: 1 })
-		/* //json과 결합되는 트리거 */	
+		/* //json과 결합되는 트리거 */
 
 		/* 움직이는 원 트리거 */
 		const tl2 = gsap.timeline({

@@ -6,6 +6,13 @@
 
 @font-face { font-family: "OmNiGothic"; font-style: normal; font-weight: 600; src: url(../../fonts/210Gothic050.woff) format("woff"); }
 
+/* Inter */
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 300; src: url(../../fonts/InterRegular.woff) format("woff"); }
+
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 400; src: url(../../fonts/InterMedium.woff) format("woff"); }
+
+@font-face { font-family: "Inter"; font-style: normal; font-weight: 600; src: url(../../fonts/InterSemiBold.woff) format("woff"); }
+
 /* reset css */
 article, aside, footer, header, nav, section { display: block; }
 
@@ -129,7 +136,7 @@ a { text-decoration: none; cursor: pointer; color: #000; }
 
 a:link, a:visited, a:active, a:hover { text-decoration: none; }
 
-select, input, button, textarea { -webkit-appearance: none; -moz-appearance: none; appearance: none; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; background-color: transparent; border: 0 none; font-size: 20px; font-weight: 400; font-family: "omnigothic", Arial, Apple SD Gothic Neo, sans-serif, "Apple SD Gothic Neo", AppleGothic, Arial, Helvetica, sans-serif; line-height: 1; }
+select, input, button, textarea { -webkit-appearance: none; -moz-appearance: none; appearance: none; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; background-color: transparent; border: 0 none; font-size: 20px; font-weight: 300; font-family: "omnigothic", Arial, Apple SD Gothic Neo, sans-serif, "Apple SD Gothic Neo", AppleGothic, Arial, Helvetica, sans-serif; line-height: 1; }
 
 select[type="checkbox"], input[type="checkbox"], button[type="checkbox"], textarea[type="checkbox"] { -webkit-appearance: checkbox; }
 
@@ -137,24 +144,26 @@ select[type="radio"], input[type="radio"], button[type="radio"], textarea[type="
 
 select::-ms-expand, input::-ms-expand, button::-ms-expand, textarea::-ms-expand { display: none; }
 
-html, body { font-family: "omnigothic", Arial, Apple SD Gothic Neo, sans-serif, "Apple SD Gothic Neo", AppleGothic, Arial, Helvetica, sans-serif; font-size: 20px; font-weight: 400; color: #000; word-break: keep-all; line-height: 1; letter-spacing: 0; -webkit-font-smoothing: antialiased; }
+html, body { font-family: "omnigothic", Arial, Apple SD Gothic Neo, sans-serif, "Apple SD Gothic Neo", AppleGothic, Arial, Helvetica, sans-serif; font-size: 20px; font-weight: 300; color: #000; word-break: keep-all; line-height: 1; letter-spacing: 0; -webkit-font-smoothing: antialiased; }
 
-strong, h1, h2, h3, h4, h5, h6 { font-weight: 600; }
+strong, h1, h2, h3, h4, h5, h6 { font-weight: 500; }
 
 label, button { cursor: pointer; }
 
 .top { position: fixed; left: 0; bottom: 0; font-size: 50px; color: black; z-index: 9999; }
 
 /* 메인 css --------------------------------------------------------------------------------------------------------- */
+.container { width: 100%; overflow: visible; background-image: linear-gradient(rgba(0, 0, 0, 0.1) 2px, transparent 2px), linear-gradient(90deg, rgba(0, 0, 0, 0.1) 2px, transparent 2px), linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px); background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px; background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px; }
+
 .index { background-color: #777; }
 
 .index section { width: 100%; height: 100vh; }
 
-.index #content { overflow: visible; width: 100%; background-image: linear-gradient(rgba(255, 255, 255, 0.07) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 255, 255, 0.07) 2px, transparent 2px), linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px); background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px; background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px; }
+.index .sec1-container { background-color: #fff; }
 
-.index .sec1-container { background-color: #fff; overflow: hidden; }
+.index .sec1-container .cont { width: 100%; height: 100vh; position: absolute; top: 0; left: 0; overflow: hidden; }
 
-.index .sec1-container .content1 { width: 100%; height: 100vh; display: flex; align-items: center; justify-content: center; }
+.index .sec1-container .content1 { display: flex; align-items: center; justify-content: center; background-color: #a53b3b; display: none; }
 
 .index .sec1-container .content1 .txt_wrap { text-align: center; }
 
@@ -162,17 +171,17 @@ label, button { cursor: pointer; }
 
 .index .sec1-container .content1 .txt_wrap p { padding: 25px 0 0; font-size: 27px; font-weight: 300; color: #2d2d2d; }
 
-.index .sec1-container .content1 .bg_circle { width: 100%; height: 100%; overflow: hidden; position: absolute; display: flex; align-items: center; justify-content: center; }
+.index .sec1-container .content1 .bg_circle { width: 100%; height: 100vh; overflow: hidden; position: absolute; display: flex; align-items: center; justify-content: center; }
 
 .index .sec1-container .content1 .bg_circle img { position: absolute; }
 
-.index .sec1-container .content1 .circle_deco1 { animation: linear infinite circle1 50s; }
+.index .sec1-container .content1 .circle_deco1 { animation: linear infinite circleRotateRight 150s; }
 
-.index .sec1-container .content1 .circle_deco2 { animation: linear infinite circle2 80s; }
+.index .sec1-container .content1 .circle_deco2 { animation: linear infinite circleRotateLeft 110s; }
 
-.index .sec1-container .content1 .circle_deco3 { animation: linear infinite circle1 100s; }
+.index .sec1-container .content1 .circle_deco3 { animation: linear infinite circleRotateRight 90s; }
 
-@keyframes circle1 { 0% { -webkit-transform: rotate(0deg);
+@keyframes circleRotateRight { 0% { -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     -o-transform: rotate(0deg);
@@ -183,7 +192,7 @@ label, button { cursor: pointer; }
     -o-transform: rotate(360deg);
     transform: rotate(360deg); } }
 
-@keyframes circle2 { 0% { -webkit-transform: rotate(0deg);
+@keyframes circleRotateLeft { 0% { -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     -o-transform: rotate(0deg);
@@ -193,6 +202,60 @@ label, button { cursor: pointer; }
     -ms-transform: rotate(-360deg);
     -o-transform: rotate(-360deg);
     transform: rotate(-360deg); } }
+
+.index .sec1-container .content2 { background-color: #045664; opacity: 0; display: none; }
+
+.index .sec1-container .content2 .txt_wrap { width: 100%; height: 100%; text-align: center; display: flex; align-items: center; justify-content: center; }
+
+.index .sec1-container .content2 .txt_wrap > div { position: absolute; }
+
+.index .sec1-container .content2 .txt_wrap p { padding: 25px 0 0; font-size: 30px; font-weight: 300; color: #2d2d2d; line-height: 48px; opacity: 0; -webkit-transform: translate(0, 20px); -moz-transform: translate(0, 20px); -ms-transform: translate(0, 20px); -o-transform: translate(0, 20px); transform: translate(0, 20px); }
+
+.index .sec1-container .content2 .various_circle { width: 100%; height: 100%; position: absolute; top: 0; overflow: hidden; }
+
+.index .sec1-container .content2 .various_circle .round_wrap > div { width: 0; height: 0; position: absolute; left: 50%; top: 50%; overflow: hidden; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); -webkit-border-radius: 100%; -moz-border-radius: 100%; border-radius: 100%; }
+
+.index .sec1-container .content2 .various_circle .round_wrap > div.round_elm1 { background-color: #9fc3ff; margin: -250px 0 0 -401px; /*  width: 330px; height:330px;  */ }
+
+.index .sec1-container .content2 .various_circle .round_wrap > div.round_elm2 { background-color: #63d1c2; margin: -60px 0 0 -700px; /* width:160px; height:160px;  */ }
+
+.index .sec1-container .content2 .various_circle .round_wrap > div.round_elm3 { background-color: #ff5758; margin: 250px 0 0 -560px; /* width:200px; height:200px;  */ }
+
+.index .sec1-container .content2 .various_circle .round_wrap > div.round_elm4 { background-color: #ffd34e; margin: -260px 0 0 700px; /*  width:220px; height:220px; */ }
+
+.index .sec1-container .content2 .various_circle .round_wrap > div.round_elm5 { background-color: #63d1c2; margin: 175px 0 0 402px; /*  width:240px; height:240px; */ }
+
+.index .sec1-container .content2 .various_circle .round_wrap > div.round_elm6 { background-color: #ff5758; margin: 300px 0 0 701px; /*  width:160px; height:160px; */ }
+
+.index .sec1-container .content2 .various_circle .round_wrap > div img { position: absolute; bottom: -100%; }
+
+.index .sec1-container .content2 .various_circle .deco_elm > span { width: 0; height: 0; position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); -webkit-border-radius: 100%; -moz-border-radius: 100%; border-radius: 100%; }
+
+.index .sec1-container .content2 .various_circle .deco_elm > span.deco1 { background-color: #ff5758; margin: -338px 0 0 -42px; }
+
+.index .sec1-container .content2 .various_circle .deco_elm > span.deco2 { background-color: #9fc3ff; margin: 155px 0 0 -735px; }
+
+.index .sec1-container .content2 .various_circle .deco_elm > span.deco3 { background-color: #ffd34e; margin: 175px 0 0 -145px; }
+
+.index .sec1-container .content2 .various_circle .deco_elm > span.deco4 { background-color: #9fc3ff; margin: -140px 0 0 288px; }
+
+.index .sec1-container .content2 .various_circle .deco_elm > span.deco5 { background-color: #ff5758; margin: 419px 0 0 32px; }
+
+.index .sec1-container .content2 .various_circle .deco_elm > span.deco6 { background-color: #63d1c2; margin: 136px 0 0 677px; }
+
+.index .sec1-container .content3 { z-index: 1; }
+
+.index .sec1-container .content3 #animationWindow { width: 1920px !important; height: 970px !important; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) !important; }
+
+.index .sec1-container .content4 { background-color: red; z-index: 2; }
+
+.index .sec1-container .content4 .txt_wrap { width: 100%; height: 100%; padding: 155px 0 0; text-align: center; display: flex; justify-content: center; }
+
+.index .sec1-container .content4 .txt_wrap p { font-size: 30px; line-height: 48px; color: #2d2d2d; font-weight: 400; }
+
+.index .sec1-container .content4 .video_wrap { width: 100%; min-width: 1700px; position: absolute; top: 50%; left: 50%; z-index: -1; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+
+.index .sec1-container .content4 .video_wrap video { width: 100%; }
 
 /* //메인 css --------------------------------------------------------------------------------------------------------- */
 /* 기술 연습 css ------------------------------------------------------------------------------------------------*/
