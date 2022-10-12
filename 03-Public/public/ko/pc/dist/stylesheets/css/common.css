@@ -453,7 +453,7 @@ footer .footer .fc2 .donate_btn { float: right; padding: 25px 0 0; }
 
 .index .sec3 .min_wrap .min:nth-of-type(odd) { background-color: green; }
 
-.index .sec4 { background-color: #fff; position: fixed; top: 0; }
+.index .sec4 { background-color: #fff; }
 
 .index .sec4 .cont { width: 100%; height: 100vh; position: absolute; top: 0; left: 0; overflow: hidden; background-color: #fff; }
 
