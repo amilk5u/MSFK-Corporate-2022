@@ -1,0 +1,336 @@
+@@include("./include/header.html")
+<!-- container -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.3/lottie.min.js"></script>
+<script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
+<div class="container index">
+	<!-- <img src="./images/main/bg_circle_img.png" alt=""> -->
+	<section id="intro" class="sec1">
+		<div class="cont content1">
+			<div class="txt_wrap">
+				<h1>동행기업</h1>
+				<p>국경업는의사회를 움직이는 하나의 힘</p>
+			</div>
+			<div class="bg_circle">
+				<img class="circle_deco1" src="./images/main/intro_circle1.png" alt="">
+				<img class="circle_deco2" src="./images/main/intro_circle2.png" alt="">
+				<img class="circle_deco3" src="./images/main/intro_circle3.png" alt="">
+			</div>
+		</div>
+		<div class="cont content2">
+			<div class="txt_wrap">
+				<div class="txt_cont1">
+					<p>국경없는의사회의 <br> 가치와 원칙을 함께하는</p>
+				</div>
+				<div class="txt_cont2">
+					<p>동행기업이 되어주세요.</p>
+				</div>
+				<div class="txt_cont3">
+					<p>동행기업은 국경없는의사회가 보다 많은 분쟁지역과 의료 사각지대에서 <br> 안정적인 의료 구호 활동을 펼칠 수 있도록</p>
+				</div>
+				<div class="txt_cont4">
+					<p>기업의 이름으로 국경없는의사회의 활동을 후원하며, <br> 전세계의 긴급 구호 상황에 놓인 사람들을 위해 <br> 관심과 지원을 지속하는 파트너십입니다. </p>
+				</div>
+			</div>
+			<div class="various_circle">
+				<div class="round_wrap">
+					<div class="round_elm1">
+						<img src="./images/main/round_img1.png" alt="">
+					</div>
+					<div class="round_elm2">
+						<img src="./images/main/round_img2.png" alt="">
+					</div>
+					<div class="round_elm3">
+						<img src="./images/main/round_img3.png" alt="">
+					</div>
+					<div class="round_elm4">
+						<img src="./images/main/round_img6.png" alt="">
+					</div>
+					<div class="round_elm5">
+						<img src="./images/main/round_img4.png" alt="">
+					</div>
+					<div class="round_elm6">
+						<img src="./images/main/round_img5.png" alt="">
+					</div>
+				</div>
+				<div class="deco_wrap">
+					<span class="circle_deco1"></span>
+					<span class="circle_deco2"></span>
+					<span class="circle_deco3"></span>
+					<span class="circle_deco4"></span>
+					<span class="circle_deco5"></span>
+				</div>
+			</div>
+			<div id="circularLineMotion"> </div>
+		</div>
+		<div class="cont content3">
+			<div class="earth_contain">
+				<div class="txt_wrap">
+					<p>국경없는의사회는 <br> 기업 및 개인 후원자의 든든한 후원으로</p>
+				</div>
+				<div class="video_wrap">
+					<video loop="loop" muted="" autoplay="autoplay" src="./datafile/earth_sphere_car.mp4"> </video>
+				</div>
+				<div class="circle_cont">
+					<span class="circle_deco1"></span>
+					<span class="circle_deco2"></span>
+					<span class="circle_deco3"></span>
+					<span class="circle_deco4"></span>
+					<span class="circle_deco5"></span>
+					<span class="circle_deco6"></span>
+				</div>
+				<div class="glitter_cont">
+					<img class="glitter_deco1" src="./images/main/glitter_deco1.png" alt="">
+					<img class="glitter_deco2" src="./images/main/glitter_deco1.png" alt="">
+					<img class="glitter_deco3" src="./images/main/glitter_deco1.png" alt="">
+					<img class="glitter_deco4" src="./images/main/glitter_deco1.png" alt="">
+					<img class="glitter_deco5" src="./images/main/glitter_deco1.png" alt="">
+					<img class="glitter_deco6" src="./images/main/glitter_deco1.png" alt="">
+				</div>
+			</div>
+			<div class="graph_contain">
+				<div class="txt_wrap">
+					<p>재원의 <span class="inter_font">97%</span>를 <br> 민간 후원금으로 마련하고 있습니다.</p>
+				</div>
+				<div class="circle_wrap">
+					<div class="txt_percentage">
+						<div class="txt_elm1">
+							<span class="inter_font">1.5<i>%</i> </span> 공공기관
+						</div>
+						<div class="txt_elm2">
+							<span class="inter_font">1.5<i>%</i></span> 기타
+						</div>
+					</div>
+					<div class="income_wrap">
+						<span class="income_tit">총 수입</span>
+						<div class="money_tit">
+							<strong> <span class="inter_font">19</span> 억 <span class="inter_font">3500</span>만 </strong>
+							<span> 유로</span>
+						</div>
+					</div>
+					<div class="bottom_txt">
+						<strong class="inter_font"> 97.1 <span>%</span> </strong>
+						<span>민간 후원금</span>
+					</div>
+				</div>
+			</div>
+			<div id="earthGraphMotion"></div>
+		</div>
+		<!-- 원 & 스트록 모션 lottie 로 구현하기 -->
+		<!-- <div class="cont content4">
+			<div class="transparent_wrap">
+				<div class="one"></div>
+			</div>
+		</div> -->
+		<!-- //원 & 스트록 모션 lottie 로 구현하기 -->
+	</section>
+	<section id="social" class="sec2">
+		<div class="cont content1">
+			<div class="txt_wrap">
+				<p class="txt_elm1">기업의 사회 공헌 활동은</p>
+				<p class="txt_elm2">종교, 정치적 이익과 관계없이 <br> 독립적인 의료지원을 펼치는 </p>
+				<p class="txt_elm3">우리의 큰 원동력이 됩니다.</p>
+				<p class="txt_elm4">우리는 변함없는 관심과 <br> 국경없는 나눔을 실천하는 기업과 함께 </p>
+				<p class="txt_elm5">국제 사회의 지속적인 발전에 기여하고, <br> 글로벌 파트너십을 만들어 갑니다.</p>
+			</div>
+			<div id="seedMotion"></div>
+			<div class="circle_line">
+				<img class="circle_img1" src="./images/main/navy_bg_circle_img1.png" alt="">
+				<img class="circle_img2" src="./images/main/navy_bg_circle_img2.png" alt="">
+				<span class="circle_deco1"></span>
+				<span class="circle_deco2"></span>
+				<span class="circle_deco3"></span>
+				<span class="circle_deco4"></span>
+				<span class="circle_deco5"></span>
+				<span class="circle_deco6"></span>
+			</div>
+			<div class="video_wrap">
+				<video loop="loop" muted="" autoplay="autoplay" src="./datafile/earth_sphere_navy.mp4"> </video>
+			</div>
+		</div>
+		<div class="cont content2">
+			<div class="hidden_box">
+				<img src="./images/main/bg_circle_img1.png" alt="">
+				<div class="hidden_txt">
+					<p>도움이 필요한 곳을 향한 <br> 우리의 끈끈한 동행은 오늘도 멈추지 않습니다. </p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- <div class="sec3">
+		<div class="line_wrap">
+			<div class="line">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8009 1079.86" enable-background="new 0 0 8009 1079.86" xml:space="preserve">
+					<path d="
+						M1412.155,542.777c0,0,130.979-29.872,296.425,95.743c36.973,28.072,98.549,40.73,143.336,43.998
+						c78.694,5.742,141.965-25.784,196.009-81.112c47.536-48.664,96.92-95.975,137.886-150.521
+						c21.366-28.449,39.976-59.101,53.637-92.009c13.692-32.983,23.097-67.664,41.269-98.686
+						c37.076-63.297,101.746-82.777,171.521-90.423c50.003-5.48,100.838,2.152,147.123,21.809
+						c35.095,14.904,63.991,40.116,95.438,61.053c28.006,18.646,58.984,34.131,89.765,47.659
+						c64.603,28.393,133.639,42.426,203.165,52.532c85.022,22.978,133.277,53.617,186.128,157.021
+						c45.192,93.446,193.787,381.445,335.489,173.108c33.444-49.172,56.914-106.865,85.281-159.072
+						c27.452-50.523,56.523-101.902,95.462-144.621c28.047-30.771,64.202-58.787,107.535-60.259c65.06-2.21,116.399,53.462,161.936,92.9
+						c27.305,23.648,54.896,47.812,87.743,63.531c104.03,49.782,231.963-0.58,329.873-41.417
+						c130.213-45.957,258.895-87.319,258.895-87.319s90.383-34.468,115.658,48.255c28.342,84.256,106.469,362.298,106.469,362.298
+						s72.766,302.553,382.979,152.425c89.072-45.154,178.499-89.614,267.836-134.241c93.181-46.548,186.083-93.746,279.72-139.371
+						c116.734-56.88,216.272-157.833,305.721-249.536c58.152-59.619,125.979-138.071,214.136-147.995
+						c43.049-4.847,84.095,10.673,118.771,35.436c24.535,17.521,46.055,39.064,65.596,61.93c26.145,30.593,50.023,61.077,67.094,97.718
+						c10.826,23.24,21.787,46.446,33.139,69.433c24.668,49.951,52.243,99.034,88.523,141.589
+						c56.496,66.269,132.456,108.649,219.295,118.74c68.17,4.595,179.234,6.893,227.488-121.787
+						c12.006-32.011,15.916-68.295,25.195-101.261c10.608-37.687,23.575-75.669,44.547-108.984
+						c19.051-30.262,45.849-56.348,81.364-65.325c46.604-11.78,95.394,6.694,135.858,28.9c62.229,34.15,115.294,80.09,181.927,106.63
+						c51.692,20.589,106.164,33.689,161.368,40.322c82.54,9.918,166.365,5.635,248.295-7.517" />
+				</svg>
+			</div>
+		</div>
+		<div class="min_wrap">
+			<div class="min"></div>
+			<div class="min"></div>
+			<div class="min"></div>
+			<div class="min"></div>
+			<div class="min"></div>
+		</div>
+	</div> -->
+	<!-- section 4 (동행기업 참여방법 / 후원절차)-->
+	<section id="corporation" class="sec4">
+		<h1>동행기업 참여방법/후원절차</h1>
+		<div class="cont content1">
+			<div class="txt_wrap">
+				<strong> <i></i> 동행기업 참여방법 </strong>
+			</div>
+			<div class="scene_contain">
+				<div class="scene_wrap scene1">
+					<div class="elm_cont elm1">
+						<img src="./images/main/participating_icon1.png" alt="">
+						<b>기금 기부</b>
+						<p>기업의 이름으로 기금을 전달하며 <br> 일시 후원 또는 정기 후원으로 <br> 함께 하실 수 있습니다. </p>
+					</div>
+					<div class="elm_cont elm2">
+						<img src="./images/main/participating_icon2.png" alt="">
+						<b>임직원 기부</b>
+						<p>급여의 일부를 기부하거나 <br> 임직원이 주체가 되어 <br> 모금 활동을 한 후 기금을 전달합니다.</p>
+					</div>
+					<div class="elm_cont elm3">
+						<img src="./images/main/participating_icon3.png" alt="">
+						<b>매칭 기부</b>
+						<p>특정 국가 프로젝트를 지정하거나, <br> 병원 설립, 구급차 구매 비용의 <br> 일부를 지원할 수 있습니다.</p>
+					</div>
+				</div>
+				<div class="scene_wrap scene2">
+					<div class="elm_cont elm1">
+						<img src="./images/main/participating_icon4.png" alt="">
+						<b>공익 연계 마케팅<span>(CRM)</span> </b>
+						<p>특정 상품이나 행사의 판매 수익금을 <br> 기부함으로써 소비자와 기업이 <br> 함께 기부합니다. </p>
+					</div>
+					<div class="elm_cont elm2">
+						<img src="./images/main/participating_icon5.png" alt="">
+						<b>미씽맵 참여 기부</b>
+						<p>가상공간 매타버스를 통한 <br> ‘미씽맵 생명을 살리는 지도 만들기’ <br> 봉사활동을 체험하는 참여형 기부입니다.</p>
+					</div>
+					<div class="elm_cont elm3">
+						<img src="./images/main/participating_icon6.png" alt="">
+						<b>이벤트 기부</b>
+						<p>스포츠 행사, 바자회, 동호회 등 <br> 사내 이벤트와 의미있는 날을 연계하여 <br> 특별한 행사를 기획하고 기부합니다. </p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="cont content2">
+			
+			<div class="txt_wrap">
+				<strong> <i></i> 동행기업 후원절차 </strong>
+			</div>
+			<div class="shell_cont">
+				<span class="line_stroke"></span>
+				<div class="scene_wrap">
+					<div class="elm_cont">
+						<div class="number_wrap">
+							<span>1</span>
+						</div>
+						<b>후원 문의</b>
+						<p>기업의 사회공헌 목적과 <br> 파트너십 가능 여부를 확인합니다. </p>
+					</div>
+					<div class="elm_cont">
+						<div class="number_wrap">
+							<span>2</span>
+						</div>
+						<b>제안 협의</b>
+						<p>후원방법과 세부내용을 <br> 논의합니다.</p>
+					</div>
+					<div class="elm_cont">
+						<div class="number_wrap">
+							<span>3</span>
+						</div>
+						<b>후원 체결 </b>
+						<p>후원 협약을 확정하고 <br> 실행합니다.</p>
+					</div>
+					<div class="elm_cont">
+						<div class="number_wrap">
+							<span>4</span>
+						</div>
+						<b>후원 보고 </b>
+						<p>구호활동 결과를 보고하고 <br> 지속적인 협력을 논의합니다. </p>
+					</div>
+				</div>
+				<div class="btn_wrap">
+					<a href="">동행기업 후원 문의하기</a>
+					<a href="">동행기업 후원 소개서 </a>
+				</div>
+				<div class="copyright">
+					<span>국제 인도주의 의료 구호 단체인 국경없는의사회는 우리가 지향하는 인도적 목표와 의료적 가치가 상충하는 경우 관련 기업의 지원을 받아서는 안 된다고 굳게 믿고 있습니다.</span>
+					<span>국경없는의사회 한국 사무소는 다음 범주에 해당하는 기업의 지원은 받지 않거나 제한하고 있습니다.</span>
+					<span>담배, 술, 무기 제조업 / 광물, 석유, 가스, 그 밖의 채굴 산업 (국경없는의사회가 활동하는 지역에 한함) / 제약업</span>
+				</div>
+			</div>
+		</div>
+		<div class="cont content3">
+			<div class="txt_wrap">
+				<strong> <i></i> 동행기업 후원절차 </strong>
+			</div>
+			<div class="scene_wrap scene1">
+				<div class="elm_cont">
+					<img src="" alt="">
+					<div class="elm_box">
+						<b>로고 제공 </b>
+						<p>수익금의 일부를 기부함을 알릴 수 있는 <br> 동행기업 로고와 증서를 드립니다.</p>
+					</div>
+				</div>
+				<div class="elm_cont">
+					<img src="" alt="">
+					<div class="elm_box">
+						<b>현판 • 도어 스티커</b>
+						<p>동행기업을 나타낼 수 있는 <br> 현판과 도어 스티커를 드립니다.</p>
+					</div>
+				</div>
+				<div class="elm_cont">
+					<img src="" alt="">
+					<div class="elm_box">
+						<b>온라인 홍보</b>
+						<p>동행기업의 따뜻한 후원소식을 <br> 국경없는의사회 을 통해 홍보합니다.</p>
+					</div>
+				</div>
+				<div class="elm_cont">
+					<img src="" alt="">
+					<div class="elm_box">
+						<b>기부금 영수증 발급 </b>
+						<p>기부하신 후원금에 대해 <br> 소득 공제 혜택을 받을 수 있습니다.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="cont content4">
+			<div class="txt_wrap">
+				<p>우리의 동행은 보다 많은 환자를 살릴 수 있습니다. </p>
+				<strong> 국경없는의사회를 움직이는 하나의 힘 <span>지금, 동행기업이 되어주세요.</span> </strong>
+			</div>
+			<div class="bg_circle">
+				<img class="circle_deco1" src="./images/main/intro_circle1.png" alt="">
+				<img class="circle_deco2" src="./images/main/intro_circle2.png" alt="">
+				<img class="circle_deco3" src="./images/main/intro_circle3.png" alt="">
+			</div>
+		</div>
+	</section>
+	<!-- //section 4 (동행기업 참여방법 / 후원절차)-->
+</div>
+<!-- //container --> @@include("./include/footer.html")
