@@ -1,0 +1,52 @@
+@charset "UTF-8";
+body {overflow-x:hidden; }
+header {
+  width:100%; position:absolute; z-index:100;
+  #logo {
+    width:vw(253); margin:vw(30) 0 0 vw(40);
+    img { width:100%; }
+  }
+  nav {
+    position:fixed; bottom:vw(220); right:vw(40); z-index:99;
+    &.active { bottom:vw(320); }
+    .page_dir { width:vw(100); height:vw(100); display:block; background:url("../../images/common/nav_up.png") no-repeat 0 0; background-size:cover; font-size:0; overflow:hidden; }
+    .page_dir.next {
+      margin:vw(20) 0 0;
+      @include transform(rotate(180deg));
+    }
+  }
+}
+
+footer {
+  position:relative; background-color:#1b1b1b; z-index:50;
+  //donate btn 기본
+  .donate_wrap {
+    width:100%; padding:0 vw(40) vw(40); position:fixed; bottom:0; z-index:10;
+    @include boxSizing;
+    &.active { position:absolute; padding:0 vw(40) vw(141); bottom:0; opacity:1; }
+    .donate_btn {
+      text-align:center; background-color:$red; font-style:normal; font-weight:$regular; border-radius:vw(10);
+      @include boxSizing;
+      a { display:block; padding:vw(48) 0 vw(41); font-size:vw(42); color:$white; font-weight:$regular; letter-spacing:vw(-1.8); }
+    }
+  }
+  //footer
+  .footer_wrap {
+    width:100%; text-align:center; padding:vw(24) 0 vw(20); font-family:$omnigothic;
+    @include boxSizing;
+    ul {
+      padding:vw(10) 0 0; overflow:hidden; font-size:0;
+      &.address { padding:0; }
+      li {
+        position:relative; padding:0 0 0 vw(15); display:inline-block; vertical-align:middle; font-size:vw(18); color:#707279; font-weight:$light; line-height:vw(20); letter-spacing:vw(-1.2);
+        @extend %clearfix;
+        &:first-child {
+          padding:0;
+          &:before { display:none; }
+        }
+        &:before { width:1px; height:100%; content:""; display:block; background-color:#323437; position:absolute; left:vw(7); top:vw(1); }
+        span { font-weight:$regular; }
+      }
+    }
+  }
+}
