@@ -1,13 +1,13 @@
 function main() {
 
-/* 	setTimeout(function () {
-		TweenMax.to($('.loading'), 1.2, { display:'none', opacity:0 })
-	}, 1200);
-	setTimeout(function () {
-		$('body').removeClass('scroll_bar');
-		// $('header').addClass('scroll_p');
-		$(window).scrollTop(0);
-	}, 2300); */
+	/* 	setTimeout(function () {
+			TweenMax.to($('.loading'), 1.2, { display:'none', opacity:0 })
+		}, 1200);
+		setTimeout(function () {
+			$('body').removeClass('scroll_bar');
+			// $('header').addClass('scroll_p');
+			$(window).scrollTop(0);
+		}, 2300); */
 
 	const $intro = $('#intro');
 	const $social = $('#social');
@@ -50,7 +50,7 @@ function main() {
 			document.body.style.height = height + "px";
 			return height - document.documentElement.clientHeight;
 		}
- 
+
 		ScrollTrigger.addEventListener("refresh", () => {
 			removeScroll();
 			requestAnimationFrame(removeScroll);
@@ -128,29 +128,29 @@ function main() {
 		sec1ContainerTimeLine.to($sec1Content2, .01, { display: 'block', opacity: 1 }, "-=28.3")
 		sec1ContainerTimeLine.to('#intro .content2 .txt_cont1 p', .4, { opacity: 1, yPercent: -20 }, "-=28.3")
 		// 메인 원형 생기기
-		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm6', .2, { width: 40, height: 40 }, "-=28.39")
-		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm1', .3, { width: 60, height: 60 }, "-=28.37")
-		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm5', .3, { width: 60, height: 60 }, "-=28.35")
-		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm2', .3, { width: 30, height: 30 }, "-=28.33")
-		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm4', .3, { width: 50, height: 50 }, "-=28.31")
-		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm3', .2, { width: 50, height: 50 }, "-=28.29")
+		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm6', .2, { width: 40, height: 40 }, "-=28.39")
+		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm1', .3, { width: 60, height: 60 }, "-=28.37")
+		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm5', .3, { width: 60, height: 60 }, "-=28.35")
+		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm2', .3, { width: 30, height: 30 }, "-=28.33")
+		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm4', .3, { width: 50, height: 50 }, "-=28.31")
+		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm3', .2, { width: 50, height: 50 }, "-=28.29")
 		sec1ContainerTimeLine.to('#intro .content2 .txt_cont1 p', .3, { opacity: 0 }, "-=27.8")
 		// 텍스트 2
 		sec1ContainerTimeLine.to('#intro .content2 .txt_cont2 p', .3, { opacity: 1, yPercent: -20 }, "-=27.5")
 		// 메인 원형 커지기
-		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm1', .3, { width: 330, height: 330 }, "-=27.49")
-		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm6', .4, { width: 160, height: 160 }, "-=27.48")
-		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm3', .2, { width: 200, height: 200 }, "-=27.47")
-		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm4', .4, { width: 220, height: 220 }, "-=27.46")
-		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm2', .4, { width: 160, height: 160 }, "-=27.45")
-		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm5', .4, { width: 240, height: 240 }, "-=27.44")
-		// 작은 데코 원형
-		// sec1ContainerTimeLine.to('#intro .content2 .deco_wrap .circle_deco1', .3, { width: 20, height: 20 }, "-=27.43")
-		// sec1ContainerTimeLine.to('#intro .content2 .deco_wrap .circle_deco3', .3, { width: 30, height: 30 }, "-=27.42")
-		// sec1ContainerTimeLine.to('#intro .content2 .deco_wrap .circle_deco6', .3, { width: 20, height: 20 }, "-=27.41")
-		// sec1ContainerTimeLine.to('#intro .content2 .deco_wrap .circle_deco4', .3, { width: 30, height: 30 }, "-=27.40")
-		// sec1ContainerTimeLine.to('#intro .content2 .deco_wrap .circle_deco5', .3, { width: 20, height: 20 }, "-=27.39")
-		// sec1ContainerTimeLine.to('#intro .content2 .deco_wrap .circle_deco2', .3, { width: 20, height: 20 }, "-=27.38")
+		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm1', .3, { 'clip-path': 'circle(100% at 50% 50%)' }, "-=27.49")
+		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm6', .4, { width: 160, height: 160 }, "-=27.49")
+		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm3', .2, { width: 200, height: 200 }, "-=27.49")
+		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm4', .4, { width: 220, height: 220 }, "-=27.49")
+		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm2', .4, { width: 160, height: 160 }, "-=27.49")
+		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm5', .4, { width: 240, height: 240 }, "-=27.49")
+		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm2 img', .3, { bottom: 0 }, "-=27.49")
+		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm6 img', .3, { bottom: 0 }, "-=27.49")
+		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm4 img', .3, { bottom: 0 }, "-=27.49")
+		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm1 img', .3, { bottom: 0 }, "-=27.49")
+		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm5 img', .3, { bottom: 0 }, "-=27.49")
+		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm3 img', .3, { bottom: 0 }, "-=27.49")
+		
 		sec1ContainerTimeLine.to('#intro .content2 .txt_cont2 p', .5, { opacity: 0 }, "-=26.8")
 
 		sec1ContainerTimeLine.to('#intro .content2 .txt_cont3 p', .3, { opacity: 1, yPercent: -20 }, "-=26.5")
@@ -161,7 +161,7 @@ function main() {
 		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm1 img', .3, { bottom: 0 }, "-=26.43")
 		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm5 img', .3, { bottom: 0 }, "-=26.39")
 		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm3 img', .3, { bottom: 0 }, "-=26.35")
-		sec1ContainerTimeLine.to('#intro .content2 .txt_cont3 p', .5, { opacity: 0}, "-=25.9")
+		sec1ContainerTimeLine.to('#intro .content2 .txt_cont3 p', .5, { opacity: 0 }, "-=25.9")
 
 
 		// 작은 데코 사라지기 *****
