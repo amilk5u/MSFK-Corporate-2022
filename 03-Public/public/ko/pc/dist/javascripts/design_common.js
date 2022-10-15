@@ -132,9 +132,9 @@ function main() {
 		scrollTrigger: {
 			trigger: $intro,
 			start: "top top",
-			end: "+=29000", // 전체 스크롤 길이.
+			end: "+=10000", // 전체 스크롤 길이.
 			pin: $intro,
-			scrub: 1,
+			scrub: 2,
 			pinSpacing: true,
 			// markers: { startColor: "blue", endColor: "blue", },
 		}
@@ -144,118 +144,243 @@ function main() {
 		const sec1ContainerTimeLine = gsap.timeline();
 		/* content1 *******/
 		// 동행기업 국경없는의사회를 움직이는 하나의 힘
-		sec1ContainerTimeLine.to($sec1Content1Title, .3, { opacity: 0, yPercent: -20 }, "-=28.8")
-		sec1ContainerTimeLine.to($sec1Content1Txt, .3, { opacity: 0, yPercent: -20 }, "-=28.8")
+		sec1ContainerTimeLine.to($sec1Content1Title, .25, { opacity: 0, yPercent: -20 }, "-=9.795")
+		sec1ContainerTimeLine.to($sec1Content1Txt, .25, { opacity: 0, yPercent: -20 }, "-=9.79")
 		// 라운드 배경 데코
-		sec1ContainerTimeLine.to($sec1Cont1circleDeco1, .3, { opacity: 0 }, "-=28.8")
-		sec1ContainerTimeLine.to($sec1Cont1circleDeco2, .2, { opacity: 0 }, "-=28.8")
-		sec1ContainerTimeLine.to($sec1Cont1circleDeco3, .2, { opacity: 0 }, "-=28.8")
-		sec1ContainerTimeLine.to('#intro .content1 .mini_deco', .2, { opacity: 0 }, "-=28.8")
-		sec1ContainerTimeLine.to('#intro .content1 .glitter_cont', .2, { opacity: 0 }, "-=28.8")
-		sec1ContainerTimeLine.to($sec1Content1, .3, { display: 'none', opacity: 0 }, "-=28.3")
+		sec1ContainerTimeLine.to($sec1Cont1circleDeco1, .3, { opacity: 0 }, "-=9.785")
+		sec1ContainerTimeLine.to('#intro .content1 .glitter_cont', .2, { opacity: 0 }, "-=9.78")
+		sec1ContainerTimeLine.to($sec1Cont1circleDeco2, .3, { opacity: 0 }, "-=9.775")
+		sec1ContainerTimeLine.to('#intro .content1 .mini_deco', .2, { opacity: 0 }, "-=9.77")
+		sec1ContainerTimeLine.to($sec1Cont1circleDeco3, .3, { opacity: 0 }, "-=9.765")
+		sec1ContainerTimeLine.to($sec1Content1, .3, { display: 'none', opacity: 0 }, "-=9.76")
 
-		/* content2 *******/
-		sec1ContainerTimeLine.to($sec1Content2, .01, { display: 'block', opacity: 1 }, "-=28.3")
-		sec1ContainerTimeLine.to('#intro .content2 .txt_cont1 p', .4, { opacity: 1, yPercent: -20 }, "-=28.3")
-		// 메인 원형 생기기
-		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm6', .2, { width: 40, height: 40 }, "-=28.39")
-		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm1', .3, { width: 60, height: 60 }, "-=28.37")
-		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm5', .3, { width: 60, height: 60 }, "-=28.35")
-		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm2', .3, { width: 30, height: 30 }, "-=28.33")
-		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm4', .3, { width: 50, height: 50 }, "-=28.31")
-		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm3', .2, { width: 50, height: 50 }, "-=28.29")
-		sec1ContainerTimeLine.to('#intro .content2 .txt_cont1 p', .3, { opacity: 0 }, "-=27.8")
-		// 텍스트 2
-		sec1ContainerTimeLine.to('#intro .content2 .txt_cont2 p', .3, { opacity: 1, yPercent: -20 }, "-=27.5")
+		// /* content2 *******/
+		sec1ContainerTimeLine.to($sec1Content2, .01, { display: 'block', opacity: 1 }, "-=9.75")
+		// // 메인 원형 생기기
+		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm2', .3, { 'clip-path': 'circle(30px at 50% 50%)' }, "-=9.74")
+		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm5', .2, { 'clip-path': 'circle(60px at 50% 50%)' }, "-=9.535")
+		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm1', .2, { 'clip-path': 'circle(60px at 50% 50%)' }, "-=9.73")
+		// 텍스트 1 (국경없는의사회의 가치와 원칙을 함께하는 동행기업이 되어주세요.)
+		sec1ContainerTimeLine.to('#intro .content2 .txt_cont1 p', .2, { opacity: 1, yPercent: -20 }, "-=9.65")
+		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm4', .3, { 'clip-path': 'circle(50px at 50% 50%)' }, "-=9.65")
+		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm3', .3, { 'clip-path': 'circle(50px at 50% 50%)' }, "-=9.645")
+		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm6', .2, { 'clip-path': 'circle(40px at 50% 50%)' }, "-=9.64")
+
+
+		sec1ContainerTimeLine.to('#intro .content2 .txt_cont1 p', .3, { opacity: 0 }, "-=9")
+		// 텍스트 2 (동행기업은 국경없는의사회가 보다 많은 분쟁지역과 의료 사각지대에서 안정적인 의료 구호 활동을 펼칠 수 있도록)
+		sec1ContainerTimeLine.to('#intro .content2 .txt_cont2 p', .3, { opacity: 1, yPercent: -20 }, "-=8.9")
+		sec1ContainerTimeLine.to('#intro .content2 .txt_cont3 p', .2, { opacity: 1, yPercent: -20 }, "-=8.859")
 		// 메인 원형 커지기
-		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm1', .3, { 'clip-path': 'circle(100% at 50% 50%)' }, "-=27.49")
-		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm6', .4, { width: 160, height: 160 }, "-=27.49")
-		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm3', .2, { width: 200, height: 200 }, "-=27.49")
-		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm4', .4, { width: 220, height: 220 }, "-=27.49")
-		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm2', .4, { width: 160, height: 160 }, "-=27.49")
-		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm5', .4, { width: 240, height: 240 }, "-=27.49")
-		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm2 img', .3, { bottom: 0 }, "-=27.49")
-		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm6 img', .3, { bottom: 0 }, "-=27.49")
-		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm4 img', .3, { bottom: 0 }, "-=27.49")
-		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm1 img', .3, { bottom: 0 }, "-=27.49")
-		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm5 img', .3, { bottom: 0 }, "-=27.49")
-		// sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm3 img', .3, { bottom: 0 }, "-=27.49")
-		
-		sec1ContainerTimeLine.to('#intro .content2 .txt_cont2 p', .5, { opacity: 0 }, "-=26.8")
+		sec1ContainerTimeLine.to('#intro .content2 .round_wrap > div span', .3, { opacity: 1 }, "-=8.85")
+		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm1', .7, { 'clip-path': 'circle(330px at 50% 50%)' }, "-=8.85")
+		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm2', .7, { 'clip-path': 'circle(160px at 50% 50%)' }, "-=8.845")
+		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm3', .7, { 'clip-path': 'circle(200px at 50% 50%)' }, "-=8.84")
+		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm4', .8, { 'clip-path': 'circle(220px at 50% 50%)' }, "-=8.835")
+		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm5', .8, { 'clip-path': 'circle(240px at 50% 50%)' }, "-=8.83")
+		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm6', .7, { 'clip-path': 'circle(160px at 50% 50%)' }, "-=8.825")
+		sec1ContainerTimeLine.to('#intro .content2 .round_wrap > div', .3, { 'backgroundColor': 'transparent' }, "-=8.825")
+		// 작은 데코 원형
+		sec1ContainerTimeLine.to('#intro .content2 .deco_wrap .circle_deco1', .2, { width: 20, height: 20 }, "-=8.83")
+		sec1ContainerTimeLine.to('#intro .content2 .deco_wrap .circle_deco3', .2, { width: 30, height: 30 }, "-=8.83")
+		sec1ContainerTimeLine.to('#intro .content2 .deco_wrap .circle_deco6', .2, { width: 20, height: 20 }, "-=8.83")
+		sec1ContainerTimeLine.to('#intro .content2 .deco_wrap .circle_deco4', .2, { width: 30, height: 30 }, "-=8.83")
+		sec1ContainerTimeLine.to('#intro .content2 .deco_wrap .circle_deco5', .2, { width: 20, height: 20 }, "-=8.83")
+		sec1ContainerTimeLine.to('#intro .content2 .deco_wrap .circle_deco2', .2, { width: 20, height: 20 }, "-=8.83")
 
-		sec1ContainerTimeLine.to('#intro .content2 .txt_cont3 p', .3, { opacity: 1, yPercent: -20 }, "-=26.5")
-		// 사진 이미지 생기기
-		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm2 img', .3, { bottom: 0 }, "-=26.49")
-		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm6 img', .3, { bottom: 0 }, "-=26.46")
-		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm4 img', .3, { bottom: 0 }, "-=26.44")
-		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm1 img', .3, { bottom: 0 }, "-=26.43")
-		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm5 img', .3, { bottom: 0 }, "-=26.39")
-		sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm3 img', .3, { bottom: 0 }, "-=26.35")
-		sec1ContainerTimeLine.to('#intro .content2 .txt_cont3 p', .5, { opacity: 0 }, "-=25.9")
-
+		sec1ContainerTimeLine.to('#intro .content2 .txt_cont3 p', .2, { opacity: 0 }, "-=8.2")
+		// 텍스트 4 (기업의 이름으로 국경없는의사회의 활동을 후원하며,전세계의 긴급 구호 상황에 놓인 사람들을 위해 <br> 관심과 지원을 지속하는 파트너십입니다. )
+		sec1ContainerTimeLine.to('#intro .content2 .txt_cont4 p', .3, { opacity: 1, yPercent: -20 }, "-=8.1")
 
 		// 작은 데코 사라지기 *****
-		sec1ContainerTimeLine.to('#intro .content2 .deco_wrap span', .0001, { opacity: 0 }, "-=25.55")
-		// 텍스트 4
-		sec1ContainerTimeLine.to('#intro .content2 .txt_cont4 p', .5, { opacity: 1, yPercent: -20 }, "-=25.6")
-		sec1ContainerTimeLine.to('#intro .content2', .3, { display: 'none', opacity: 0 }, "-=24")
-		sec1ContainerTimeLine.to('#intro .content3', .3, { display: 'flex', opacity: 1 }, "-=24")
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .txt_wrap p', .3, { opacity: 1, yPercent: -30 }, "-=24")
+		sec1ContainerTimeLine.to('#intro .content2 .deco_wrap span', .0001, { opacity: 0 }, "-=7.9")
+		// 사라지기 
+		sec1ContainerTimeLine.to('#intro .content2', .15, { display: 'none', opacity: 0 }, "-=7")
+		sec1ContainerTimeLine.to('#intro .content3', .3, { display: 'flex', opacity: 1 }, "-=7")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .txt_wrap p', .3, { opacity: 1, yPercent: -30 }, "-=7")
 
 		// video
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .video_wrap video', .3, { opacity: 1 }, "-=24")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .video_wrap video', .3, { opacity: 1 }, "-=7")
 		// deco 순차적으로 나타나기
 		// 원 데코
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco1', .2, { width: 20, height: 20 }, "-=23.49")
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco2', .2, { width: 20, height: 20 }, "-=23.49")
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco3', .2, { width: 30, height: 30 }, "-=23.49")
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco4', .2, { width: 20, height: 20 }, "-=23.49")
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco5', .2, { width: 30, height: 30 }, "-=23.49")
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco6', .2, { width: 20, height: 20 }, "-=23.49")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco1', .2, { width: 20, height: 20 }, "-=6.95")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco2', .2, { width: 20, height: 20 }, "-=6.9")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco3', .2, { width: 30, height: 30 }, "-=6.85")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco4', .2, { width: 20, height: 20 }, "-=6.8")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco5', .2, { width: 30, height: 30 }, "-=6.75")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco6', .2, { width: 20, height: 20 }, "-=6.7")
 		// 별 데코
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco1', .2, { display: 'block', opacity: 1 }, "-=23.49")
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco2', .2, { display: 'block', opacity: 1 }, "-=23.49")
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco3', .2, { display: 'block', opacity: 1 }, "-=23.49")
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco4', .2, { display: 'block', opacity: 1 }, "-=23.49")
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco5', .2, { display: 'block', opacity: 1 }, "-=23.49")
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco6', .2, { display: 'block', opacity: 1 }, "-=23.49")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco1', .2, { display: 'block', opacity: 1 }, "-=6.95")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco2', .2, { display: 'block', opacity: 1 }, "-=6.9")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco3', .2, { display: 'block', opacity: 1 }, "-=6.85")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco4', .2, { display: 'block', opacity: 1 }, "-=6.8")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco5', .2, { display: 'block', opacity: 1 }, "-=6.75")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco6', .2, { display: 'block', opacity: 1 }, "-=6.7")
 		// 별 / 원 / 비디오 / 텍스트 지우기
-		sec1ContainerTimeLine.to('#intro #earthGraphMotion', .2, { opacity: 1 }, "-=22.4")
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .video_wrap video', .2, { opacity: 0 }, "-=22.4")
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .txt_wrap p', .2, { opacity: 0, yPercent: -20 }, "-=22.4")
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain img', .2, { opacity: 0 }, "-=22.4")
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain span', .2, { opacity: 0 }, "-=22.4")
+		sec1ContainerTimeLine.to('#intro #earthGraphMotion', .2, { opacity: 1 }, "-=6.3")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .video_wrap video', .2, { opacity: 0 }, "-=6.3")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .txt_wrap p', .2, { opacity: 0, yPercent: -20 }, "-=6.3")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain img', .2, { opacity: 0 }, "-=6.3")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain span', .2, { opacity: 0 }, "-=6.3")
 		// 지구 그래프
-		sec1ContainerTimeLine.to('#intro .content3 .graph_contain .txt_wrap p', .5, { opacity: 1, yPercent: -20 }, "-=22.3")
+		sec1ContainerTimeLine.to('#intro .content3 .graph_contain .txt_wrap p', .3, { opacity: 1, yPercent: -20 }, "-=6.3")
 		// 총 수입
-		sec1ContainerTimeLine.to('#intro .content3 .graph_contain .income_tit', .5, { display: 'block', opacity: 1, yPercent: -20, }, "-=21.3")
+		sec1ContainerTimeLine.to('#intro .content3 .graph_contain .income_tit', .5, { display: 'block', opacity: 1, yPercent: -20, }, "-=5.85")
 		// 19억 3500만 유로
-		sec1ContainerTimeLine.to('#intro .content3 .graph_contain .money_tit', .5, { display: 'block', opacity: 1, yPercent: -20 }, "-=21.2")
+		sec1ContainerTimeLine.to('#intro .content3 .graph_contain .money_tit', .5, { display: 'block', opacity: 1, yPercent: -20 }, "-=5.845")
 		// 퍼센트
-		sec1ContainerTimeLine.to('#intro .content3 .graph_contain .txt_elm1', .2, { display: 'block', opacity: 1, yPercent: -20 }, "-=21.1")
-		sec1ContainerTimeLine.to('#intro .content3 .graph_contain .txt_elm2', .2, { display: 'block', opacity: 1, yPercent: -20 }, "-=21")
+		sec1ContainerTimeLine.to('#intro .content3 .graph_contain .txt_elm1', .2, { display: 'block', opacity: 1, yPercent: -20 }, "-=5.65")
+		sec1ContainerTimeLine.to('#intro .content3 .graph_contain .txt_elm2', .2, { display: 'block', opacity: 1, yPercent: -20 }, "-=5.6")
 		// bottom
-		sec1ContainerTimeLine.to('#intro .content3 .graph_contain .bottom_txt strong', .2, { display: 'block', opacity: 1, yPercent: -20 }, "-=20.99")
-		sec1ContainerTimeLine.to('#intro .content3 .graph_contain .bottom_txt > span', .2, { display: 'block', opacity: 1, yPercent: -20 }, "-=20.97")
-		sec1ContainerTimeLine.to('#intro .content3', .5, { display: 'none', opacity: 0 }, "-=5")
+		sec1ContainerTimeLine.to('#intro .content3 .graph_contain .bottom_txt strong', .2, { display: 'block', opacity: 1, yPercent: -20 }, "-=5.5")
+		sec1ContainerTimeLine.to('#intro .content3 .graph_contain .bottom_txt > span', .2, { display: 'block', opacity: 1, yPercent: -20 }, "-=5.45")
+		sec1ContainerTimeLine.to('#intro .content3', .5, { display: 'none', opacity: 0 }, "-=4.8")
 
 		// 원형 라인 따라 움직이는 모션의 텍스트 나타나기
-		sec1ContainerTimeLine.to('#intro .content4', .5, { display: 'block', opacity: 1 }, "-=4.8899")
+		sec1ContainerTimeLine.to('#intro .content4', .5, { display: 'block', opacity: 1 }, "-=4.8")
 		// 700 만명
-		sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm1', .5, { opacity: 1 }, "-=5")
-		sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm1', 2, { display: 'block' }, "-=3.3899")
-		sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm1', .3, { opacity: 0 }, "-=3.0899")
+		sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm1', .3, { opacity: 1 }, "-=4.8")
+		// sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm1', 2, { display: 'block' }, "-=3.3899")
+		sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm1', .3, { opacity: 0 }, "-=3.45")
 		// 1조 9천억원
-		sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm2', .5, { opacity: 1 }, "-=2.3899")
-		sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm2', 2, { display: 'block' }, "-=3.3899")
-		sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm2', .3, { opacity: 0 }, "-=1.0899")
+		sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm2', .3, { opacity: 1 }, "-=3.15")
+		// sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm2', 2, { display: 'block' }, "-=3.3899")
+		sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm2', .3, { opacity: 0 }, "-=1.95")
 		// 218 억원
-		sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm3', .5, { opacity: 1 }, "-=0.3899")
-		sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm3', 2, { display: 'block' }, "-=3.3899")
-		sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm3', .3, { opacity: 0 }, "-=3.0899")
+		sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm3', .3, { opacity: 1 }, "-=1.65")
+		// sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm3', 2, { display: 'block' }, "-=3.3899")
+		// sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm3', .15, { opacity: 0 }, "-=0")
 
 		return sec1ContainerTimeLine;
 	}
+
+
+	// const introTimeline = gsap.timeline({
+	// 	scrollTrigger: {
+	// 		trigger: $intro,
+	// 		start: "top top",
+	// 		end: "+=29000", // 전체 스크롤 길이.
+	// 		pin: $intro,
+	// 		scrub: 2,
+	// 		pinSpacing: true,
+	// 		// markers: { startColor: "blue", endColor: "blue", },
+	// 	}
+	// });
+
+	// function introMotion1() {
+	// 	const sec1ContainerTimeLine = gsap.timeline();
+	// 	/* content1 *******/
+	// 	// 동행기업 국경없는의사회를 움직이는 하나의 힘
+	// 	sec1ContainerTimeLine.to($sec1Content1Title, .25, { opacity: 0, yPercent: -20 }, "-=28.795")
+	// 	sec1ContainerTimeLine.to($sec1Content1Txt, .25, { opacity: 0, yPercent: -20 }, "-=28.79")
+	// 	// 라운드 배경 데코
+	// 	sec1ContainerTimeLine.to($sec1Cont1circleDeco1, .3, { opacity: 0 }, "-=28.785")
+	// 	sec1ContainerTimeLine.to('#intro .content1 .glitter_cont', .2, { opacity: 0 }, "-=28.78")
+	// 	sec1ContainerTimeLine.to($sec1Cont1circleDeco2, .3, { opacity: 0 }, "-=28.775")
+	// 	sec1ContainerTimeLine.to('#intro .content1 .mini_deco', .2, { opacity: 0 }, "-=28.77")
+	// 	sec1ContainerTimeLine.to($sec1Cont1circleDeco3, .3, { opacity: 0 }, "-=28.765")
+	// 	sec1ContainerTimeLine.to($sec1Content1, .3, { display: 'none', opacity: 0 }, "-=28.76")
+
+	// 	/* content2 *******/
+	// 	sec1ContainerTimeLine.to($sec1Content2, .01, { display: 'block', opacity: 1 }, "-=28.75")
+	// 	// 메인 원형 생기기
+	// 	sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm2', .3, { 'clip-path': 'circle(30px at 50% 50%)' }, "-=28.74")
+	// 	sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm5', .2, { 'clip-path': 'circle(60px at 50% 50%)' }, "-=28.535")
+	// 	sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm1', .2, { 'clip-path': 'circle(60px at 50% 50%)' }, "-=28.73")
+	// 	// 텍스트 1 (국경없는의사회의 가치와 원칙을 함께하는 동행기업이 되어주세요.)
+	// 	sec1ContainerTimeLine.to('#intro .content2 .txt_cont1 p', .2, { opacity: 1, yPercent: -20 }, "-=28.65")
+	// 	sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm4', .3, { 'clip-path': 'circle(50px at 50% 50%)' }, "-=28.65")
+	// 	sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm3', .3, { 'clip-path': 'circle(50px at 50% 50%)' }, "-=28.645")
+	// 	sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm6', .2, { 'clip-path': 'circle(40px at 50% 50%)' }, "-=28.64")
+
+
+	// 	sec1ContainerTimeLine.to('#intro .content2 .txt_cont1 p', .3, { opacity: 0 }, "-=28")
+	// 	// 텍스트 2 (동행기업은 국경없는의사회가 보다 많은 분쟁지역과 의료 사각지대에서 안정적인 의료 구호 활동을 펼칠 수 있도록)
+	// 	// sec1ContainerTimeLine.to('#intro .content2 .txt_cont2 p', .3, { opacity: 1, yPercent: -20 }, "-=27.9")
+	// 	sec1ContainerTimeLine.to('#intro .content2 .txt_cont3 p', .2, { opacity: 1, yPercent: -20 }, "-=27.859")
+	// 	// 메인 원형 커지기
+	// 	sec1ContainerTimeLine.to('#intro .content2 .round_wrap > div span', .3, { opacity: 1 }, "-=27.85")
+	// 	sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm1', .7, { 'clip-path': 'circle(330px at 50% 50%)' }, "-=27.85")
+	// 	sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm2', .7, { 'clip-path': 'circle(160px at 50% 50%)' }, "-=27.845")
+	// 	sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm3', .7, { 'clip-path': 'circle(200px at 50% 50%)' }, "-=27.84")
+	// 	sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm4', .8, { 'clip-path': 'circle(220px at 50% 50%)' }, "-=27.835")
+	// 	sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm5', .8, { 'clip-path': 'circle(240px at 50% 50%)' }, "-=27.83")
+	// 	sec1ContainerTimeLine.to('#intro .content2 .round_wrap .round_elm6', .7, { 'clip-path': 'circle(160px at 50% 50%)' }, "-=27.825")
+	// 	sec1ContainerTimeLine.to('#intro .content2 .round_wrap > div', .3, { 'backgroundColor': 'transparent' }, "-=27.825")
+	// 	// 작은 데코 원형
+	// 	sec1ContainerTimeLine.to('#intro .content2 .deco_wrap .circle_deco1', .2, { width: 20, height: 20 }, "-=27.83")
+	// 	sec1ContainerTimeLine.to('#intro .content2 .deco_wrap .circle_deco3', .2, { width: 30, height: 30 }, "-=27.83")
+	// 	sec1ContainerTimeLine.to('#intro .content2 .deco_wrap .circle_deco6', .2, { width: 20, height: 20 }, "-=27.83")
+	// 	sec1ContainerTimeLine.to('#intro .content2 .deco_wrap .circle_deco4', .2, { width: 30, height: 30 }, "-=27.83")
+	// 	sec1ContainerTimeLine.to('#intro .content2 .deco_wrap .circle_deco5', .2, { width: 20, height: 20 }, "-=27.83")
+	// 	sec1ContainerTimeLine.to('#intro .content2 .deco_wrap .circle_deco2', .2, { width: 20, height: 20 }, "-=27.83")
+
+
+	// 	sec1ContainerTimeLine.to('#intro .content2 .txt_cont3 p', .2, { opacity: 0 }, "-=27.2")
+	// 	// 텍스트 4 (기업의 이름으로 국경없는의사회의 활동을 후원하며,전세계의 긴급 구호 상황에 놓인 사람들을 위해 <br> 관심과 지원을 지속하는 파트너십입니다. )
+	// 	sec1ContainerTimeLine.to('#intro .content2 .txt_cont4 p', .3, { opacity: 1, yPercent: -20 }, "-=27.1")
+
+	// 	// 작은 데코 사라지기 *****
+	// 	sec1ContainerTimeLine.to('#intro .content2 .deco_wrap span', .0001, { opacity: 0 }, "-=26.9")
+	// 	// 사라지기 
+	// 	sec1ContainerTimeLine.to('#intro .content2', .15, { display: 'none', opacity: 0 }, "-=26")
+	// 	sec1ContainerTimeLine.to('#intro .content3', .3, { display: 'flex', opacity: 1 }, "-=26")
+	// 	sec1ContainerTimeLine.to('#intro .content3 .earth_contain .txt_wrap p', .3, { opacity: 1, yPercent: -30 }, "-=26")
+
+	// 	// video
+	// 	sec1ContainerTimeLine.to('#intro .content3 .earth_contain .video_wrap video', .3, { opacity: 1 }, "-=26")
+	// 	// deco 순차적으로 나타나기
+	// 	// 원 데코
+	// 	sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco1', .2, { width: 20, height: 20 }, "-=25.95")
+	// 	sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco2', .2, { width: 20, height: 20 }, "-=25.9")
+	// 	sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco3', .2, { width: 30, height: 30 }, "-=25.85")
+	// 	sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco4', .2, { width: 20, height: 20 }, "-=25.8")
+	// 	sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco5', .2, { width: 30, height: 30 }, "-=25.75")
+	// 	sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco6', .2, { width: 20, height: 20 }, "-=25.7")
+	// 	// 별 데코
+	// 	sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco1', .2, { display: 'block', opacity: 1 }, "-=25.95")
+	// 	sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco2', .2, { display: 'block', opacity: 1 }, "-=25.9")
+	// 	sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco3', .2, { display: 'block', opacity: 1 }, "-=25.85")
+	// 	sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco4', .2, { display: 'block', opacity: 1 }, "-=25.8")
+	// 	sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco5', .2, { display: 'block', opacity: 1 }, "-=25.75")
+	// 	sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco6', .2, { display: 'block', opacity: 1 }, "-=25.7")
+	// 	// 별 / 원 / 비디오 / 텍스트 지우기
+	// 	sec1ContainerTimeLine.to('#intro #earthGraphMotion', .2, { opacity: 1 }, "-=25.3")
+	// 	sec1ContainerTimeLine.to('#intro .content3 .earth_contain .video_wrap video', .2, { opacity: 0 }, "-=25.3")
+	// 	sec1ContainerTimeLine.to('#intro .content3 .earth_contain .txt_wrap p', .2, { opacity: 0, yPercent: -20 }, "-=25.3")
+	// 	sec1ContainerTimeLine.to('#intro .content3 .earth_contain img', .2, { opacity: 0 }, "-=25.3")
+	// 	sec1ContainerTimeLine.to('#intro .content3 .earth_contain span', .2, { opacity: 0 }, "-=25.3")
+	// 	// 지구 그래프
+	// 	sec1ContainerTimeLine.to('#intro .content3 .graph_contain .txt_wrap p', .3, { opacity: 1, yPercent: -20 }, "-=25.3")
+	// 	// 총 수입
+	// 	sec1ContainerTimeLine.to('#intro .content3 .graph_contain .income_tit', .5, { display: 'block', opacity: 1, yPercent: -20, }, "-=24.85")
+	// 	// 19억 3500만 유로
+	// 	sec1ContainerTimeLine.to('#intro .content3 .graph_contain .money_tit', .5, { display: 'block', opacity: 1, yPercent: -20 }, "-=24.845")
+	// 	// 퍼센트
+	// 	sec1ContainerTimeLine.to('#intro .content3 .graph_contain .txt_elm1', .2, { display: 'block', opacity: 1, yPercent: -20 }, "-=24.65")
+	// 	sec1ContainerTimeLine.to('#intro .content3 .graph_contain .txt_elm2', .2, { display: 'block', opacity: 1, yPercent: -20 }, "-=24.6")
+	// 	// bottom
+	// 	sec1ContainerTimeLine.to('#intro .content3 .graph_contain .bottom_txt strong', .2, { display: 'block', opacity: 1, yPercent: -20 }, "-=24.5")
+	// 	sec1ContainerTimeLine.to('#intro .content3 .graph_contain .bottom_txt > span', .2, { display: 'block', opacity: 1, yPercent: -20 }, "-=24.45")
+	// 	sec1ContainerTimeLine.to('#intro .content3', .5, { display: 'none', opacity: 0 }, "-=23.8")
+
+	// 	// 원형 라인 따라 움직이는 모션의 텍스트 나타나기
+	// 	sec1ContainerTimeLine.to('#intro .content4', .5, { display: 'block', opacity: 1 }, "-=23.8")
+	// 	// 700 만명
+	// 	sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm1', .15, { opacity: 1 }, "-=23.8")
+	// 	// sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm1', 2, { display: 'block' }, "-=3.3899")
+	// 	sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm1', .15, { opacity: 0 }, "-=22.5")
+	// 	// 1조 9천억원
+	// 	sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm2', .15, { opacity: 1 }, "-=21.9")
+	// 	// sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm2', 2, { display: 'block' }, "-=3.3899")
+	// 	sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm2', .15, { opacity: 0 }, "-=20.8")
+	// 	// 218 억원
+	// 	sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm3', .15, { opacity: 1 }, "-=20.3")
+	// 	// sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm3', 2, { display: 'block' }, "-=3.3899")
+	// 	sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm3', .15, { opacity: 0 }, "-=19")
+
+	// 	return sec1ContainerTimeLine;
+	// }
 
 	// function introMotion2() {
 	// 	const sec2ContainerTimeLine = gsap.timeline();
@@ -486,8 +611,8 @@ function main() {
 		target: "#circularLineMotion",
 		path: "./datafile/sec05.json",
 		pin: true,
-		start: 3000,
-		end: '+=900',
+		start: 1500,
+		end: '+=1000',
 		// speed: "medium",
 		scrub: 2,
 	});
@@ -497,8 +622,8 @@ function main() {
 		target: "#earthGraphMotion",
 		path: "./datafile/sec_08.json",
 		pin: true,
-		start: 6300,
-		end: '+=2000',
+		start: 3400,
+		end: '+=1500',
 		// speed: "medium",
 		scrub: 2,
 	});
@@ -508,8 +633,8 @@ function main() {
 		target: "#cricleLineMotion",
 		path: "./datafile/sec09-11-2_bg.json",
 		// pin: true,
-		start: 24950,
-		end: '+=4050',
+		start: 5700,
+		end: '+=3500',
 		// speed: "medium",
 		// markers: { startColor: "blue", endColor: "blue" },
 		scrub: 3,
