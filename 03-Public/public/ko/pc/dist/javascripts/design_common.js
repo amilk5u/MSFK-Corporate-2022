@@ -446,7 +446,8 @@ function main() {
 			trigger: '#social',
 			pin: '#social',
 			start: "top top",
-			end: "+=21000",
+			// end: "+=21000",
+			end: "+=15000",
 			scrub: 2,
 		}
 	});
@@ -510,16 +511,17 @@ function main() {
 		// sec2ContainerTimeLine.to('#social .content2 .horizontal_wrap', { backgroundColor: '#fff', duration: 0.001, })
 		// sec2ContainerTimeLine.to('#social .content2 .hidden_box', { backgroundColor: 'transparent', duration: 0.001 })
 		// 가로 스크롤 실행
-		sec2ContainerTimeLine.to('#social .content2 .horizontal_wrap', { x: _horizontalW, duration: 140, delay: 1.5, ease: Power0.easeNone, })
-		sec2ContainerTimeLine.to('#social .content2 .partner5', { border: 0, duration: 10 }) // 시간 텀 주기
+		sec2ContainerTimeLine.to('#social .content2 .horizontal_wrap', { x: _horizontalW, duration: 60, delay: 1.5, ease: Power0.easeNone, })
+		sec2ContainerTimeLine.to('#social .content2 .partner5', { border: 0, duration: 5 }) // 시간 텀 주기
 
 
 		// 컨텐츠 순차적으로 나타나기
-		sec2ContainerTimeLine.to('#social .content2 .donation_company .elm1', { opacity: 1, duration: 15, x: -60, delay: -175 })
-		sec2ContainerTimeLine.to('#social .content2 .donation_company .elm2', { opacity: 1, duration: 15, x: -60, delay: -140 })
-		sec2ContainerTimeLine.to('#social .content2 .donation_company .elm3', { opacity: 1, duration: 15, x: -60, delay: -110 })
+		sec2ContainerTimeLine.to('#social .content2 .donation_company .elm1', { opacity: 1, duration: 15, x: -60, delay: -60 })
+		sec2ContainerTimeLine.to('#social .content2 .donation_company .elm2', { opacity: 1, duration: 15, x: -60, delay: -60 })
+		sec2ContainerTimeLine.to('#social .content2 .donation_company .elm3', { opacity: 1, duration: 15, x: -60, delay: -60 })
 
-		sec2ContainerTimeLine.to('#social .content2 .company_partner .partner6', { opacity: 1, duration: 8, delay: -70 })
+		// 파트너로고
+		sec2ContainerTimeLine.to('#social .content2 .company_partner .partner6', { opacity: 1, duration: 8, delay: -60 })
 		sec2ContainerTimeLine.to('#social .content2 .company_partner .partner3', { opacity: 1, duration: 8, delay: -65 })
 		sec2ContainerTimeLine.to('#social .content2 .company_partner .partner5', { opacity: 1, duration: 8, delay: -60 })
 		sec2ContainerTimeLine.to('#social .content2 .company_partner .partner4', { opacity: 1, duration: 8, delay: -55 })
@@ -538,7 +540,8 @@ function main() {
 			trigger: '#corporation',
 			pin: '#corporation',
 			start: "top top",
-			end: "+=15000",
+			// end: "+=15000",
+			end: "+=7000",
 			scrub: 2,
 		}
 	});
@@ -606,7 +609,7 @@ function main() {
 	/* //corporation trigger ------------------------------------------------------------------------*/
 
 	/* LottieScrollTrigger ------------------------------------------ */
-	// 원형 라인 
+	// 점선원형 라인 모션 
 	LottieScrollTrigger({
 		target: "#circularLineMotion",
 		path: "./datafile/sec05.json",
@@ -617,7 +620,7 @@ function main() {
 		scrub: 2,
 	});
 
-	// 그래프 모션
+	// 지구 그래프 모션
 	LottieScrollTrigger({
 		target: "#earthGraphMotion",
 		path: "./datafile/sec_08.json",
@@ -628,25 +631,25 @@ function main() {
 		scrub: 2,
 	});
 
-	// 구호 원형 라인 모션
+	// 3개 구호 원형 라인 모션
 	LottieScrollTrigger({
 		target: "#cricleLineMotion",
 		path: "./datafile/sec09-11-2_bg.json",
 		// pin: true,
 		start: 5700,
-		end: '+=3500',
+		end: '+=2800',
 		// speed: "medium",
 		// markers: { startColor: "blue", endColor: "blue" },
 		scrub: 3,
 	});
 
-	// 움직이는 원형씨드 국경 로고
+	// 움직이는 원형씨드 국경로고 모션
 	LottieScrollTrigger({
 		target: "#seedMotion",
 		path: "./datafile/sec12.json",
 		pin: true,
-		start: 30000,
-		end: '+=5200',
+		start: 11000,
+		end: '+=5000',
 		// speed: "medium",
 		scrub: 2,
 	});
