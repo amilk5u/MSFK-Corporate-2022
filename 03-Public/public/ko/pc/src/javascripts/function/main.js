@@ -1,13 +1,14 @@
 function main() {
 
-	/* 	setTimeout(function () {
-			TweenMax.to($('.loading'), 1.2, { display:'none', opacity:0 })
-		}, 1200);
-		setTimeout(function () {
-			$('body').removeClass('scroll_bar');
-			// $('header').addClass('scroll_p');
-			$(window).scrollTop(0);
-		}, 2300); */
+	setTimeout(function () {
+		TweenMax.to($('.loading .img_wrap'), .5, { display:'none', opacity:0 })
+		$(window).scrollTop(0);
+	}, 1000);
+	setTimeout(function () {
+		TweenMax.to($('.loading'), .8, { display: 'none', opacity: 0 })
+		$('body').removeClass('scroll_bar');
+		$('header').addClass('scroll_p');
+	}, 1500);
 
 	const $intro = $('#intro');
 	const $social = $('#social');
@@ -174,18 +175,18 @@ function main() {
 		// deco 순차적으로 나타나기
 		// 원 데코
 		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco1', .2, { width: 20, height: 20 }, "-=6.95")
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco2', .2, { width: 20, height: 20 }, "-=6.9")
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco3', .2, { width: 30, height: 30 }, "-=6.85")
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco4', .2, { width: 20, height: 20 }, "-=6.8")
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco5', .2, { width: 30, height: 30 }, "-=6.75")
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco6', .2, { width: 20, height: 20 }, "-=6.7")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco2', .2, { width: 20, height: 20 }, "-=6.95")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco3', .2, { width: 30, height: 30 }, "-=6.95")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco4', .2, { width: 20, height: 20 }, "-=6.95")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco5', .2, { width: 30, height: 30 }, "-=6.95")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .circle_deco6', .2, { width: 20, height: 20 }, "-=6.95")
 		// 별 데코
 		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco1', .2, { display: 'block', opacity: 1 }, "-=6.95")
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco2', .2, { display: 'block', opacity: 1 }, "-=6.9")
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco3', .2, { display: 'block', opacity: 1 }, "-=6.85")
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco4', .2, { display: 'block', opacity: 1 }, "-=6.8")
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco5', .2, { display: 'block', opacity: 1 }, "-=6.75")
-		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco6', .2, { display: 'block', opacity: 1 }, "-=6.7")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco2', .2, { display: 'block', opacity: 1 }, "-=6.95")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco3', .2, { display: 'block', opacity: 1 }, "-=6.95")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco4', .2, { display: 'block', opacity: 1 }, "-=6.95")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco5', .2, { display: 'block', opacity: 1 }, "-=6.95")
+		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .glitter_deco6', .2, { display: 'block', opacity: 1 }, "-=6.95")
 		// 별 / 원 / 비디오 / 텍스트 지우기
 		sec1ContainerTimeLine.to('#intro #earthGraphMotion', .2, { opacity: 1 }, "-=6.3")
 		sec1ContainerTimeLine.to('#intro .content3 .earth_contain .video_wrap video', .2, { opacity: 0 }, "-=6.3")
@@ -202,22 +203,22 @@ function main() {
 		sec1ContainerTimeLine.to('#intro .content3 .graph_contain .txt_elm1', .2, { display: 'block', opacity: 1, yPercent: -20 }, "-=5.65")
 		sec1ContainerTimeLine.to('#intro .content3 .graph_contain .txt_elm2', .2, { display: 'block', opacity: 1, yPercent: -20 }, "-=5.6")
 		// bottom
-		sec1ContainerTimeLine.to('#intro .content3 .graph_contain .bottom_txt strong', .2, { display: 'block', opacity: 1, yPercent: -20 }, "-=5.5")
-		sec1ContainerTimeLine.to('#intro .content3 .graph_contain .bottom_txt > span', .2, { display: 'block', opacity: 1, yPercent: -20 }, "-=5.45")
-		sec1ContainerTimeLine.to('#intro .content3', .5, { display: 'none', opacity: 0 }, "-=4.8")
+		sec1ContainerTimeLine.to('#intro .content3 .graph_contain .bottom_txt strong', .2, { display: 'block', opacity: 1, yPercent: -20 }, "-=5.55")
+		sec1ContainerTimeLine.to('#intro .content3 .graph_contain .bottom_txt > span', .2, { display: 'block', opacity: 1, yPercent: -20 }, "-=5.545")
+		sec1ContainerTimeLine.to('#intro .content3', .2, { display: 'none', opacity: 0 }, "-=4.82")
 
 		// 원형 라인 따라 움직이는 모션의 텍스트 나타나기
 		sec1ContainerTimeLine.to('#intro .content4', .5, { display: 'block', opacity: 1 }, "-=4.8")
 		// 700 만명
-		sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm1', .3, { opacity: 1 }, "-=4.8")
+		sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm1', .2, { opacity: 1 }, "-=4.8")
 		// sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm1', 2, { display: 'block' }, "-=3.3899")
-		sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm1', .3, { opacity: 0 }, "-=3.45")
+		sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm1', .2, { opacity: 0 }, "-=3.6")
 		// 1조 9천억원
-		sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm2', .3, { opacity: 1 }, "-=3.15")
+		sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm2', .2, { opacity: 1 }, "-=3.1")
 		// sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm2', 2, { display: 'block' }, "-=3.3899")
-		sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm2', .3, { opacity: 0 }, "-=1.95")
+		sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm2', .2, { opacity: 0 }, "-=2.2")
 		// 218 억원
-		sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm3', .3, { opacity: 1 }, "-=1.65")
+		sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm3', .2, { opacity: 1 }, "-=1.75")
 		// sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm3', 2, { display: 'block' }, "-=3.3899")
 		// sec1ContainerTimeLine.to('#intro .content4 .txt_wrap .elm3', .15, { opacity: 0 }, "-=0")
 
@@ -429,13 +430,13 @@ function main() {
 		sec1ContainerTimeLine.to('#logo .wh_logo', { display: 'block', opacity: 1, duration: .5, delay: -.001 })
 		// 텍스트 1 (기업의 사회 공헌 활동은)
 		sec1ContainerTimeLine.to('#social .content1 .txt_wrap .txt_elm1', { display: 'block', opacity: 1, yPercent: -20, duration: 6, delay: 3 })
-		sec1ContainerTimeLine.to('#social .content1 .txt_wrap .txt_elm1', { display: 'none', opacity: 0, duration: 6, delay: 18 })
+		sec1ContainerTimeLine.to('#social .content1 .txt_wrap .txt_elm1', { display: 'none', opacity: 0, duration: 6, delay: 10 })
 		// 텍스트 2 (종교, 정치적 이익과 관계없이 독립적인 의료지원을 펼치는 )
 		sec1ContainerTimeLine.to('#social .content1 .txt_wrap .txt_elm2', { display: 'block', opacity: 1, yPercent: -20, duration: 6 })
-		sec1ContainerTimeLine.to('#social .content1 .txt_wrap .txt_elm2', { display: 'none', opacity: 0, duration: 6, delay: 8 })
+		sec1ContainerTimeLine.to('#social .content1 .txt_wrap .txt_elm2', { display: 'none', opacity: 0, duration: 6, delay: 5 })
 		// 텍스트 3 (우리의 큰 원동력이 됩니다.)
 		sec1ContainerTimeLine.to('#social .content1 .txt_wrap .txt_elm3', { display: 'block', opacity: 1, yPercent: -20, duration: 6, delay: .5 })			// line scale
-		sec1ContainerTimeLine.to('#social .content1 .txt_wrap .txt_elm3', { display: 'none', opacity: 0, duration: 6, delay: 30 })
+		sec1ContainerTimeLine.to('#social .content1 .txt_wrap .txt_elm3', { display: 'none', opacity: 0, duration: 6, delay: 6 })
 		// 텍스트 4 (우리는 변함없는 관심과 국경없는 나눔을 실천하는 기업과 함께 )
 		sec1ContainerTimeLine.to('#social .content1 .txt_wrap .txt_elm4', { display: 'block', opacity: 1, yPercent: -20, duration: 6 })
 		sec1ContainerTimeLine.to('#social .content1 .circle_line .circle_img1', { scale: 1, duration: 5, delay: -.9 })
@@ -448,48 +449,46 @@ function main() {
 		// 지구 영상 생성
 		sec1ContainerTimeLine.to('#social .content1 .video_wrap video', { opacity: 1, duration: 8, delay: -5 })
 		// 데코 생성
-		sec1ContainerTimeLine.to('#social .content1 .circle_line .circle_deco6', { width: 40, height: 40, duration: 2, delay: -.15 })
-		sec1ContainerTimeLine.to('#social .content1 .circle_line .circle_deco1', { width: 50, height: 50, duration: 2, delay: -.15 })
-		sec1ContainerTimeLine.to('#social .content1 .circle_line .circle_deco5', { width: 60, height: 60, duration: 2, delay: -.15 })
-		sec1ContainerTimeLine.to('#social .content1 .circle_line .circle_deco3', { width: 30, height: 30, duration: 2, delay: -.15 })
-		sec1ContainerTimeLine.to('#social .content1 .circle_line .circle_deco4', { width: 50, height: 50, duration: 2, delay: -.15 })
-		sec1ContainerTimeLine.to('#social .content1 .circle_line .circle_deco2', { width: 60, height: 60, duration: 2, delay: -.15 })
+		sec1ContainerTimeLine.to('#social .content1 .circle_line .circle_deco6', { width: 40, height: 40, duration: 1, delay: -5.2 })
+		sec1ContainerTimeLine.to('#social .content1 .circle_line .circle_deco1', { width: 50, height: 50, duration: 1, delay: -5.15 })
+		sec1ContainerTimeLine.to('#social .content1 .circle_line .circle_deco5', { width: 60, height: 60, duration: 1, delay: -5.05 })
+		sec1ContainerTimeLine.to('#social .content1 .circle_line .circle_deco3', { width: 30, height: 30, duration: 1, delay: -5 })
+		sec1ContainerTimeLine.to('#social .content1 .circle_line .circle_deco4', { width: 50, height: 50, duration: 1, delay: -4.95 })
+		sec1ContainerTimeLine.to('#social .content1 .circle_line .circle_deco2', { width: 60, height: 60, duration: 1, delay: -4.9 })
 		return sec1ContainerTimeLine;
 	}
 	function socialMotion2() {
 		const sec2ContainerTimeLine = gsap.timeline();
 
 		sec2ContainerTimeLine.to('#social .content2', { display: 'block', opacity: 1 })
-		sec2ContainerTimeLine.to('#social .content2', { 'clip-path': 'circle(75% at 50% 50%)', duration: 20, delay: 30 })
+		sec2ContainerTimeLine.to('#social .content2', { 'clip-path': 'circle(75% at 50% 50%)', duration: 20, delay: 5 })
+		sec2ContainerTimeLine.to('#social .content1', { display: 'none', opacity: 0, delay: -5 })
 		// 로고 색상 변경
-		sec2ContainerTimeLine.to('#logo .wh_logo', { display: 'none', opacity: 0, duration: .001, delay: -.001 })
-		sec2ContainerTimeLine.to('#logo .bk_logo', { display: 'block', opacity: 1, duration: .001 })
+		sec2ContainerTimeLine.to('#logo .wh_logo', { display: 'none', opacity: 0, duration: .001, delay: -6 })
+		sec2ContainerTimeLine.to('#logo .bk_logo', { display: 'block', opacity: 1, duration: .001, delay: -6 })
 		//	원 데코 생성
-		sec2ContainerTimeLine.to('#social .content2 .deco_wrap .circle_deco3', { width: 20, height: 20, duration: 2, delay: -.05 })
-		sec2ContainerTimeLine.to('#social .content2 .deco_wrap .circle_deco1', { width: 30, height: 30, duration: 2, delay: -.05 })
-		sec2ContainerTimeLine.to('#social .content2 .deco_wrap .circle_deco2', { width: 20, height: 20, duration: 2, delay: -.05 })
-		sec2ContainerTimeLine.to('#social .content2 .deco_wrap .circle_deco4', { width: 40, height: 40, duration: 2, delay: -.05 })
-		sec2ContainerTimeLine.to('#social .content2 .deco_wrap .circle_deco5', { width: 20, height: 20, duration: 2, delay: -.05 })
+		sec2ContainerTimeLine.to('#social .content2 .deco_wrap .circle_deco3', { width: 20, height: 20, duration: .5, delay: -.05 })
+		sec2ContainerTimeLine.to('#social .content2 .deco_wrap .circle_deco1', { width: 30, height: 30, duration: .5, delay: -.05 })
+		sec2ContainerTimeLine.to('#social .content2 .deco_wrap .circle_deco2', { width: 20, height: 20, duration: .5, delay: -.05 })
+		sec2ContainerTimeLine.to('#social .content2 .deco_wrap .circle_deco4', { width: 40, height: 40, duration: .5, delay: -.05 })
+		sec2ContainerTimeLine.to('#social .content2 .deco_wrap .circle_deco5', { width: 20, height: 20, duration: .5, delay: -.05 })
 		// 미니 데코 생성
-		sec2ContainerTimeLine.to('#social .content2 .mini_deco .deco1', { opacity: 1, duration: 1.5, delay: -.1 })
-		sec2ContainerTimeLine.to('#social .content2 .mini_deco .deco2', { opacity: 1, duration: 1.5, delay: -.1 })
-		sec2ContainerTimeLine.to('#social .content2 .mini_deco .deco3', { opacity: 1, duration: 1.5, delay: -.1 })
-		sec2ContainerTimeLine.to('#social .content2 .mini_deco .deco4', { opacity: 1, duration: 1.5, delay: -.1 })
-		sec2ContainerTimeLine.to('#social .content2 .mini_deco .deco5', { opacity: 1, duration: 1.5, delay: -.1 })
-		sec2ContainerTimeLine.to('#social .content2 .mini_deco .deco6', { opacity: 1, duration: 1.5, delay: -.1 })
+		sec2ContainerTimeLine.to('#social .content2 .mini_deco .deco1', { opacity: 1, duration: .5, delay: -.05 })
+		sec2ContainerTimeLine.to('#social .content2 .mini_deco .deco2', { opacity: 1, duration: .5, delay: -.05 })
+		sec2ContainerTimeLine.to('#social .content2 .mini_deco .deco3', { opacity: 1, duration: .5, delay: -.05 })
+		sec2ContainerTimeLine.to('#social .content2 .mini_deco .deco4', { opacity: 1, duration: .5, delay: -.05 })
+		sec2ContainerTimeLine.to('#social .content2 .mini_deco .deco5', { opacity: 1, duration: .5, delay: -.05 })
+		sec2ContainerTimeLine.to('#social .content2 .mini_deco .deco6', { opacity: 1, duration: .5, delay: -.05 })
 		// 원 확대 모션
 		// sec2ContainerTimeLine.to('#social .content2 .horizontal_wrap', { backgroundColor: '#fff', duration: 0.001, })
 		// sec2ContainerTimeLine.to('#social .content2 .hidden_box', { backgroundColor: 'transparent', duration: 0.001 })
 		// 가로 스크롤 실행
 		sec2ContainerTimeLine.to('#social .content2 .horizontal_wrap', { x: _horizontalW, duration: 60, delay: 1.5, ease: Power0.easeNone, })
 		sec2ContainerTimeLine.to('#social .content2 .partner5', { border: 0, duration: 5 }) // 시간 텀 주기
-
-
 		// 컨텐츠 순차적으로 나타나기
-		sec2ContainerTimeLine.to('#social .content2 .donation_company .elm1', { opacity: 1, duration: 15, x: -60, delay: -60 })
-		sec2ContainerTimeLine.to('#social .content2 .donation_company .elm2', { opacity: 1, duration: 15, x: -60, delay: -60 })
-		sec2ContainerTimeLine.to('#social .content2 .donation_company .elm3', { opacity: 1, duration: 15, x: -60, delay: -60 })
-
+		sec2ContainerTimeLine.to('#social .content2 .donation_company .elm1', { opacity: 1, duration: 15, x: -60, delay: -68 })
+		sec2ContainerTimeLine.to('#social .content2 .donation_company .elm2', { opacity: 1, duration: 15, x: -60, delay: -53 })
+		sec2ContainerTimeLine.to('#social .content2 .donation_company .elm3', { opacity: 1, duration: 15, x: -60, delay: -43 })
 		// 파트너로고
 		sec2ContainerTimeLine.to('#social .content2 .company_partner .partner6', { opacity: 1, duration: 8, delay: -60 })
 		sec2ContainerTimeLine.to('#social .content2 .company_partner .partner3', { opacity: 1, duration: 8, delay: -65 })
@@ -511,7 +510,7 @@ function main() {
 			pin: '#corporation',
 			start: "top top",
 			// end: "+=15000",
-			end: "+=7000",
+			end: "+=8500",
 			scrub: 2,
 		}
 	});
@@ -520,13 +519,13 @@ function main() {
 		/* 동행기업 참여방법 ----------------------------------------------------------- */
 		// 참여방법 1
 		sec1ContainerTimeLine.to('#corporation .content1 .scene1 .elm1', { opacity: 1, y: -50, duration: 6, delay: 5 })
-		sec1ContainerTimeLine.to('#corporation .content1 .scene1 .elm2', { opacity: 1, y: -50, duration: 6 })
-		sec1ContainerTimeLine.to('#corporation .content1 .scene1 .elm3', { opacity: 1, y: -50, duration: 6 })
-		sec1ContainerTimeLine.to('#corporation .content1 .scene1', { opacity: 0, duration: 10, delay: 20 })
+		sec1ContainerTimeLine.to('#corporation .content1 .scene1 .elm2', { opacity: 1, y: -50, duration: 6, delay: -5 })
+		sec1ContainerTimeLine.to('#corporation .content1 .scene1 .elm3', { opacity: 1, y: -50, duration: 6, delay: -5 })
+		sec1ContainerTimeLine.to('#corporation .content1 .scene1', { opacity: 0, duration: 10, delay: 10 })
 		// 참여방법 2
-		sec1ContainerTimeLine.to('#corporation .content1 .scene2 .elm1', { opacity: 1, y: -50, duration: 6, delay: 10 })
-		sec1ContainerTimeLine.to('#corporation .content1 .scene2 .elm2', { opacity: 1, y: -50, duration: 6 })
-		sec1ContainerTimeLine.to('#corporation .content1 .scene2 .elm3', { opacity: 1, y: -50, duration: 6 })
+		sec1ContainerTimeLine.to('#corporation .content1 .scene2 .elm1', { opacity: 1, y: -50, duration: 6, delay: 5 })
+		sec1ContainerTimeLine.to('#corporation .content1 .scene2 .elm2', { opacity: 1, y: -50, duration: 6, delay: -6 })
+		sec1ContainerTimeLine.to('#corporation .content1 .scene2 .elm3', { opacity: 1, y: -50, duration: 6, delay: -6 })
 		sec1ContainerTimeLine.to('#corporation .content1', { opacity: 0, duration: 10, delay: 10 })
 
 		/* 동행기업 후원절차 --------------------------------------------------------------- */
@@ -534,45 +533,45 @@ function main() {
 		sec1ContainerTimeLine.to('#corporation .content2 .txt_wrap', { y: -300, duration: 8 })
 		// 라인 & 컨텐츠 생성
 		sec1ContainerTimeLine.to('#corporation .content2 .line_stroke', { width: 420, duration: 4 })
-		sec1ContainerTimeLine.to('#corporation .content2 .elm1', { opacity: 1, y: 30, duration: 4 })
-		sec1ContainerTimeLine.to('#corporation .content2 .line_stroke', { width: 790, duration: 4, delay: -.5 })
-		sec1ContainerTimeLine.to('#corporation .content2 .elm2', { opacity: 1, y: 30, duration: 4, delay: -.5 })
-		sec1ContainerTimeLine.to('#corporation .content2 .line_stroke', { width: 1150, duration: 4, delay: -.5 })
-		sec1ContainerTimeLine.to('#corporation .content2 .elm3', { opacity: 1, y: 30, duration: 4, delay: -.5 })
-		sec1ContainerTimeLine.to('#corporation .content2 .line_stroke', { width: 1480, duration: 4, delay: -.5 })
-		sec1ContainerTimeLine.to('#corporation .content2 .elm4', { opacity: 1, y: 30, duration: 4, delay: -.5 })
+		sec1ContainerTimeLine.to('#corporation .content2 .elm1', { opacity: 1, y: 30, duration: 4, delay: -3.5 })
+		sec1ContainerTimeLine.to('#corporation .content2 .line_stroke', { width: 790, duration: 4, delay: -3.5 })
+		sec1ContainerTimeLine.to('#corporation .content2 .elm2', { opacity: 1, y: 30, duration: 4, delay: -3.5 })
+		sec1ContainerTimeLine.to('#corporation .content2 .line_stroke', { width: 1150, duration: 4, delay: -3.5 })
+		sec1ContainerTimeLine.to('#corporation .content2 .elm3', { opacity: 1, y: 30, duration: 4, delay: -3.5 })
+		sec1ContainerTimeLine.to('#corporation .content2 .line_stroke', { width: 1480, duration: 4, delay: -3.5 })
+		sec1ContainerTimeLine.to('#corporation .content2 .elm4', { opacity: 1, y: 30, duration: 4, delay: -3.5 })
 		sec1ContainerTimeLine.to('#corporation .content2 .line_stroke', { width: 1920, duration: 4 })
 		// 버튼
-		sec1ContainerTimeLine.to('#corporation .content2 .btn_wrap', { opacity: 1, y: -20, duration: 7, delay: -.5 })
-		sec1ContainerTimeLine.to('#corporation .content2 .copyright', { opacity: 1, y: -20, duration: 5, delay: -.3 })
-		sec1ContainerTimeLine.to('#corporation .content2', { opacity: 0, duration: 10, delay: 20 })
+		sec1ContainerTimeLine.to('#corporation .content2 .btn_wrap', { opacity: 1, y: -20, duration: 7, delay: -2.5 })
+		sec1ContainerTimeLine.to('#corporation .content2 .copyright', { opacity: 1, y: -20, duration: 5, delay: -2.5 })
+		sec1ContainerTimeLine.to('#corporation .content2', { opacity: 0, duration: 10, delay: 10 })
 
 		/* 동행기업 참여효과 ------------------------------------------------------------------------- */
 		sec1ContainerTimeLine.to('#corporation .content3', { display: 'block', opacity: 1, duration: 15 })
 		sec1ContainerTimeLine.to('#corporation .content3 .txt_wrap', { y: -300, duration: 8 })
 		sec1ContainerTimeLine.to('#corporation .content3 .elm1', { opacity: 1, y: -20, duration: 10, delay: 6 })
-		sec1ContainerTimeLine.to('#corporation .content3 .elm2', { opacity: 1, y: -20, duration: 10, delay: -.12 })
-		sec1ContainerTimeLine.to('#corporation .content3 .elm3', { opacity: 1, y: -20, duration: 10, delay: -.12 })
-		sec1ContainerTimeLine.to('#corporation .content3 .elm4', { opacity: 1, y: -20, duration: 10, delay: -.12 })
-		sec1ContainerTimeLine.to('#corporation .content3', { opacity: 0, duration: 10, delay: 20 })
+		sec1ContainerTimeLine.to('#corporation .content3 .elm2', { opacity: 1, y: -20, duration: 10, delay: -10 })
+		sec1ContainerTimeLine.to('#corporation .content3 .elm3', { opacity: 1, y: -20, duration: 10, delay: -10 })
+		sec1ContainerTimeLine.to('#corporation .content3 .elm4', { opacity: 1, y: -20, duration: 10, delay: -10 })
+		sec1ContainerTimeLine.to('#corporation .content3', { opacity: 0, duration: 10, delay: 10 })
 
 		/* 마지막 섹션 -------------------------------------------------------------------------------- */
-		sec1ContainerTimeLine.to('#corporation .content4', { display: 'block', opacity: 1, duration: 10 })
+		sec1ContainerTimeLine.to('#corporation .content4', { display: 'block', opacity: 1, duration: 3 })
 		// 데코 
 		sec1ContainerTimeLine.to('#corporation .content4 .circle_deco1', { opacity: 1, duration: 6, delay: -1 })
-		sec1ContainerTimeLine.to('#corporation .content4 .circle_deco2', { opacity: 1, duration: 6 })
-		sec1ContainerTimeLine.to('#corporation .content4 .circle_deco3', { opacity: 1, duration: 2 })
-		sec1ContainerTimeLine.to('#corporation .content4 .circle_deco3', { opacity: 1, duration: 2 })
+		sec1ContainerTimeLine.to('#corporation .content4 .circle_deco2', { opacity: 1, duration: 6, delay: -1 })
+		sec1ContainerTimeLine.to('#corporation .content4 .circle_deco3', { opacity: 1, duration: 2, delay: -1 })
+		sec1ContainerTimeLine.to('#corporation .content4 .circle_deco3', { opacity: 1, duration: 2, delay: -1 })
 
 		// 텍스트 내용
-		sec1ContainerTimeLine.to('#corporation .content4 .txt_wrap p', { opacity: 1, duration: 10, delay: -2 })
-		sec1ContainerTimeLine.to('#corporation .content4 .txt_wrap strong', { opacity: 1, y: -30, duration: 12, delay: -2 })
-		sec1ContainerTimeLine.to('#corporation .content4 .txt_wrap strong span', { opacity: 1, y: -30, duration: 12 })
+		sec1ContainerTimeLine.to('#corporation .content4 .txt_wrap p', { opacity: 1, duration: 10, delay: -10 })
+		sec1ContainerTimeLine.to('#corporation .content4 .txt_wrap strong', { opacity: 1, y: -30, duration: 12, delay: -10 })
+		sec1ContainerTimeLine.to('#corporation .content4 .txt_wrap strong span', { opacity: 1, y: -30, duration: 12, delay: -10 })
 		// 미니 데코
 		sec1ContainerTimeLine.to('#corporation .content4 .glitter_cont img', { opacity: 1, duration: 10, delay: -10 })
 		sec1ContainerTimeLine.to('#corporation .content4 .mini_deco span', { opacity: 1, duration: 10, delay: -10 })
 
-		sec1ContainerTimeLine.to('#social .content2 .partner5', { border: 0, duration: 20 }) // 시간 텀 주기
+		sec1ContainerTimeLine.to('#social .content2 .partner5', { border: 0, duration: 8 }) // 시간 텀 주기
 		return sec1ContainerTimeLine;
 	}
 	corporationTimeline.add(corporationMotion1());
@@ -582,7 +581,7 @@ function main() {
 	// 점선원형 라인 모션 
 	LottieScrollTrigger({
 		target: "#circularLineMotion",
-		path: "./datafile/sec05.json",
+		path: "./datafile/circularLineMotion.json",
 		pin: true,
 		start: 1500,
 		end: '+=1000',
@@ -593,7 +592,7 @@ function main() {
 	// 지구 그래프 모션
 	LottieScrollTrigger({
 		target: "#earthGraphMotion",
-		path: "./datafile/sec_08.json",
+		path: "./datafile/earthGraphMotion.json",
 		pin: true,
 		start: 3400,
 		end: '+=1500',
@@ -604,10 +603,10 @@ function main() {
 	// 3개 구호 원형 라인 모션
 	LottieScrollTrigger({
 		target: "#cricleLineMotion",
-		path: "./datafile/sec09-11-2_bg.json",
-		// pin: true,
+		path: "./datafile/cricleLineMotion.json",
+		// pin: true, 
 		start: 5700,
-		end: '+=2800',
+		end: '+=3300',
 		// speed: "medium",
 		// markers: { startColor: "blue", endColor: "blue" },
 		scrub: 3,
@@ -616,7 +615,7 @@ function main() {
 	// 움직이는 원형씨드 국경로고 모션
 	LottieScrollTrigger({
 		target: "#seedMotion",
-		path: "./datafile/sec12.json",
+		path: "./datafile/seedMotion.json",
 		pin: true,
 		start: 11000,
 		end: '+=5000',
@@ -627,10 +626,10 @@ function main() {
 	// 가로 스크롤 라인
 	LottieScrollTrigger({
 		target: "#lineMotion",
-		path: "./datafile/line_test.json",
+		path: "./datafile/lineMotion.json",
 		pin: true,
-		start: 42390,
-		end: '+=10000',
+		start: 21190,
+		end: '+=5100',
 		// speed: "medium",
 		scrub: 3,
 	});

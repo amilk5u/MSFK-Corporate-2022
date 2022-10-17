@@ -1,10 +1,10 @@
 @charset "UTF-8";
 .top { position: fixed; left: 0; bottom: 0; font-size: 50px; color: black; z-index: 9999; }
 // 인트로 로딩 모션
-/* .loading { 
+.loading { 
 	width: 100%; height: 100vh; position: fixed; top: 0; left: 0; background-color:$white; z-index: 100;
-	> img {
-		position: absolute; top: 50%; left: 50%; 
+	> div {
+		width: 410px; height: 124px; overflow: hidden; position: absolute; top: 50%; left: 50%;
 		@include translate(-50%,-50%);
 	}
 } 
@@ -13,7 +13,8 @@ body.scroll_bar{
 	&::-webkit-scrollbar {
 		display: none;
 	}
-} */
+	overflow: hidden;
+}
 	
 // header
 header {
@@ -78,8 +79,8 @@ footer {
 					position:relative;
 					&:after { width:1px; height:11px; content:""; display:block; position:absolute; left:0; top:39px; background-color:#474b4e; }
 				 }
-				 dt { display:inline-block;  font-size:15px; color:#ffe043; margin-right:10px; }
-				 dd { display:inline-block;  font-size:15px; color:#fff; }
+				 dt { display:inline-block;  font-size:14px; color:#ffe043; margin-right:10px; }
+				 dd { display:inline-block;  font-size:14px; color:#fff; }
 			  }
 			}
 		 }
@@ -88,15 +89,15 @@ footer {
 		 .address {
 			height:100%; float:left; padding:40px 0; font-size:13px; color:#90929b;
 			span {
-			  margin:0 0 0 13px; font-weight:$bold;
+			  margin:0 0 0 13px; font-weight:$regular;
 			  &:first-child { margin:0; }
 			}
 		 }
 		 .donate_btn {
 			float:right; padding:25px 0 0;
 			a {
-				width: 170px; padding: 11px 0 8px; font-size: 16px; color: $white; display: block; line-height: 20px;
-				font-weight: $medium; background-color: $red; text-align: center; border: 2px solid transparent;
+				width: 180px; padding: 14px 0 10px; font-size: 16px; color: $white; display: block; line-height: 20px;
+				font-weight: $regular; background-color: $red; text-align: center; border: 2px solid transparent;
 				@include borderRadius(5px);
 				@include boxSizing;
 			}

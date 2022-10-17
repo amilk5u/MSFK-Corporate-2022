@@ -154,19 +154,14 @@ label, button { cursor: pointer; }
 
 .top { position: fixed; left: 0; bottom: 0; font-size: 50px; color: black; z-index: 9999; }
 
-/* .loading { 
-	width: 100%; height: 100vh; position: fixed; top: 0; left: 0; background-color:$white; z-index: 100;
-	> img {
-		position: absolute; top: 50%; left: 50%; 
-		@include translate(-50%,-50%);
-	}
-} 
-body.scroll_bar{
-	-ms-overflow-style: none;
-	&::-webkit-scrollbar {
-		display: none;
-	}
-} */
+.loading { width: 100%; height: 100vh; position: fixed; top: 0; left: 0; background-color: #fff; z-index: 100; }
+
+.loading > div { width: 410px; height: 124px; overflow: hidden; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+
+body.scroll_bar { -ms-overflow-style: none; overflow: hidden; }
+
+body.scroll_bar::-webkit-scrollbar { display: none; }
+
 header { width: 100%; position: fixed; z-index: 50; top: 0; /* right:17px; */ -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 header.scroll_p { right: 0; }
@@ -217,19 +212,19 @@ footer .footer .fc1 .contain .donate_info dl.account { position: relative; }
 
 footer .footer .fc1 .contain .donate_info dl.account:after { width: 1px; height: 11px; content: ""; display: block; position: absolute; left: 0; top: 39px; background-color: #474b4e; }
 
-footer .footer .fc1 .contain .donate_info dl dt { display: inline-block; font-size: 15px; color: #ffe043; margin-right: 10px; }
+footer .footer .fc1 .contain .donate_info dl dt { display: inline-block; font-size: 14px; color: #ffe043; margin-right: 10px; }
 
-footer .footer .fc1 .contain .donate_info dl dd { display: inline-block; font-size: 15px; color: #fff; }
+footer .footer .fc1 .contain .donate_info dl dd { display: inline-block; font-size: 14px; color: #fff; }
 
 footer .footer .fc2 .address { height: 100%; float: left; padding: 40px 0; font-size: 13px; color: #90929b; }
 
-footer .footer .fc2 .address span { margin: 0 0 0 13px; font-weight: 500; }
+footer .footer .fc2 .address span { margin: 0 0 0 13px; font-weight: 300; }
 
 footer .footer .fc2 .address span:first-child { margin: 0; }
 
 footer .footer .fc2 .donate_btn { float: right; padding: 25px 0 0; }
 
-footer .footer .fc2 .donate_btn a { width: 170px; padding: 11px 0 8px; font-size: 16px; color: #fff; display: block; line-height: 20px; font-weight: 400; background-color: #e42020; text-align: center; border: 2px solid transparent; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+footer .footer .fc2 .donate_btn a { width: 180px; padding: 14px 0 10px; font-size: 16px; color: #fff; display: block; line-height: 20px; font-weight: 300; background-color: #e42020; text-align: center; border: 2px solid transparent; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 section { width: 100%; height: 100vh; position: relative; }
 
@@ -435,7 +430,7 @@ section { width: 100%; height: 100vh; position: relative; }
 
 .sec1 .content3 .graph_contain .bottom_txt { width: 100%; position: absolute; top: 455px; bottom: 0; text-align: center; }
 
-.sec1 .content3 .graph_contain .bottom_txt strong { opacity: 0; display: none; display: block; font-size: 70px; color: #ff5758; font-weight: 600; }
+.sec1 .content3 .graph_contain .bottom_txt strong { opacity: 0; display: none; margin: 0 0 0 25px; display: block; font-size: 70px; color: #ff5758; font-weight: 600; }
 
 .sec1 .content3 .graph_contain .bottom_txt strong span { display: inline-block; font-size: 40px; margin: 0 0 0 -18px; }
 
@@ -485,9 +480,9 @@ section { width: 100%; height: 100vh; position: relative; }
 
 .sec2 .content1 { background-color: #273034; }
 
-.sec2 .content1 .txt_wrap { position: relative; z-index: 5; }
+.sec2 .content1 .txt_wrap { height: 100%; position: relative; z-index: 5; }
 
-.sec2 .content1 .txt_wrap p { position: absolute; top: 130px; left: 130px; color: #fff; font-size: 30px; line-height: 48px; font-weight: 400; opacity: 0; display: none; }
+.sec2 .content1 .txt_wrap p { position: absolute; top: 51%; left: 130px; color: #fff; font-size: 30px; line-height: 48px; font-weight: 400; opacity: 0; display: none; -webkit-transform: translate(0, -50%); -moz-transform: translate(0, -50%); -ms-transform: translate(0, -50%); -o-transform: translate(0, -50%); transform: translate(0, -50%); }
 
 .sec2 .content1 #seedMotion { width: 1920px !important; height: 1080px !important; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) !important; z-index: 1; }
 
@@ -511,11 +506,11 @@ section { width: 100%; height: 100vh; position: relative; }
 
 .sec2 .content1 .circle_line > span.circle_deco6 { margin: -37px 0 0 649px; background-color: #ff5758; }
 
-.sec2 .content1 .video_wrap { width: 520px; height: 520px; position: relative; margin: 0 auto; top: 50%; z-index: 2; -webkit-transform: translate(0, -50%); -moz-transform: translate(0, -50%); -ms-transform: translate(0, -50%); -o-transform: translate(0, -50%); transform: translate(0, -50%); }
+.sec2 .content1 .video_wrap { width: 520px; height: 520px; position: absolute; margin: 0 auto; top: 50%; left: 50%; z-index: 2; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
 
 .sec2 .content1 .video_wrap video { width: 100%; height: 100%; opacity: 0; }
 
-.sec2 .content2 { position: relative; z-index: 2; display: none; opacity: 0; clip-path: circle(0% at 50% 50%); background-color: #fff; }
+.sec2 .content2 { position: relative; z-index: 5; display: none; opacity: 0; clip-path: circle(0% at 50% 50%); background-color: #fff; }
 
 .sec2 .content2 .horizontal_wrap { width: max-content; height: 100vh; position: relative; overflow: hidden; }
 
@@ -561,7 +556,7 @@ section { width: 100%; height: 100vh; position: relative; }
 
 .sec2 .content2 .contain.donation_company > .pin-spacer { left: -200px !important; }
 
-.sec2 .content2 .contain.donation_company #lineMotion { width: 8009px !important; height: 1080px !important; position: absolute; top: 50%; transform: translate(-1691px, -49%) !important; z-index: -1; }
+.sec2 .content2 .contain.donation_company #lineMotion { width: 8009px !important; height: 1080px !important; position: absolute; top: 50%; transform: translate(-1721px, -49%) !important; z-index: -1; }
 
 .sec2 .content2 .contain.donation_company .line_img { width: 6597px; height: 785px; position: absolute; top: 50%; left: -481px; transform: translate(0, -50%) !important; display: none; }
 
@@ -677,7 +672,7 @@ section { width: 100%; height: 100vh; position: relative; }
 
 .sec3 .content2 { z-index: 2; text-align: center; display: none; opacity: 0; }
 
-.sec3 .content2 .shell_cont { width: 100%; min-width: 1920px; position: absolute; top: 52%; left: 50%; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+.sec3 .content2 .shell_cont { width: 100%; min-width: 1920px; position: absolute; top: 46%; left: 50%; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
 
 .sec3 .content2 .shell_cont .line_stroke { width: 0; height: 1px; position: absolute; top: 9%; left: 0; background: url(./../../images/main/line_bg.png) 0 repeat; }
 
@@ -701,7 +696,7 @@ section { width: 100%; height: 100vh; position: relative; }
 
 .sec3 .content2 .btn_wrap { width: max-content; position: absolute; top: 300px; left: 50%; opacity: 0; -webkit-transform: translate(-50%, 0); -moz-transform: translate(-50%, 0); -ms-transform: translate(-50%, 0); -o-transform: translate(-50%, 0); transform: translate(-50%, 0); }
 
-.sec3 .content2 .btn_wrap a { width: 270px; display: block; float: left; padding: 27px 0 23px; font-size: 20px; line-height: 20px; font-weight: 400; color: #ff5758; border: 2px solid #ff5758; margin: 0 0 0 15px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease; -o-transition: all 0.2s ease; -ms-transition: all 0.2s ease; }
+.sec3 .content2 .btn_wrap a { width: 230px; display: block; float: left; padding: 20px 0 16px; font-size: 18px; line-height: 20px; font-weight: 300; color: #ff5758; border: 2px solid #ff5758; margin: 0 0 0 15px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease; -o-transition: all 0.2s ease; -ms-transition: all 0.2s ease; }
 
 .sec3 .content2 .btn_wrap a:nth-of-type(1) { margin: 0; color: #fff; background-color: #ff5758; }
 
