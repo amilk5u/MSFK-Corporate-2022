@@ -31,19 +31,19 @@
       }
       .circle_1_red {
         background-image:url(../../images/main/circle_1_red.png);
-        @include animation(circleRotate 30s linear infinite);
+        @include animation(circleRotate 50s linear infinite);
       }
       .circle_1_yellow {
         background-image:url(../../images/main/circle_1_yellow.png);
-        @include animation(circleRotate 30s linear infinite);
+        @include animation(circleRotate 50s linear infinite);
       }
       .circle_1_darkgreen {
         background-image:url(../../images/main/circle_1_darkgreen.png);
-        @include animation(circleRotate 35s linear infinite);
+        @include animation(circleRotate 50s linear infinite);
       }
       .circle_1_green {
         background-image:url(../../images/main/circle_1_green.png);
-        @include animation(circleRotate 30s linear infinite);
+        @include animation(circleRotate 50s linear infinite);
       }
     }
     .bg_circle_2 {
@@ -53,18 +53,21 @@
         width:vw(871); height:vw(871); display:block; position:absolute; top:0; left:0;
         @include backgroundSoltC();
       }
-      span { background-image:url(../../images/main/circle_2.png); }
+      span { 
+        background-image:url(../../images/main/circle_2.png); 
+        @include animation(circleRotate 45s linear infinite);
+      }
       .circle_2_blue {
         background-image:url(../../images/main/circle_2_blue.png);
-        @include animation(circleRotate 30s linear infinite);
+        @include animation(circleRotate 45s linear infinite);
       }
       .circle_2_green {
         background-image:url(../../images/main/circle_2_green.png);
-        @include animation(circleRotate 35s linear infinite);
+        @include animation(circleRotate 45s linear infinite);
       }
       .circle_2_yellow {
         background-image:url(../../images/main/circle_2_yellow.png);
-        @include animation(circleRotate 35s linear infinite);
+        @include animation(circleRotate 45s linear infinite);
       }
     }
     .bg_circle_3 {
@@ -74,10 +77,10 @@
         width:vw(1050); height:vw(1050); display:block; position:absolute; top:0; left:0;
         @include backgroundSoltC();
       }
-      span { background-image:url(../../images/main/circle_3.png); }
+      span { background-image: url(../../images/main/circle_3.png); }
       .circle_3_blue {
         background-image:url(../../images/main/circle_3_blue.png);
-        @include animation(circleRotate 30s linear infinite);
+        @include animation(circleRotate 35s linear infinite);
       }
     }
   }
@@ -358,19 +361,19 @@
         }
         .circle_1_darkgreen {
           background-image:url(../../images/main/outro_circle_1_darkgreen.png);
-          @include animation(circleRotate 35s linear infinite);
+          @include animation(circleRotate 50s linear infinite);
         }
         .circle_1_green {
           background-image:url(../../images/main/outro_circle_1_green.png);
-          @include animation(circleRotate 30s linear infinite);
+          @include animation(circleRotate 50s linear infinite);
         }
         .circle_1_red {
           background-image:url(../../images/main/outro_circle_1_red.png);
-          @include animation(circleRotate 30s linear infinite);
+          @include animation(circleRotate 50s linear infinite);
         }
         .circle_1_yellow {
           background-image:url(../../images/main/outro_circle_1_yellow.png);
-          @include animation(circleRotate 30s linear infinite);
+          @include animation(circleRotate 50s linear infinite);
         }
       }
       .bg_circle_2 {
@@ -380,18 +383,21 @@
           width:vw(871); height:vw(871); display:block; position:absolute; top:0; left:0;
           @include backgroundSoltC();
         }
-        span { background-image:url(../../images/main/circle_2.png); }
+        span { 
+          background-image:url(../../images/main/circle_2.png); 
+          @include animation(circleRotate 45s linear infinite);
+        }
         .circle_2_blue {
           background-image:url(../../images/main/outro_circle_2_blue.png);
-          @include animation(circleRotate 30s linear infinite);
+          @include animation(circleRotate 45s linear infinite);
         }
         .circle_2_blue2 {
           background-image:url(../../images/main/outro_circle_2_blue2.png);
-          @include animation(circleRotate 35s linear infinite);
+          @include animation(circleRotate 45s linear infinite);
         }
         .circle_2_red {
           background-image:url(../../images/main/outro_circle_2_red.png);
-          @include animation(circleRotate 30s linear infinite);
+          @include animation(circleRotate 45s linear infinite);
         }
       }
     }

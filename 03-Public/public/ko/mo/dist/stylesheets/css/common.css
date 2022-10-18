@@ -231,25 +231,25 @@ footer .footer_wrap ul li span { font-weight: 400; }
 
 #container #visual .bg_circle_1 span { background-image: url(../../images/main/circle_1.png); -webkit-animation: circleRotate 50s linear infinite; -moz-animation: circleRotate 50s linear infinite; animation: circleRotate 50s linear infinite; }
 
-#container #visual .bg_circle_1 .circle_1_red { background-image: url(../../images/main/circle_1_red.png); -webkit-animation: circleRotate 30s linear infinite; -moz-animation: circleRotate 30s linear infinite; animation: circleRotate 30s linear infinite; }
+#container #visual .bg_circle_1 .circle_1_red { background-image: url(../../images/main/circle_1_red.png); -webkit-animation: circleRotate 50s linear infinite; -moz-animation: circleRotate 50s linear infinite; animation: circleRotate 50s linear infinite; }
 
-#container #visual .bg_circle_1 .circle_1_yellow { background-image: url(../../images/main/circle_1_yellow.png); -webkit-animation: circleRotate 30s linear infinite; -moz-animation: circleRotate 30s linear infinite; animation: circleRotate 30s linear infinite; }
+#container #visual .bg_circle_1 .circle_1_yellow { background-image: url(../../images/main/circle_1_yellow.png); -webkit-animation: circleRotate 50s linear infinite; -moz-animation: circleRotate 50s linear infinite; animation: circleRotate 50s linear infinite; }
 
-#container #visual .bg_circle_1 .circle_1_darkgreen { background-image: url(../../images/main/circle_1_darkgreen.png); -webkit-animation: circleRotate 35s linear infinite; -moz-animation: circleRotate 35s linear infinite; animation: circleRotate 35s linear infinite; }
+#container #visual .bg_circle_1 .circle_1_darkgreen { background-image: url(../../images/main/circle_1_darkgreen.png); -webkit-animation: circleRotate 50s linear infinite; -moz-animation: circleRotate 50s linear infinite; animation: circleRotate 50s linear infinite; }
 
-#container #visual .bg_circle_1 .circle_1_green { background-image: url(../../images/main/circle_1_green.png); -webkit-animation: circleRotate 30s linear infinite; -moz-animation: circleRotate 30s linear infinite; animation: circleRotate 30s linear infinite; }
+#container #visual .bg_circle_1 .circle_1_green { background-image: url(../../images/main/circle_1_green.png); -webkit-animation: circleRotate 50s linear infinite; -moz-animation: circleRotate 50s linear infinite; animation: circleRotate 50s linear infinite; }
 
 #container #visual .bg_circle_2 { width: 116.13333vw; height: 116.13333vw; position: absolute; top: 12vw; left: 50%; z-index: 1; -webkit-transform: translate(-50%, 0); -moz-transform: translate(-50%, 0); -ms-transform: translate(-50%, 0); -o-transform: translate(-50%, 0); transform: translate(-50%, 0); }
 
 #container #visual .bg_circle_2 span, #container #visual .bg_circle_2 i { width: 116.13333vw; height: 116.13333vw; display: block; position: absolute; top: 0; left: 0; -ms-background-position-x: 50%; background-position-x: 50%; -ms-background-position-y: 50%; background-position-y: 50%; -webkit-background-size: cover; background-size: cover; background-repeat: no-repeat; }
 
-#container #visual .bg_circle_2 span { background-image: url(../../images/main/circle_2.png); }
+#container #visual .bg_circle_2 span { background-image: url(../../images/main/circle_2.png); -webkit-animation: circleRotate 45s linear infinite; -moz-animation: circleRotate 45s linear infinite; animation: circleRotate 45s linear infinite; }
 
-#container #visual .bg_circle_2 .circle_2_blue { background-image: url(../../images/main/circle_2_blue.png); -webkit-animation: circleRotate 30s linear infinite; -moz-animation: circleRotate 30s linear infinite; animation: circleRotate 30s linear infinite; }
+#container #visual .bg_circle_2 .circle_2_blue { background-image: url(../../images/main/circle_2_blue.png); -webkit-animation: circleRotate 45s linear infinite; -moz-animation: circleRotate 45s linear infinite; animation: circleRotate 45s linear infinite; }
 
-#container #visual .bg_circle_2 .circle_2_green { background-image: url(../../images/main/circle_2_green.png); -webkit-animation: circleRotate 35s linear infinite; -moz-animation: circleRotate 35s linear infinite; animation: circleRotate 35s linear infinite; }
+#container #visual .bg_circle_2 .circle_2_green { background-image: url(../../images/main/circle_2_green.png); -webkit-animation: circleRotate 45s linear infinite; -moz-animation: circleRotate 45s linear infinite; animation: circleRotate 45s linear infinite; }
 
-#container #visual .bg_circle_2 .circle_2_yellow { background-image: url(../../images/main/circle_2_yellow.png); -webkit-animation: circleRotate 35s linear infinite; -moz-animation: circleRotate 35s linear infinite; animation: circleRotate 35s linear infinite; }
+#container #visual .bg_circle_2 .circle_2_yellow { background-image: url(../../images/main/circle_2_yellow.png); -webkit-animation: circleRotate 45s linear infinite; -moz-animation: circleRotate 45s linear infinite; animation: circleRotate 45s linear infinite; }
 
 #container #visual .bg_circle_3 { width: 140vw; height: 140vw; position: absolute; top: 0; left: 50%; z-index: 1; -webkit-transform: translate(-50%, 0); -moz-transform: translate(-50%, 0); -ms-transform: translate(-50%, 0); -o-transform: translate(-50%, 0); transform: translate(-50%, 0); }
 
@@ -257,7 +257,7 @@ footer .footer_wrap ul li span { font-weight: 400; }
 
 #container #visual .bg_circle_3 span { background-image: url(../../images/main/circle_3.png); }
 
-#container #visual .bg_circle_3 .circle_3_blue { background-image: url(../../images/main/circle_3_blue.png); -webkit-animation: circleRotate 30s linear infinite; -moz-animation: circleRotate 30s linear infinite; animation: circleRotate 30s linear infinite; }
+#container #visual .bg_circle_3 .circle_3_blue { background-image: url(../../images/main/circle_3_blue.png); -webkit-animation: circleRotate 35s linear infinite; -moz-animation: circleRotate 35s linear infinite; animation: circleRotate 35s linear infinite; }
 
 #container #about { text-align: center; color: #2d2d2d; }
 
@@ -501,25 +501,25 @@ footer .footer_wrap ul li span { font-weight: 400; }
 
 #container #together .circle_wrap .bg_circle_1 span { background-image: url(../../images/main/circle_1.png); -webkit-animation: circleRotate 50s linear infinite; -moz-animation: circleRotate 50s linear infinite; animation: circleRotate 50s linear infinite; }
 
-#container #together .circle_wrap .bg_circle_1 .circle_1_darkgreen { background-image: url(../../images/main/outro_circle_1_darkgreen.png); -webkit-animation: circleRotate 35s linear infinite; -moz-animation: circleRotate 35s linear infinite; animation: circleRotate 35s linear infinite; }
+#container #together .circle_wrap .bg_circle_1 .circle_1_darkgreen { background-image: url(../../images/main/outro_circle_1_darkgreen.png); -webkit-animation: circleRotate 50s linear infinite; -moz-animation: circleRotate 50s linear infinite; animation: circleRotate 50s linear infinite; }
 
-#container #together .circle_wrap .bg_circle_1 .circle_1_green { background-image: url(../../images/main/outro_circle_1_green.png); -webkit-animation: circleRotate 30s linear infinite; -moz-animation: circleRotate 30s linear infinite; animation: circleRotate 30s linear infinite; }
+#container #together .circle_wrap .bg_circle_1 .circle_1_green { background-image: url(../../images/main/outro_circle_1_green.png); -webkit-animation: circleRotate 50s linear infinite; -moz-animation: circleRotate 50s linear infinite; animation: circleRotate 50s linear infinite; }
 
-#container #together .circle_wrap .bg_circle_1 .circle_1_red { background-image: url(../../images/main/outro_circle_1_red.png); -webkit-animation: circleRotate 30s linear infinite; -moz-animation: circleRotate 30s linear infinite; animation: circleRotate 30s linear infinite; }
+#container #together .circle_wrap .bg_circle_1 .circle_1_red { background-image: url(../../images/main/outro_circle_1_red.png); -webkit-animation: circleRotate 50s linear infinite; -moz-animation: circleRotate 50s linear infinite; animation: circleRotate 50s linear infinite; }
 
-#container #together .circle_wrap .bg_circle_1 .circle_1_yellow { background-image: url(../../images/main/outro_circle_1_yellow.png); -webkit-animation: circleRotate 30s linear infinite; -moz-animation: circleRotate 30s linear infinite; animation: circleRotate 30s linear infinite; }
+#container #together .circle_wrap .bg_circle_1 .circle_1_yellow { background-image: url(../../images/main/outro_circle_1_yellow.png); -webkit-animation: circleRotate 50s linear infinite; -moz-animation: circleRotate 50s linear infinite; animation: circleRotate 50s linear infinite; }
 
 #container #together .circle_wrap .bg_circle_2 { width: 116.13333vw; height: 116.13333vw; position: absolute; top: 50%; left: 50%; z-index: 1; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
 
 #container #together .circle_wrap .bg_circle_2 span, #container #together .circle_wrap .bg_circle_2 i { width: 116.13333vw; height: 116.13333vw; display: block; position: absolute; top: 0; left: 0; -ms-background-position-x: 50%; background-position-x: 50%; -ms-background-position-y: 50%; background-position-y: 50%; -webkit-background-size: cover; background-size: cover; background-repeat: no-repeat; }
 
-#container #together .circle_wrap .bg_circle_2 span { background-image: url(../../images/main/circle_2.png); }
+#container #together .circle_wrap .bg_circle_2 span { background-image: url(../../images/main/circle_2.png); -webkit-animation: circleRotate 45s linear infinite; -moz-animation: circleRotate 45s linear infinite; animation: circleRotate 45s linear infinite; }
 
-#container #together .circle_wrap .bg_circle_2 .circle_2_blue { background-image: url(../../images/main/outro_circle_2_blue.png); -webkit-animation: circleRotate 30s linear infinite; -moz-animation: circleRotate 30s linear infinite; animation: circleRotate 30s linear infinite; }
+#container #together .circle_wrap .bg_circle_2 .circle_2_blue { background-image: url(../../images/main/outro_circle_2_blue.png); -webkit-animation: circleRotate 45s linear infinite; -moz-animation: circleRotate 45s linear infinite; animation: circleRotate 45s linear infinite; }
 
-#container #together .circle_wrap .bg_circle_2 .circle_2_blue2 { background-image: url(../../images/main/outro_circle_2_blue2.png); -webkit-animation: circleRotate 35s linear infinite; -moz-animation: circleRotate 35s linear infinite; animation: circleRotate 35s linear infinite; }
+#container #together .circle_wrap .bg_circle_2 .circle_2_blue2 { background-image: url(../../images/main/outro_circle_2_blue2.png); -webkit-animation: circleRotate 45s linear infinite; -moz-animation: circleRotate 45s linear infinite; animation: circleRotate 45s linear infinite; }
 
-#container #together .circle_wrap .bg_circle_2 .circle_2_red { background-image: url(../../images/main/outro_circle_2_red.png); -webkit-animation: circleRotate 30s linear infinite; -moz-animation: circleRotate 30s linear infinite; animation: circleRotate 30s linear infinite; }
+#container #together .circle_wrap .bg_circle_2 .circle_2_red { background-image: url(../../images/main/outro_circle_2_red.png); -webkit-animation: circleRotate 45s linear infinite; -moz-animation: circleRotate 45s linear infinite; animation: circleRotate 45s linear infinite; }
 
 @keyframes circleRotate { 0% { -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
