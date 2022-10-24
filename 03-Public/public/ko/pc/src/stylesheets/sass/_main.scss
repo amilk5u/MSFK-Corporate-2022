@@ -104,8 +104,7 @@ section { width: 100%; height: 100vh; position: relative; }
 			}
 		}
 		#circularLineMotion { 
-			width:1920px !important; height: 1080px !important; position: absolute; top: 50% ; left: 50%;
-			z-index: -1;
+			width: 1920px !important; height: 1080px !important; position: absolute; top: 50% ; left: 50%; z-index: -1; opacity: 0;
 			transform: translate(-50%,-50%) !important;
 		}
 	}
@@ -329,6 +328,7 @@ section { width: 100%; height: 100vh; position: relative; }
 					width: 100%; height: 100%; 
 					.elm_img {  
 						position: absolute; top:50%; left:50%; background-color: $white;
+						@include borderRadius(100%);
 						@include translate(-50%,-50%);
 					}
 				}
@@ -339,7 +339,7 @@ section { width: 100%; height: 100vh; position: relative; }
 				}
 				.deco_wrap {
 					> span {
-						width: 0; height: 0; position: absolute; left: 50%; top: 50%;
+						width: 20px; height: 20px; position: absolute; left: 50%; top: 50%;
 						@include translate(-50%,-50%);
 						&.circle_deco1 { background-color: #ffd34e; margin: -241px 0 0 -379px; } //20
 						&.circle_deco2 { background-color: $pink; margin: 134px 0 0 -429px ; } //30
@@ -352,7 +352,7 @@ section { width: 100%; height: 100vh; position: relative; }
 				.mini_deco {
 					> span {
 						width: 9px; height: 9px; position: absolute; left: 50%; top: 50%;
-						opacity: 0;
+						// opacity: 0;
 						@include translate(-50%,-50%);
 						&.deco1 { background-color: $pink; margin: -465px 0 0 -182px; }
 						&.deco2 { background-color: #63d1c2; margin: -322px 0 0 -601px; }
@@ -370,8 +370,8 @@ section { width: 100%; height: 100vh; position: relative; }
 					left:-200px !important;
 				}
 				#lineMotion { 
-					width: 8009px !important; height: 1080px !important; position: absolute; top: 50%; 
-					transform: translate(-1721px, -49%) !important; z-index: -1;
+					width: 6341px !important; height: 790px !important; position: absolute; top: 50%; 
+					transform: translate(-310px, -50%) !important; z-index: -1;
 				}
 				.line_img {
 					width: 6597px; height: 785px; position: absolute; top: 50%; left: -481px;
@@ -388,13 +388,13 @@ section { width: 100%; height: 100vh; position: relative; }
 						}
 					}
 					&.elm2 { 
-						left: 1278px; margin: 155px 0 0; 
+						left: 1218px; margin: 155px 0 0; 
 						.ani_line { 
 							img { animation: linear infinite circleRotateRight 100s; }
 						}
 					}
 					&.elm3 { 
-						left: 2610px; margin: -115px 0 0; 
+						left: 2550px; margin: -115px 0 0; 
 						.ani_line { 
 							img { animation: linear infinite circleRotateRight 150s; }
 						}
@@ -424,26 +424,28 @@ section { width: 100%; height: 100vh; position: relative; }
 				}
 			}
 			&.company_partner {
-				width: 2247px; 
-				/* width: 100vw; */ position: relative;
+				width: 2000px; position: relative; display: flex; align-items: center; justify-content: center;
 				> img {
-					position: absolute; top: 50%; left: 50%; opacity: 0;
-					@include translate(-50%,-50%);
-					&.partner1 { margin: 250px 0 0 697px; }
-					&.partner2 { margin: -186px 0 00 633px; }
-					&.partner3 { margin: 194px 0 0 -570px; }
-					&.partner4 { margin: -301px 0 0 57px; }
-					&.partner5 { margin: -133px 0 0 -282px; }
-					&.partner6 { margin: -218px 0 0 -766px; }
-					&.partner7 { margin: 165px 0 0 153px; }
+					position: absolute;
+					// opacity: 0;
+					&.partner1 { left: 236px; bottom: 118px; }
+					&.partner2 { right: 100px; top: 349px; }
+					&.partner3 { left: -80px; top: 323px; }
+					&.partner4 { right: 275px; top: 59px; }
+					&.partner5 { top: 253px; right: 627px; }
+					&.partner6 { bottom: 91px; right: 325px; }
+					&.partner7 { top: 333px; left: 548px; }
+					&.partner8 { left: 819px; top: 94px; }
+					&.partner9 { top: 100px; left: 292px; }
+					&.partner10 { left: 895px; bottom: 188px; }
 				}
 				.mini_deco {
 					> span {
 						width: 9px; height: 9px; position: absolute; left: 50%; top: 50%; 
 						@include translate(-50%,-50%);
-						&.deco1 { background-color: #9fc3ff; margin: 59px 0 0 -919px; }
-						&.deco2 { background-color: $pink; margin: -377px 0 0 -201px; }
-						&.deco3 { background-color: #ffd34e; margin: 113px 0 0 -380px; }
+						&.deco1 { background-color: #9fc3ff; margin: 162px 0 0 -954px; }
+						&.deco2 { background-color: $pink; margin: -377px 0 0 -299px; }
+						&.deco3 { background-color: #ffd34e; margin: 158px 0 0 -380px; }
 						&.deco4 { background-color: $pink; margin: 391px 0 0 198px; }
 						&.deco5 { background-color: #63d1c2; margin: 60px 0 0 491px; }
 						&.deco6 { background-color: #ffd34e; margin: -322px 0 0 796px; }
@@ -515,7 +517,7 @@ section { width: 100%; height: 100vh; position: relative; }
 			.line_stroke { width: 0; height: 1px; position: absolute; top: 9%; left: 0; background: url(./../../images/main/line_bg.png) 0 repeat; }
 		}
 		.txt_wrap {
-			position: absolute; top: 50%; left: 50%;
+			position: absolute; top: 19.3%; left: 50%;
 			@include transform(translate(-50%,-50%));
 			strong { 
 				position: relative; font-size: 40px; font-weight: $medium; line-height: 48px; color: #2d2d2d;
@@ -596,7 +598,7 @@ section { width: 100%; height: 100vh; position: relative; }
 	.content3 {
 		z-index: 3; display: none; opacity: 0;
 		.txt_wrap {
-			position: absolute; top: 50%; left: 50%; z-index: 1;
+			position: absolute; top: 19.3%; left: 50%; z-index: 1;
 			@include transform(translate(-50%,-50%));
 			strong { 
 				position: relative; font-size: 40px; font-weight: $medium; line-height: 48px; color: #2d2d2d;
@@ -648,8 +650,8 @@ section { width: 100%; height: 100vh; position: relative; }
 			p { font-size: 22px; line-height: 48px; font-weight: $regular; color: #2d2d2d; opacity: 0; }
 			strong {
 				display: block; padding: 12px 0 0; font-size: 36px; line-height: 50px; font-weight: $medium; color: #2d2d2d; opacity: 0;
-				position: relative; top: 30px;
-				span { color: #ed3637; display: block; opacity: 0; position: relative; top: 30px; }
+				position: relative; top: 10px;
+				span { color: #ed3637; display: block; opacity: 0; position: relative; top: 10px; }
 			}
 		}
 		.bg_circle {

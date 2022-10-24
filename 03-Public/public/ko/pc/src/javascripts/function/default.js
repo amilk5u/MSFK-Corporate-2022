@@ -15,7 +15,7 @@ $window.load(function () {
 	_this.trigger("resize");
 	$window.scroll(function () {
 		winSc = _this.scrollTop();
-		// $('.top').text(winSc); 
+		$('.top').text(winSc); 
 	});
 	$window.scrollTop(0);
 	layout();
