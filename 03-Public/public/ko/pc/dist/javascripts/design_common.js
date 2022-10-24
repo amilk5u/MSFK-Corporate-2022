@@ -574,8 +574,8 @@ function main() {
 		target: "#lineMotion",
 		path: "./datafile/lineMotion.json",
 		pin: true,
-		start: 9600,
-		end: '+=3100',
+		start: 9150,
+		end: '+=3700',
 		// speed: "medium",
 		scrub: 3,
 	});
