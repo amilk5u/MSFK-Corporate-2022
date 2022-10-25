@@ -152,8 +152,6 @@ strong, h1, h2, h3, h4, h5, h6 { font-weight: 500; }
 
 label, button { cursor: pointer; }
 
-.top { position: fixed; left: 0; bottom: 0; font-size: 50px; color: black; z-index: 9999; }
-
 .loading { width: 100%; height: 100vh; position: fixed; top: 0; left: 0; background-color: #fff; z-index: 100; }
 
 .loading > div { width: 410px; height: 124px; overflow: hidden; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
@@ -556,7 +554,7 @@ section { width: 100%; height: 100vh; position: relative; }
 
 .sec2 .content2 .contain.donation_company > .pin-spacer { left: -200px !important; }
 
-.sec2 .content2 .contain.donation_company #lineMotion { width: 7062px !important; height: 800px !important; position: absolute; top: 50%; transform: translate(-808px, -50%) !important; z-index: -1; }
+.sec2 .content2 .contain.donation_company #lineMotion { width: 7072px !important; height: 800px !important; position: absolute; top: 50%; transform: translate(-808px, -50%) !important; z-index: -1; }
 
 .sec2 .content2 .contain.donation_company .line_img { width: 6597px; height: 785px; position: absolute; top: 50%; left: -481px; transform: translate(0, -50%) !important; display: none; }
 
@@ -682,7 +680,7 @@ section { width: 100%; height: 100vh; position: relative; }
 
 .sec3 .content2 .shell_cont .line_stroke { width: 0; height: 1px; position: absolute; top: 9%; left: 0; background: url(./../../images/main/line_bg.png) 0 repeat; }
 
-.sec3 .content2 .txt_wrap { position: absolute; top: 19.3%; left: 50%; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+.sec3 .content2 .txt_wrap { position: absolute; top: 50%; left: 50%; margin: -300px 0 0; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
 
 .sec3 .content2 .txt_wrap strong { position: relative; font-size: 40px; font-weight: 400; line-height: 48px; color: #2d2d2d; }
 
@@ -734,7 +732,7 @@ section { width: 100%; height: 100vh; position: relative; }
 
 .sec3 .content3 { z-index: 3; display: none; opacity: 0; }
 
-.sec3 .content3 .txt_wrap { position: absolute; top: 19.3%; left: 50%; z-index: 1; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+.sec3 .content3 .txt_wrap { position: absolute; top: 50%; left: 50%; z-index: 1; margin: -300px 0 0; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
 
 .sec3 .content3 .txt_wrap strong { position: relative; font-size: 40px; font-weight: 400; line-height: 48px; color: #2d2d2d; }
 

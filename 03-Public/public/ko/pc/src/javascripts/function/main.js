@@ -367,7 +367,7 @@ function main() {
 		// 원 확대 모션
 		// 가로 스크롤 실행
 		.to('#social .content2 .horizontal_wrap', { x: _horizontalW, duration: 60, delay: 1.5, ease: Power0.easeNone, })		
-		.to('#social .content2 .partner5', { border: 0, duration: 13 }) // 시간 텀 주기
+		.to('#social .content2 .partner5', { border: 0, duration: 12 }) // 시간 텀 주기
 		// 컨텐츠 순차적으로 나타나기
 		.to('#social .content2 .donation_company .elm1', { opacity: 1, duration: 15, x: -60, delay: -75 })
 		.to('#social .content2 .donation_company .elm2', { opacity: 1, duration: 15, x: -60, delay: -61 }) 
@@ -508,8 +508,8 @@ function main() {
 		target: "#lineMotion",
 		path: "./datafile/lineMotion.json",
 		pin: true,
-		start: 9150,
-		end: '+=3700',
+		start: 9500,
+		end: '+=3000',
 		// speed: "medium",
 		scrub: 3,
 	});

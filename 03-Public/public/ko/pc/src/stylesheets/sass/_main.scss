@@ -371,7 +371,7 @@ section { width: 100%; height: 100vh; position: relative; }
 					left:-200px !important;
 				}
 				#lineMotion { 
-					width: 7062px !important; height: 800px !important; position: absolute; top: 50%; 
+					width: 7072px !important; height: 800px !important; position: absolute; top: 50%; 
 					transform: translate(-808px, -50%) !important; z-index: -1;
 				}
 				.line_img {
@@ -518,7 +518,7 @@ section { width: 100%; height: 100vh; position: relative; }
 			.line_stroke { width: 0; height: 1px; position: absolute; top: 9%; left: 0; background: url(./../../images/main/line_bg.png) 0 repeat; }
 		}
 		.txt_wrap {
-			position: absolute; top: 19.3%; left: 50%;
+			position: absolute; top: 50%; left: 50%; margin: -300px 0 0;
 			@include transform(translate(-50%,-50%));
 			strong { 
 				position: relative; font-size: 40px; font-weight: $medium; line-height: 48px; color: #2d2d2d;
@@ -599,7 +599,7 @@ section { width: 100%; height: 100vh; position: relative; }
 	.content3 {
 		z-index: 3; display: none; opacity: 0;
 		.txt_wrap {
-			position: absolute; top: 19.3%; left: 50%; z-index: 1;
+			position: absolute; top: 50%; left: 50%; z-index: 1; margin: -300px 0 0;
 			@include transform(translate(-50%,-50%));
 			strong { 
 				position: relative; font-size: 40px; font-weight: $medium; line-height: 48px; color: #2d2d2d;
