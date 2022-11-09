@@ -1,4 +1,4 @@
-# MSFK Corporate 2022 동행기업 Project / 기업후원 연말 캠페인 
+# MSFK Corporate 2022 동행기업 캠페인
 
 Demo : [corporate_2022](https://msf.or.kr/campaigns/corporate_2022/)
  
