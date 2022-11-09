@@ -34,7 +34,7 @@ Demo : [corporate_2022](https://msf.or.kr/campaigns/corporate_2022/)
 </br>
 
 ## 🎫 Result 
-![image](http://chamshin.kr/images/lg/appliance_Finder/washing_img1.jpg)
+![image](http://chamshin.kr/images/msfk/appliance_Finder/corporate_2022_img.jpg)
 
 </br>
 
