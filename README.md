@@ -1,8 +1,3 @@
-# MSFK-Corporate-2022
-MSFK 국경없는의사회 / 기업후원 연말 캠페인 / 기업프로젝트
-
-
-
 # MSFK Corporate 2022 동행기업 Project / 기업후원 연말 캠페인 
 
 Demo : [corporate_2022](https://msf.or.kr/campaigns/corporate_2022/)
